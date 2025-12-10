@@ -1,5 +1,0 @@
-hi hello hi if you're here that means you extracted le mod, hooray
-ahem, this part of the code isn't actually in the original 1.3 version, but is here instead out of necessity because the og code is depreciated
-so ye, if you wanna look at the og code, look into it on github (by going to certain files' history then clicking on browse files after selecting a period in time)
-that's it, see you around
-	- siberian
