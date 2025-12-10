@@ -1,0 +1,3 @@
+﻿hi there! these classes weren't originally here either, but for the sake of making my life easier... here they are.
+Originally these were part of CalamityPlayer, but moving them out provides both more flexibility and modularity!
+(and a slight breather for my poor laptop, sheesh!)

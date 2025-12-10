@@ -1,0 +1,39 @@
+using System;
+using System.Collections.Generic;
+using Microsoft.Xna.Framework;
+using Terraria;
+using Terraria.DataStructures;
+using Terraria.ID;
+using Terraria.ModLoader;
+using CalamityModClassicPreTrailer.Items;
+using CalamityModClassicPreTrailer.NPCs;
+
+namespace CalamityModClassicPreTrailer.Items
+{
+	public class NightmareFuel : ModItem
+	{
+		public override void SetStaticDefaults()
+		{
+			// DisplayName.SetDefault("Nightmare Fuel");
+			// Tooltip.SetDefault("May drain your sanity");
+		}
+
+		public override void Update(ref float gravity, ref float maxFallSpeed)
+		{
+			maxFallSpeed = 0f;
+			float num = (float)Main.rand.Next(90, 111) * 0.01f;
+			num *= Main.essScale;
+			Lighting.AddLight((int)((Item.position.X + (float)(Item.width / 2)) / 16f), (int)((Item.position.Y + (float)(Item.height / 2)) / 16f), 0.7f * num, 0.7f * num, 0f * num);
+		}
+
+		public override void SetDefaults()
+		{
+			Item.width = 20;
+			Item.height = 20;
+			Item.maxStack = 999;
+			Item.rare = 10;
+			Item.value = Item.buyPrice(0, 7, 50, 0);
+			Item.GetGlobalItem<CalamityGlobalItem>().postMoonLordRarity = 14;
+		}
+	}
+}

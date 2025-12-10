@@ -1,0 +1,75 @@
+using System;
+using System.Collections.Generic;
+using Microsoft.Xna.Framework;
+using Terraria;
+using Terraria.DataStructures;
+using Terraria.ID;
+using Terraria.ModLoader;
+using CalamityModClassicPreTrailer.Items;
+using CalamityModClassicPreTrailer.Projectiles;
+
+namespace CalamityModClassicPreTrailer.Items.Weapons
+{
+	public class SpectralstormCannon : ModItem
+	{
+		public override void SetStaticDefaults()
+		{
+			// DisplayName.SetDefault("Spectralstorm Cannon");
+			// Tooltip.SetDefault("70% chance to not consume flares\nFires a storm of ectoplasm and flares");
+		}
+
+	    public override void SetDefaults()
+	    {
+			Item.damage = 44;
+			Item.DamageType = DamageClass.Ranged;
+			Item.width = 66;
+			Item.height = 26;
+			Item.useTime = 3;
+			Item.useAnimation = 9;
+			Item.useStyle = 5;
+			Item.noMelee = true;
+			Item.knockBack = 1.5f;
+            Item.value = Item.buyPrice(0, 95, 0, 0);
+            Item.rare = 9;
+			Item.UseSound = SoundID.Item11;
+			Item.autoReuse = true;
+			Item.shoot = 163;
+			Item.shootSpeed = 9.5f;
+			Item.useAmmo = 931;
+		}
+	    
+	    public override bool CanConsumeAmmo(Item ammo, Player player)
+	    {
+	    	if (Main.rand.Next(0, 100) < 70)
+	    		return false;
+	    	return true;
+	    }
+		
+		public override bool Shoot(Player player, EntitySource_ItemUse_WithAmmo source, Vector2 position, Vector2 velocity, int type, int damage, float knockback)
+		{
+		    int num6 = Main.rand.Next(1, 2);
+		    for (int index = 0; index < num6; ++index)
+		    {
+		        float num7 = velocity.X;
+		        float num8 = velocity.Y;
+		        float SpeedX = velocity.X + (float) Main.rand.Next(-40, 41) * 0.05f;
+		        float SpeedY = velocity.Y + (float) Main.rand.Next(-40, 41) * 0.05f;
+		        int projectile = Projectile.NewProjectile(Entity.GetSource_FromThis(null), position.X, position.Y, velocity.X, velocity.Y, type, damage, knockback, player.whoAmI, 0.0f, 0.0f);
+		        Main.projectile[projectile].timeLeft = 200;
+		    }
+		    int proj = Projectile.NewProjectile(Entity.GetSource_FromThis(null), position.X, position.Y, velocity.X, velocity.Y, 297, damage, knockback, player.whoAmI, 0f, 0f);
+			Main.projectile[proj].GetGlobalProjectile<CalamityGlobalProjectile>().forceRanged = true;
+			return false;
+		}
+		
+		public override void AddRecipes()
+		{
+			Recipe recipe = CreateRecipe();
+            recipe.AddIngredient(null, "FirestormCannon");
+            recipe.AddIngredient(ItemID.FragmentVortex, 20);
+            recipe.AddIngredient(ItemID.Ectoplasm, 10);
+            recipe.AddTile(TileID.LunarCraftingStation);
+            recipe.Register();
+		}
+	}
+}
