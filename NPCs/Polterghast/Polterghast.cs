@@ -683,14 +683,15 @@ namespace CalamityModClassicPreTrailer.NPCs.Polterghast
 			npcLoot.Add(new CommonDrop(ModContent.ItemType<PolterghastTrophy>(), 10));
 			npcLoot.Add(ItemDropRule.BossBag(ModContent.ItemType<PolterghastBag>()));
 			
-			npcLoot.Add(notExpert.OnSuccess(new CommonDrop(ModContent.ItemType<RuinousSoul>(), 1, 5, 9)));
-			npcLoot.Add(notExpert.OnSuccess(new CommonDrop(ModContent.ItemType<BansheeHook>(), 4)));
-			npcLoot.Add(notExpert.OnSuccess(new CommonDrop(ModContent.ItemType<DaemonsFlame>(), 4)));
-			npcLoot.Add(notExpert.OnSuccess(new CommonDrop(ModContent.ItemType<EtherealSubjugator>(), 4)));
-			npcLoot.Add(notExpert.OnSuccess(new CommonDrop(ModContent.ItemType<FatesReveal>(), 4)));
-			npcLoot.Add(notExpert.OnSuccess(new CommonDrop(ModContent.ItemType<GhastlyVisage>(), 4)));
-			npcLoot.Add(notExpert.OnSuccess(new CommonDrop(ModContent.ItemType<GhoulishGouger>(), 4)));
-			npcLoot.Add(notExpert.OnSuccess(new CommonDrop(ModContent.ItemType<TerrorBlade>(), 4)));
+			notExpert.OnSuccess(new CommonDrop(ModContent.ItemType<RuinousSoul>(), 1, 5, 9));
+			notExpert.OnSuccess(new CommonDrop(ModContent.ItemType<BansheeHook>(), 4));
+			notExpert.OnSuccess(new CommonDrop(ModContent.ItemType<DaemonsFlame>(), 4));
+			notExpert.OnSuccess(new CommonDrop(ModContent.ItemType<EtherealSubjugator>(), 4));
+			notExpert.OnSuccess(new CommonDrop(ModContent.ItemType<FatesReveal>(), 4));
+			notExpert.OnSuccess(new CommonDrop(ModContent.ItemType<GhastlyVisage>(), 4));
+			notExpert.OnSuccess(new CommonDrop(ModContent.ItemType<GhoulishGouger>(), 4));
+			notExpert.OnSuccess(new CommonDrop(ModContent.ItemType<TerrorBlade>(), 4));
+			npcLoot.Add(notExpert);
 		}
 
 		public override void BossLoot(ref string name, ref int potionType)

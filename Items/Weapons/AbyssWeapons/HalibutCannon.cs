@@ -54,7 +54,7 @@ namespace CalamityModClassicPreTrailer.Items.Weapons.AbyssWeapons
                 float num8 = velocity.Y;
                 float SpeedX = velocity.X + (float)Main.rand.Next(-10, 11) * 0.05f;
                 float SpeedY = velocity.Y + (float)Main.rand.Next(-10, 11) * 0.05f;
-                int shot = Projectile.NewProjectile(Entity.GetSource_FromThis(null), position.X, position.Y, velocity.X, velocity.Y, type, damage, knockback, player.whoAmI, 0.0f, 0.0f);
+                int shot = Projectile.NewProjectile(source, position.X, position.Y, SpeedX, SpeedY, type, damage, knockback, player.whoAmI, 0.0f, 0.0f);
                 Main.projectile[shot].timeLeft = 180;
             }
             return false;

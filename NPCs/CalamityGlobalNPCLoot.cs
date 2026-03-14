@@ -1785,11 +1785,12 @@ namespace CalamityModClassicPreTrailer.NPCs
 				npcLoot.Add(ItemDropRule.ByCondition(new Conditions.NotExpert(),Mod.Find<ModItem>("Barinade").Type, 4));
 				npcLoot.Add(ItemDropRule.ByCondition(new Conditions.NotExpert(),Mod.Find<ModItem>("StormSpray").Type, 4));
 				npcLoot.Add(ItemDropRule.ByCondition(new Conditions.NotExpert(),Mod.Find<ModItem>("AquaticDischarge").Type, 4));
-				npcLoot.Add(notExpert.OnSuccess(new OneFromOptionsDropRule(40, 2, new int[]
+				notExpert.OnSuccess(new OneFromOptionsDropRule(40, 2, new int[]
 				{
 					ModContent.ItemType<DuneHopper>(),
 					ModContent.ItemType<ScourgeoftheDesert>(),
-				})));
+				}));
+				npcLoot.Add(notExpert);
 				npcLoot.Add(ItemDropRule.ByCondition(new Conditions.NotExpert(),Mod.Find<ModItem>("DeepDiver").Type, 40));
 				npcLoot.Add(ItemDropRule.ByCondition(new Conditions.NotExpert(),Mod.Find<ModItem>("DesertScourgeMask").Type, 7));
 				npcLoot.Add(ItemDropRule.ByCondition(new Conditions.NotExpert(),ItemID.HighTestFishingLine, 15));
@@ -1813,30 +1814,31 @@ namespace CalamityModClassicPreTrailer.NPCs
 			else if (npc.type == Mod.Find<ModNPC>("AquaticScourgeHead").Type)
 			{
 				npcLoot.Add(new CommonDrop(ItemID.GreaterHealingPotion, 1, 8, 15));
-				npcLoot.Add(notExpert.OnSuccess(ItemDropRule.ByCondition(new Conditions.IsHardmode(), Mod.Find<ModItem>("VictoryShard").Type, 1, 11, 21)));
-				npcLoot.Add(notExpert.OnSuccess(ItemDropRule.ByCondition(new Conditions.IsHardmode(), ItemID.Coral, 1, 5, 10)));
-				npcLoot.Add(notExpert.OnSuccess(ItemDropRule.ByCondition(new Conditions.IsHardmode(), ItemID.Seashell, 1, 5, 10)));
-				npcLoot.Add(notExpert.OnSuccess(ItemDropRule.ByCondition(new Conditions.IsHardmode(), ItemID.Starfish, 1, 5, 10)));
-				npcLoot.Add(notExpert.OnSuccess(ItemDropRule.ByCondition(new Conditions.IsHardmode(), ItemID.SoulofSight, 1, 20, 41)));
-				npcLoot.Add(notExpert.OnSuccess(ItemDropRule.ByCondition(new Conditions.IsHardmode(), Mod.Find<ModItem>("DeepseaStaff").Type, 4)));
-				npcLoot.Add(notExpert.OnSuccess(ItemDropRule.ByCondition(new Conditions.IsHardmode(), Mod.Find<ModItem>("Barinautical").Type, 4)));
-				npcLoot.Add(notExpert.OnSuccess(ItemDropRule.ByCondition(new Conditions.IsHardmode(), Mod.Find<ModItem>("Downpour").Type, 4))); 
-				npcLoot.Add(notExpert.OnSuccess(ItemDropRule.ByCondition(new Conditions.IsHardmode(), Mod.Find<ModItem>("SubmarineShocker").Type, 4)));
-				npcLoot.Add(notExpert.OnSuccess(ItemDropRule.ByCondition(new Conditions.IsHardmode(), ItemID.HighTestFishingLine, 8)));
-				npcLoot.Add(notExpert.OnSuccess(ItemDropRule.ByCondition(new Conditions.IsHardmode(), ItemID.AnglerTackleBag, 8)));
-				npcLoot.Add(notExpert.OnSuccess(ItemDropRule.ByCondition(new Conditions.IsHardmode(), ItemID.TackleBox, 8)));
-				npcLoot.Add(notExpert.OnSuccess(ItemDropRule.ByCondition(new Conditions.IsHardmode(), ItemID.AnglerEarring, 5)));
-				npcLoot.Add(notExpert.OnSuccess(ItemDropRule.ByCondition(new Conditions.IsHardmode(), ItemID.FishermansGuide, 5)));
-				npcLoot.Add(notExpert.OnSuccess(ItemDropRule.ByCondition(new Conditions.IsHardmode(), ItemID.WeatherRadio, 5)));
-				npcLoot.Add(notExpert.OnSuccess(ItemDropRule.ByCondition(new Conditions.IsHardmode(), ItemID.Sextant, 5)));
-				npcLoot.Add(notExpert.OnSuccess(ItemDropRule.ByCondition(new Conditions.IsHardmode(), ItemID.AnglerHat, 3)));
-				npcLoot.Add(notExpert.OnSuccess(ItemDropRule.ByCondition(new Conditions.IsHardmode(), ItemID.AnglerVest, 3)));
-				npcLoot.Add(notExpert.OnSuccess(ItemDropRule.ByCondition(new Conditions.IsHardmode(), ItemID.AnglerPants, 3)));
-				npcLoot.Add(notExpert.OnSuccess(ItemDropRule.ByCondition(new Conditions.IsHardmode(), ItemID.CratePotion, 3, 2, 4)));
-				npcLoot.Add(notExpert.OnSuccess(ItemDropRule.ByCondition(new Conditions.IsHardmode(), ItemID.FishingPotion, 3, 2, 4)));
-				npcLoot.Add(notExpert.OnSuccess(ItemDropRule.ByCondition(new Conditions.IsHardmode(), ItemID.SonarPotion, 3, 2, 4)));
-				npcLoot.Add(notExpert.OnSuccess(ItemDropRule.ByCondition(new Conditions.IsHardmode(), Mod.Find<ModItem>("AeroStone").Type, 5)));
-				npcLoot.Add(notExpert.OnSuccess(ItemDropRule.ByCondition(new Conditions.IsHardmode(), ItemID.GoldenBugNet, 10)));
+				notExpert.OnSuccess(ItemDropRule.ByCondition(new Conditions.IsHardmode(), Mod.Find<ModItem>("VictoryShard").Type, 1, 11, 21));
+				notExpert.OnSuccess(ItemDropRule.ByCondition(new Conditions.IsHardmode(), ItemID.Coral, 1, 5, 10));
+				notExpert.OnSuccess(ItemDropRule.ByCondition(new Conditions.IsHardmode(), ItemID.Seashell, 1, 5, 10));
+				notExpert.OnSuccess(ItemDropRule.ByCondition(new Conditions.IsHardmode(), ItemID.Starfish, 1, 5, 10));
+				notExpert.OnSuccess(ItemDropRule.ByCondition(new Conditions.IsHardmode(), ItemID.SoulofSight, 1, 20, 41));
+				notExpert.OnSuccess(ItemDropRule.ByCondition(new Conditions.IsHardmode(), Mod.Find<ModItem>("DeepseaStaff").Type, 4));
+				notExpert.OnSuccess(ItemDropRule.ByCondition(new Conditions.IsHardmode(), Mod.Find<ModItem>("Barinautical").Type, 4));
+				notExpert.OnSuccess(ItemDropRule.ByCondition(new Conditions.IsHardmode(), Mod.Find<ModItem>("Downpour").Type, 4)); 
+				notExpert.OnSuccess(ItemDropRule.ByCondition(new Conditions.IsHardmode(), Mod.Find<ModItem>("SubmarineShocker").Type, 4));
+				notExpert.OnSuccess(ItemDropRule.ByCondition(new Conditions.IsHardmode(), ItemID.HighTestFishingLine, 8));
+				notExpert.OnSuccess(ItemDropRule.ByCondition(new Conditions.IsHardmode(), ItemID.AnglerTackleBag, 8));
+				notExpert.OnSuccess(ItemDropRule.ByCondition(new Conditions.IsHardmode(), ItemID.TackleBox, 8));
+				notExpert.OnSuccess(ItemDropRule.ByCondition(new Conditions.IsHardmode(), ItemID.AnglerEarring, 5));
+				notExpert.OnSuccess(ItemDropRule.ByCondition(new Conditions.IsHardmode(), ItemID.FishermansGuide, 5));
+				notExpert.OnSuccess(ItemDropRule.ByCondition(new Conditions.IsHardmode(), ItemID.WeatherRadio, 5));
+				notExpert.OnSuccess(ItemDropRule.ByCondition(new Conditions.IsHardmode(), ItemID.Sextant, 5));
+				notExpert.OnSuccess(ItemDropRule.ByCondition(new Conditions.IsHardmode(), ItemID.AnglerHat, 3));
+				notExpert.OnSuccess(ItemDropRule.ByCondition(new Conditions.IsHardmode(), ItemID.AnglerVest, 3));
+				notExpert.OnSuccess(ItemDropRule.ByCondition(new Conditions.IsHardmode(), ItemID.AnglerPants, 3));
+				notExpert.OnSuccess(ItemDropRule.ByCondition(new Conditions.IsHardmode(), ItemID.CratePotion, 3, 2, 4));
+				notExpert.OnSuccess(ItemDropRule.ByCondition(new Conditions.IsHardmode(), ItemID.FishingPotion, 3, 2, 4));
+				notExpert.OnSuccess(ItemDropRule.ByCondition(new Conditions.IsHardmode(), ItemID.SonarPotion, 3, 2, 4));
+				notExpert.OnSuccess(ItemDropRule.ByCondition(new Conditions.IsHardmode(), Mod.Find<ModItem>("AeroStone").Type, 5));
+				notExpert.OnSuccess(ItemDropRule.ByCondition(new Conditions.IsHardmode(), ItemID.GoldenBugNet, 10));
+				npcLoot.Add(notExpert);
 				npcLoot.Add(ItemDropRule.ByCondition(new Conditions.IsPreHardmode(), Mod.Find<ModItem>("VictoryShard").Type, 1, 11, 21));
 				npcLoot.Add(ItemDropRule.ByCondition(new Conditions.IsPreHardmode(), ItemID.Coral, 1, 5, 10));
 				npcLoot.Add(ItemDropRule.ByCondition(new Conditions.IsPreHardmode(), ItemID.Seashell, 1, 5, 10));
@@ -1922,18 +1924,19 @@ namespace CalamityModClassicPreTrailer.NPCs
 			else if (npc.type == NPCID.GiantTortoise)
 			{
 				
-						npcLoot.Add(isExpert.OnSuccess(new OneFromOptionsDropRule(200, 2, new int[]
+						isExpert.OnSuccess(new OneFromOptionsDropRule(200, 2, new int[]
 						{
 							ModContent.ItemType<FabledTortoiseShell>(),
 							ModContent.ItemType<GiantTortoiseShell>(),
-						})));
+						}));
 				
-						npcLoot.Add(notExpert.OnSuccess(new OneFromOptionsDropRule(203, 2,new int[]
+						notExpert.OnSuccess(new OneFromOptionsDropRule(203, 2,new int[]
 						{
 							ModContent.ItemType<FabledTortoiseShell>(),
 							ModContent.ItemType<GiantTortoiseShell>(),
-						})));
-				
+						}));
+						npcLoot.Add(isExpert);
+						npcLoot.Add(notExpert);
 			}
 			else if (npc.type == NPCID.GiantShelly || npc.type == NPCID.GiantShelly2)
 			{
@@ -1988,19 +1991,20 @@ namespace CalamityModClassicPreTrailer.NPCs
 			}
 			else if (npc.type == NPCID.IchorSticker)
 			{
-						npcLoot.Add(isExpert.OnSuccess(new OneFromOptionsDropRule(200, 2, new int[]
+						isExpert.OnSuccess(new OneFromOptionsDropRule(200, 2, new int[]
 						{
 							ModContent.ItemType<SpearofDestiny>(),
 							ModContent.ItemType<IchorSpear>(),
-						})));
+						}));
 				
 				
-						npcLoot.Add(notExpert.OnSuccess(new OneFromOptionsDropRule(200, 2, new int[]
+						notExpert.OnSuccess(new OneFromOptionsDropRule(200, 2, new int[]
 						{
 							ModContent.ItemType<SpearofDestiny>(),
 							ModContent.ItemType<IchorSpear>(),
-						})));
-				
+						}));
+						npcLoot.Add(isExpert);
+						npcLoot.Add(notExpert);
 			}
 			else if (npc.type == NPCID.Harpy && NPC.downedBoss1)
 			{
@@ -2050,18 +2054,19 @@ namespace CalamityModClassicPreTrailer.NPCs
 			else if (npc.type == NPCID.PirateCrossbower)
 			{
 				
-						npcLoot.Add(isExpert.OnSuccess(new OneFromOptionsDropRule(200, 2, new int[]
+						isExpert.OnSuccess(new OneFromOptionsDropRule(200, 2, new int[]
 						{
 							ModContent.ItemType<Arbalest>(),
 							ModContent.ItemType<RaidersGlory>(),
-						})));
+						}));
 						
-						npcLoot.Add(notExpert.OnSuccess(new OneFromOptionsDropRule(200, 2, new int[]
+						notExpert.OnSuccess(new OneFromOptionsDropRule(200, 2, new int[]
 						{
 							ModContent.ItemType<Arbalest>(),
 							ModContent.ItemType<RaidersGlory>(),
-						})));
-				
+						}));
+						npcLoot.Add(isExpert);
+						npcLoot.Add(notExpert);
 			}
 			else if (npc.type == NPCID.GoblinSummoner)
 			{
@@ -2074,14 +2079,18 @@ namespace CalamityModClassicPreTrailer.NPCs
 			}
 			else if (CalamityModClassicPreTrailer.skeletonList.Contains(npc.type))
 			{
-				npcLoot.Add(isExpert.OnSuccess(ItemDropRule.ByCondition(new Conditions.IsPreHardmode(),Mod.Find<ModItem>("Waraxe").Type, 15)));
-				npcLoot.Add(notExpert.OnSuccess(ItemDropRule.ByCondition(new Conditions.IsPreHardmode(), Mod.Find<ModItem>("Waraxe").Type, 20)));
+				isExpert.OnSuccess(ItemDropRule.ByCondition(new Conditions.IsPreHardmode(),Mod.Find<ModItem>("Waraxe").Type, 15));
+				notExpert.OnSuccess(ItemDropRule.ByCondition(new Conditions.IsPreHardmode(), Mod.Find<ModItem>("Waraxe").Type, 20)); ;
+				npcLoot.Add(isExpert);
+				npcLoot.Add(notExpert);
 				npcLoot.Add(ItemDropRule.NormalvsExpert(ModContent.ItemType<AncientBoneDust>(), 5, 4));
 			}
 			else if (npc.type == NPCID.GoblinWarrior)
 			{
-				npcLoot.Add(isExpert.OnSuccess(ItemDropRule.ByCondition(new Conditions.IsPreHardmode(),Mod.Find<ModItem>("Warblade").Type, 15)));
-				npcLoot.Add(notExpert.OnSuccess(ItemDropRule.ByCondition(new Conditions.IsPreHardmode(), Mod.Find<ModItem>("Warblade").Type, 20)));
+				isExpert.OnSuccess(ItemDropRule.ByCondition(new Conditions.IsPreHardmode(),Mod.Find<ModItem>("Warblade").Type, 15));
+				notExpert.OnSuccess(ItemDropRule.ByCondition(new Conditions.IsPreHardmode(), Mod.Find<ModItem>("Warblade").Type, 20));
+				npcLoot.Add(isExpert);
+				npcLoot.Add(notExpert);
 			}
 			else if (npc.type == NPCID.MartianWalker)
 			{
@@ -2208,11 +2217,12 @@ namespace CalamityModClassicPreTrailer.NPCs
 					npcLoot.Add(ItemDropRule.ByCondition(new Conditions.NotExpert(),Mod.Find<ModItem>("Meowthrower").Type, 5));
 					npcLoot.Add(ItemDropRule.ByCondition(new Conditions.NotExpert(),Mod.Find<ModItem>("RogueEmblem").Type, 8));
 				
-						npcLoot.Add(notExpert.OnSuccess(ItemDropRule.OneFromOptions(5, new int[]
+						notExpert.OnSuccess(ItemDropRule.OneFromOptions(5, new int[]
 						{
 							ItemID.CrimsonKey,
 							ItemID.CorruptionKey,
-						})));
+						}));
+						npcLoot.Add(notExpert);
 				
 					npcLoot.Add(ItemDropRule.ByCondition(new Conditions.IsPreHardmode(), Mod.Find<ModItem>("MagnumRounds").Type, 1, 3, 3));
 					npcLoot.Add(ItemDropRule.ByCondition(new Conditions.IsPreHardmode(), Mod.Find<ModItem>("GrenadeRounds").Type, 1)); 
@@ -2332,11 +2342,12 @@ namespace CalamityModClassicPreTrailer.NPCs
 						npcLoot.Add(ItemDropRule.ByCondition(new Conditions.NotExpert(),ItemID.Gel, 1, 180, 251)); 
 						npcLoot.Add(ItemDropRule.ByCondition(new Conditions.NotExpert(),Mod.Find<ModItem>("OverloadedBlaster").Type, 4)); 
 						npcLoot.Add(ItemDropRule.ByCondition(new Conditions.NotExpert(),Mod.Find<ModItem>("GelDart").Type, 4, 80, 101)); 
-						npcLoot.Add(notExpert.OnSuccess(ItemDropRule.OneFromOptions(7, new int[]
+						notExpert.OnSuccess(ItemDropRule.OneFromOptions(7, new int[]
 						{
 							ModContent.ItemType<SlimeGodMask>(),
 							ModContent.ItemType<SlimeGodMask2>()
-						})));
+						}));
+						npcLoot.Add(notExpert);
 						npcLoot.Add(ItemDropRule.ByCondition(new Conditions.NotExpert(),Mod.Find<ModItem>("AbyssalTome").Type, 4)); 
 						npcLoot.Add(ItemDropRule.ByCondition(new Conditions.NotExpert(),Mod.Find<ModItem>("EldritchTome").Type, 4)); 
 						npcLoot.Add(ItemDropRule.ByCondition(new Conditions.NotExpert(),Mod.Find<ModItem>("CrimslimeStaff").Type, 4)); 
@@ -2358,11 +2369,12 @@ namespace CalamityModClassicPreTrailer.NPCs
 					npcLoot.Add(ItemDropRule.ByCondition(new Conditions.NotExpert(),ItemID.Gel, 1, 180, 251)); 
 					npcLoot.Add(ItemDropRule.ByCondition(new Conditions.NotExpert(),Mod.Find<ModItem>("OverloadedBlaster").Type, 4)); 
 					npcLoot.Add(ItemDropRule.ByCondition(new Conditions.NotExpert(),Mod.Find<ModItem>("GelDart").Type, 4, 80, 101)); 
-					npcLoot.Add(notExpert.OnSuccess(ItemDropRule.OneFromOptions(7, new int[]
+					notExpert.OnSuccess(ItemDropRule.OneFromOptions(7, new int[]
 					{
 						ModContent.ItemType<SlimeGodMask>(),
 						ModContent.ItemType<SlimeGodMask2>()
-					})));
+					}));
+					npcLoot.Add(notExpert);
 					npcLoot.Add(ItemDropRule.ByCondition(new Conditions.NotExpert(),Mod.Find<ModItem>("AbyssalTome").Type, 4)); 
 					npcLoot.Add(ItemDropRule.ByCondition(new Conditions.NotExpert(),Mod.Find<ModItem>("EldritchTome").Type, 4)); 
 					npcLoot.Add(ItemDropRule.ByCondition(new Conditions.NotExpert(),Mod.Find<ModItem>("CrimslimeStaff").Type, 4)); 
@@ -2384,11 +2396,12 @@ namespace CalamityModClassicPreTrailer.NPCs
 					npcLoot.Add(ItemDropRule.ByCondition(new Conditions.NotExpert(),ItemID.Gel, 1, 180, 251)); 
 					npcLoot.Add(ItemDropRule.ByCondition(new Conditions.NotExpert(),Mod.Find<ModItem>("OverloadedBlaster").Type, 4)); 
 					npcLoot.Add(ItemDropRule.ByCondition(new Conditions.NotExpert(),Mod.Find<ModItem>("GelDart").Type, 4, 80, 101)); 
-					npcLoot.Add(notExpert.OnSuccess(ItemDropRule.OneFromOptions(7, new int[]
+					notExpert.OnSuccess(ItemDropRule.OneFromOptions(7, new int[]
 					{
 						ModContent.ItemType<SlimeGodMask>(),
 						ModContent.ItemType<SlimeGodMask2>()
-					})));
+					}));
+					npcLoot.Add(notExpert);
 					npcLoot.Add(ItemDropRule.ByCondition(new Conditions.NotExpert(),Mod.Find<ModItem>("AbyssalTome").Type, 4)); 
 					npcLoot.Add(ItemDropRule.ByCondition(new Conditions.NotExpert(),Mod.Find<ModItem>("EldritchTome").Type, 4)); 
 					npcLoot.Add(ItemDropRule.ByCondition(new Conditions.NotExpert(),Mod.Find<ModItem>("CrimslimeStaff").Type, 4)); 
@@ -2477,12 +2490,13 @@ namespace CalamityModClassicPreTrailer.NPCs
 			}
 			else if (npc.type == Mod.Find<ModNPC>("Yharon").Type) //boss 17
 			{
-				LeadingConditionRule darkSun = new LeadingConditionRule(new DarkSunCondition(npc));
+				LeadingConditionRule darkSun = new LeadingConditionRule(new DarkSunCondition());
 				
-				darkSun.OnSuccess(npcLoot.Add(ItemDropRule.ByCondition(new NotDownedYharon(), Mod.Find<ModItem>("Knowledge44").Type, 1)));
-				darkSun.OnSuccess(npcLoot.Add(ItemDropRule.ByCondition(new NotDownedYharon(), Mod.Find<ModItem>("MagnumRounds").Type, 1, 6, 6)));
-				darkSun.OnSuccess(npcLoot.Add(ItemDropRule.ByCondition(new NotDownedYharon(), Mod.Find<ModItem>("GrenadeRounds").Type, 1, 3, 3)));
-				darkSun.OnSuccess(npcLoot.Add(ItemDropRule.ByCondition(new NotDownedYharon(), Mod.Find<ModItem>("ExplosiveShells").Type, 1, 2, 2)));
+				darkSun.OnSuccess(ItemDropRule.ByCondition(new NotDownedYharon(), Mod.Find<ModItem>("Knowledge44").Type, 1));
+				darkSun.OnSuccess(ItemDropRule.ByCondition(new NotDownedYharon(), Mod.Find<ModItem>("MagnumRounds").Type, 1, 6, 6));
+				darkSun.OnSuccess(ItemDropRule.ByCondition(new NotDownedYharon(), Mod.Find<ModItem>("GrenadeRounds").Type, 1, 3, 3));
+				darkSun.OnSuccess(ItemDropRule.ByCondition(new NotDownedYharon(), Mod.Find<ModItem>("ExplosiveShells").Type, 1, 2, 2));
+				npcLoot.Add(darkSun);
 			}
 			else if (npc.type == Mod.Find<ModNPC>("SupremeCalamitas").Type) //boss 18
 			{

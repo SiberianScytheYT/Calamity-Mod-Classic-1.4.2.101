@@ -56,7 +56,7 @@ namespace CalamityModClassicPreTrailer.Items.Weapons
 	        {
 				float SpeedX = velocity.X + (float)Main.rand.Next(-30, 31) * 0.05f;
 				float SpeedY = velocity.Y + (float)Main.rand.Next(-30, 31) * 0.05f;
-	            Projectile.NewProjectile(Entity.GetSource_FromThis(null), position.X, position.Y, velocity.X, velocity.Y, type, damage, knockback, player.whoAmI, 0f, 0f);
+	            Projectile.NewProjectile(Entity.GetSource_FromThis(null), position.X, position.Y, SpeedX, SpeedY, type, damage, knockback, player.whoAmI, 0f, 0f);
 	        }
 			float num72 = Item.shootSpeed;
 	    	Vector2 vector2 = player.RotatedRelativePoint(player.MountedCenter, true);

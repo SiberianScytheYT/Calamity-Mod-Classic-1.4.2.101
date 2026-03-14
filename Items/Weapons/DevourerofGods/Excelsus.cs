@@ -62,7 +62,7 @@ namespace CalamityModClassicPreTrailer.Items.Weapons.DevourerofGods
 						type = Mod.Find<ModProjectile>("ExcelsusPink").Type;
 						break;
 				}
-                Projectile.NewProjectile(Entity.GetSource_FromThis(null), position.X, position.Y, velocity.X, velocity.Y, type, damage, knockback, player.whoAmI, 0f, 0f);
+                Projectile.NewProjectile(Entity.GetSource_FromThis(null), position.X, position.Y, SpeedX, SpeedY, type, damage, knockback, player.whoAmI, 0f, 0f);
             }
             return false;
         }

@@ -1947,7 +1947,7 @@ namespace CalamityModClassicPreTrailer.NPCs.SupremeCalamitas
 			npcLoot.Add(ItemDropRule.ByCondition(new Conditions.IsExpert(), Mod.Find<ModItem>("CalamitousEssence").Type, 1, 30, 41));
 			npcLoot.Add(ItemDropRule.ByCondition(new Conditions.NotExpert(), Mod.Find<ModItem>("CalamitousEssence").Type, 1, 20, 31));
 			npcLoot.Add(ItemDropRule.ByCondition(new RevCondition(), Mod.Find<ModItem>("Vehemenc").Type, 1));
-			npcLoot.Add(isExpert.OnSuccess(ItemDropRule.OneFromOptions(1, new int[]
+			isExpert.OnSuccess(ItemDropRule.OneFromOptions(1, new int[]
 			{
 				ModContent.ItemType<Animus>(),
 				ModContent.ItemType<Azathoth>(),
@@ -1963,7 +1963,8 @@ namespace CalamityModClassicPreTrailer.NPCs.SupremeCalamitas
 				ModContent.ItemType<TriactisTruePaladinianMageHammerofMightMelee>(),
 				ModContent.ItemType<Svantechnical>(),
 				ModContent.ItemType<CrystylCrusher>(),
-			})));
+			}));
+			npcLoot.Add(isExpert);
 		}
 		
 		public override void OnKill()
@@ -2091,7 +2092,7 @@ namespace CalamityModClassicPreTrailer.NPCs.SupremeCalamitas
 		{
 			if (modifiers.FinalDamage.Base > NPC.lifeMax / 10)
 			{
-				modifiers.FinalDamage.Base = 0;
+				modifiers.SetMaxDamage(0);
 			}
 			double newDamage = (modifiers.FinalDamage.Base + (int)((double)NPC.defense * 0.25));
 			float protection = (CalamityWorldPreTrailer.death ? 0.75f : 0.7f); //45%

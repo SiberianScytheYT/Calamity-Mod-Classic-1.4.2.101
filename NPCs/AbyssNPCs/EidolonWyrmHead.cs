@@ -559,9 +559,10 @@ namespace CalamityModClassicPreTrailer.NPCs.AbyssNPCs
 			npcLoot.Add(ItemDropRule.ByCondition(new DownedPolterghast(), Mod.Find<ModItem>("SoulEdge").Type, 3));
 			npcLoot.Add(ItemDropRule.ByCondition(new DownedPolterghast(), Mod.Find<ModItem>("EidolicWail").Type, 3));
 			
-			npcLoot.Add(fakeCalorPlantDead.OnSuccess(new CommonDrop(ItemID.Ectoplasm, 1, 8, 13)));
-			npcLoot.Add(fakeCalorPlantDead.OnSuccess(new CommonDrop(Mod.Find<ModItem>("Lumenite").Type, 1, 6, 9)));
-			npcLoot.Add(fakeCalorPlantDead.OnSuccess(ItemDropRule.ByCondition(new Conditions.IsExpert(), Mod.Find<ModItem>("Lumenite").Type, 2, 2, 4)));
+			fakeCalorPlantDead.OnSuccess(new CommonDrop(ItemID.Ectoplasm, 1, 8, 13));
+			fakeCalorPlantDead.OnSuccess(new CommonDrop(Mod.Find<ModItem>("Lumenite").Type, 1, 6, 9));
+			fakeCalorPlantDead.OnSuccess(ItemDropRule.ByCondition(new Conditions.IsExpert(), Mod.Find<ModItem>("Lumenite").Type, 2, 2, 4));
+			npcLoot.Add(fakeCalorPlantDead);
 		}
 
 		public override void HitEffect(NPC.HitInfo hit)

@@ -521,13 +521,14 @@ namespace CalamityModClassicPreTrailer.NPCs.Crabulon
 				1,
 				5, 5));
 			npcLoot.Add(ItemDropRule.BossBag(ModContent.ItemType<CrabulonBag>()));
-			npcLoot.Add(notExpert.OnSuccess(new CommonDrop(ItemID.GlowingMushroom, 1, 20, 31)));
-			npcLoot.Add(notExpert.OnSuccess(new CommonDrop(ItemID.GlowingMushroom, 1, 3, 7)));
-			npcLoot.Add(notExpert.OnSuccess(new CommonDrop(ModContent.ItemType<CrabulonMask>(), 7)));
-			npcLoot.Add(notExpert.OnSuccess(new CommonDrop(ModContent.ItemType<HyphaeRod>(), 4)));
-			npcLoot.Add(notExpert.OnSuccess(new CommonDrop(ModContent.ItemType<MycelialClaws>(), 4))); 
-			npcLoot.Add(notExpert.OnSuccess(new CommonDrop(ModContent.ItemType<Mycoroot>(), 4)));
-			npcLoot.Add(notExpert.OnSuccess(new CommonDrop(ModContent.ItemType<Fungicide>(), 4)));
+			notExpert.OnSuccess(new CommonDrop(ItemID.GlowingMushroom, 1, 20, 31));
+			notExpert.OnSuccess(new CommonDrop(ItemID.GlowingMushroom, 1, 3, 7));
+			notExpert.OnSuccess(new CommonDrop(ModContent.ItemType<CrabulonMask>(), 7));
+			notExpert.OnSuccess(new CommonDrop(ModContent.ItemType<HyphaeRod>(), 4));
+			notExpert.OnSuccess(new CommonDrop(ModContent.ItemType<MycelialClaws>(), 4)); 
+			notExpert.OnSuccess(new CommonDrop(ModContent.ItemType<Mycoroot>(), 4));
+			notExpert.OnSuccess(new CommonDrop(ModContent.ItemType<Fungicide>(), 4));
+			npcLoot.Add(notExpert);
 		}
 
 		public override void ApplyDifficultyAndPlayerScaling(int numPlayers, float balance, float bossAdjustment)/* tModPorter Note: bossLifeScale -> balance (bossAdjustment is different, see the docs for details) */

@@ -1,6 +1,7 @@
 ﻿using System;
 using System.Collections.Generic;
 using Microsoft.Xna.Framework;
+using Microsoft.Xna.Framework.Graphics;
 using Terraria;
 using Terraria.ID;
 using Terraria.ModLoader;
@@ -17,7 +18,7 @@ namespace CalamityModClassicPreTrailer.Projectiles.Melee.Spears
         public override void SetDefaults()
         {
 			Projectile.width = 56;  //The width of the .png file in pixels divided by 2.
-			Projectile.aiStyle = 19;
+			// Projectile.aiStyle = 19;
 			Projectile.DamageType = DamageClass.Melee;  //Dictates whether this is a melee-class weapon.
 			Projectile.timeLeft = 90;
 			Projectile.height = 56;  //The height of the .png file in pixels divided by 2.
@@ -68,6 +69,15 @@ namespace CalamityModClassicPreTrailer.Projectiles.Melee.Spears
         public override void OnHitNPC(NPC target, NPC.HitInfo hit, int damageDone)
 		{
 			target.AddBuff(BuffID.Poisoned, 600);
+		}
+        
+		public override bool PreDraw(ref Color lightColor)
+		{
+			Texture2D texture = ModContent.Request<Texture2D>(Texture).Value;
+			Vector2 drawPosition = Projectile.Center - Main.screenPosition;
+			Vector2 origin = Vector2.Zero;
+			Main.EntitySpriteDraw(texture, drawPosition, null, Projectile.GetAlpha(lightColor), Projectile.rotation, origin, Projectile.scale, 0, 0);
+			return false;
 		}
     }
 }

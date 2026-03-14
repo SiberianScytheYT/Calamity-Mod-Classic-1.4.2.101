@@ -42,8 +42,7 @@ namespace CalamityModClassicPreTrailer.NPCs.AbyssNPCs
             value.Position.X += 50;
             value.Position.Y += 20;
             NPCID.Sets.NPCBestiaryDrawOffset[Type] = value;
-            SpawnModBiomes = new int[] { ModContent.GetInstance<AbyssLayer3Biome>().Type, ModContent.GetInstance<AbyssLayer4Biome>().Type };
-		}
+        }
         
         public override void SetBestiary(BestiaryDatabase database, BestiaryEntry bestiaryEntry)
         {
@@ -76,6 +75,7 @@ namespace CalamityModClassicPreTrailer.NPCs.AbyssNPCs
 			NPC.netAlways = true;
 			Banner = NPC.type;
 			BannerItem = Mod.Find<ModItem>("GulperEelBanner").Type;
+            SpawnModBiomes = new int[] { ModContent.GetInstance<AbyssLayer3Biome>().Type, ModContent.GetInstance<AbyssLayer4Biome>().Type };
 		}
 		
 		public override void AI()
@@ -451,10 +451,11 @@ namespace CalamityModClassicPreTrailer.NPCs.AbyssNPCs
             LeadingConditionRule fakeCalorPlantDead = new LeadingConditionRule(new DownedCalDoppelorPlantera());
 			
             npcLoot.Add(ItemDropRule.ByCondition(new RevCondition(), Mod.Find<ModItem>("HalibutCannon").Type, 1000000));
-            npcLoot.Add(fakeCalorPlantDead.OnSuccess(new CommonDrop(Mod.Find<ModItem>("Lumenite").Type, 2, 2, 4)));
-            npcLoot.Add(fakeCalorPlantDead.OnSuccess(ItemDropRule.ByCondition(new Conditions.IsExpert(), Mod.Find<ModItem>("Lumenite").Type, 2)));
-            npcLoot.Add(fakeCalorPlantDead.OnSuccess(new CommonDrop(Mod.Find<ModItem>("DepthCells").Type, 2, 6, 9)));
-            npcLoot.Add(fakeCalorPlantDead.OnSuccess(ItemDropRule.ByCondition(new Conditions.IsExpert(), Mod.Find<ModItem>("DepthCells").Type, 2, 2, 4)));
+            fakeCalorPlantDead.OnSuccess(new CommonDrop(Mod.Find<ModItem>("Lumenite").Type, 2, 2, 4));
+            fakeCalorPlantDead.OnSuccess(ItemDropRule.ByCondition(new Conditions.IsExpert(), Mod.Find<ModItem>("Lumenite").Type, 2));
+            fakeCalorPlantDead.OnSuccess(new CommonDrop(Mod.Find<ModItem>("DepthCells").Type, 2, 6, 9));
+            fakeCalorPlantDead.OnSuccess(ItemDropRule.ByCondition(new Conditions.IsExpert(), Mod.Find<ModItem>("DepthCells").Type, 2, 2, 4));
+            npcLoot.Add(fakeCalorPlantDead);
         }
 
         public override void HitEffect(NPC.HitInfo hit)

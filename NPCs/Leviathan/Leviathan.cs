@@ -628,8 +628,8 @@ namespace CalamityModClassicPreTrailer.NPCs.Leviathan
 				ModContent.ItemType<LeviathanBag>(),
 					1,
 					5, 5)));
-			npcLoot.Add(noSiren.OnSuccess(ItemDropRule.BossBag(ModContent.ItemType<LeviathanBag>())));
-			npcLoot.Add(noSiren.OnSuccess(new CommonDrop(Mod.Find<ModItem>("LeviathanTrophy").Type, 10)));
+			noSiren.OnSuccess(ItemDropRule.BossBag(ModContent.ItemType<LeviathanBag>()));
+			noSiren.OnSuccess(new CommonDrop(Mod.Find<ModItem>("LeviathanTrophy").Type, 10));
 			noSiren.OnSuccess(ItemDropRule.ByCondition(new Conditions.NotExpert(), Mod.Find<ModItem>("EnchantedPearl").Type, 10)); //done
 			noSiren.OnSuccess(ItemDropRule.ByCondition(new Conditions.NotExpert(), ItemID.HotlineFishingHook, 10));
 			noSiren.OnSuccess(ItemDropRule.ByCondition(new Conditions.NotExpert(), ItemID.BottomlessBucket, 10));
@@ -645,6 +645,8 @@ namespace CalamityModClassicPreTrailer.NPCs.Leviathan
 			noSiren.OnSuccess(notExpert.OnSuccess(ItemDropRule.ByCondition(new Conditions.IsHardmode(), Mod.Find<ModItem>("SirensSong").Type, 4)));
 			noSiren.OnSuccess(notExpert.OnSuccess(ItemDropRule.ByCondition(new Conditions.IsHardmode(), Mod.Find<ModItem>("Greentide").Type, 4)));
 			noSiren.OnSuccess(notExpert.OnSuccess(ItemDropRule.ByCondition(new Conditions.IsHardmode(), Mod.Find<ModItem>("Atlantis").Type, 4)));
+			npcLoot.Add(notExpert);
+			npcLoot.Add(noSiren);
 		}
 
 		public override void OnHitPlayer(Player target, Player.HurtInfo hurtInfo)

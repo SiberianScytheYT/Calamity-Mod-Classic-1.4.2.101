@@ -632,14 +632,15 @@ namespace CalamityModClassicPreTrailer.NPCs.Bumblefuck
 				1,
 				5, 5));
 			npcLoot.Add(ItemDropRule.BossBag(ModContent.ItemType<BumblebirbBag>()));
-			npcLoot.Add(notExpert.OnSuccess(new CommonDrop(ModContent.ItemType<Swordsplosion>(), 40)));
-			npcLoot.Add(notExpert.OnSuccess(new CommonDrop(ModContent.ItemType<EffulgentFeather>(), 1, 6, 12)));
-			npcLoot.Add(notExpert.OnSuccess(ItemDropRule.OneFromOptions(1, new int[]
+			notExpert.OnSuccess(new CommonDrop(ModContent.ItemType<Swordsplosion>(), 40));
+			notExpert.OnSuccess(new CommonDrop(ModContent.ItemType<EffulgentFeather>(), 1, 6, 12));
+			notExpert.OnSuccess(ItemDropRule.OneFromOptions(1, new int[]
 			{ 
 				ModContent.ItemType<RougeSlash>(),
 				ModContent.ItemType<GildedProboscis>(),
 				ModContent.ItemType<GoldenEagle>(),
-			})));
+			}));
+			npcLoot.Add(notExpert);
 		}
 	}
 }

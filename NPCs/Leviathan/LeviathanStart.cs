@@ -103,12 +103,13 @@ namespace CalamityModClassicPreTrailer.NPCs.Leviathan
 		public override void ModifyNPCLoot(NPCLoot npcLoot)
 		{
 			LeadingConditionRule revActive = new LeadingConditionRule(new RevCondition());
-			npcLoot.Add(revActive.OnSuccess(ItemDropRule.OneFromOptions(4, new int[]
+			revActive.OnSuccess(ItemDropRule.OneFromOptions(4, new int[]
 			{
 				ModContent.ItemType<SirensHeart>(),
 				ModContent.ItemType<SirensHeartAlt>(),
-			})));
-        }
+			}));
+			npcLoot.Add(revActive);
+		}
 
         public override void HitEffect(NPC.HitInfo hit)
 		{

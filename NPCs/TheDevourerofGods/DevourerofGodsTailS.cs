@@ -451,7 +451,7 @@ namespace CalamityModClassicPreTrailer.NPCs.TheDevourerofGods
 		{
 			if (modifiers.FinalDamage.Base > NPC.lifeMax / 2)
 			{
-				modifiers.FinalDamage.Base = 0;
+				modifiers.SetMaxDamage(0);
 			}
 		}
 

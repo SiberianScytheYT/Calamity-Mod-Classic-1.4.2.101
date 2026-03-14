@@ -846,6 +846,8 @@ namespace CalamityModClassicPreTrailer.NPCs.Leviathan
 			noLevi.OnSuccess(notExpert.OnSuccess(ItemDropRule.ByCondition(new Conditions.IsHardmode(), Mod.Find<ModItem>("SirensSong").Type, 4)));
 			noLevi.OnSuccess(notExpert.OnSuccess(ItemDropRule.ByCondition(new Conditions.IsHardmode(), Mod.Find<ModItem>("Greentide").Type, 4)));
 			noLevi.OnSuccess(notExpert.OnSuccess(ItemDropRule.ByCondition(new Conditions.IsHardmode(), Mod.Find<ModItem>("Atlantis").Type, 4)));
+			npcLoot.Add(notExpert);
+			npcLoot.Add(noLevi);
 		}
 
 		public override void OnHitPlayer(Player target, Player.HurtInfo hurtInfo)

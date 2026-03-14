@@ -57,7 +57,7 @@ namespace CalamityModClassicPreTrailer.Items.Weapons
             {
                 float SpeedX = velocity.X + (float)Main.rand.Next(-35, 36) * 0.05f;
                 float SpeedY = velocity.Y + (float)Main.rand.Next(-35, 36) * 0.05f;
-                int wasps = Projectile.NewProjectile(Entity.GetSource_FromThis(null), position.X, position.Y, velocity.X, velocity.Y, type, damage, 0f, player.whoAmI, 0.0f, 0.0f);
+                int wasps = Projectile.NewProjectile(Entity.GetSource_FromThis(null), position.X, position.Y, SpeedX, SpeedY, type, damage, 0f, player.whoAmI, 0.0f, 0.0f);
                 Main.projectile[wasps].penetrate = 1;
 				Main.projectile[wasps].GetGlobalProjectile<CalamityGlobalProjectile>().forceMagic = true;
 			}

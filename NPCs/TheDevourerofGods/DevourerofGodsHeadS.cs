@@ -1116,7 +1116,7 @@ namespace CalamityModClassicPreTrailer.NPCs.TheDevourerofGods
 				{
 					ChatHelper.BroadcastChatMessage(NetworkText.FromKey(key), messageColor);
 				}
-				modifiers.FinalDamage.Base = 0;
+				modifiers.SetMaxDamage(0);
 			}
 		}
 

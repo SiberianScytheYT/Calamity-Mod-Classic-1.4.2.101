@@ -994,21 +994,22 @@ namespace CalamityModClassicPreTrailer.NPCs.Cryogen
 				5, 5));
 			npcLoot.Add(ItemDropRule.BossBag(ModContent.ItemType<CryogenBag>()));
 
-			npcLoot.Add(notExpert.OnSuccess(new CommonDrop(ItemID.FrozenKey, 5)));
-			npcLoot.Add(notExpert.OnSuccess(new CommonDrop(ModContent.ItemType<CryoStone>(), 10)));
-			npcLoot.Add(notExpert.OnSuccess(new CommonDrop(ModContent.ItemType<CryogenMask>(), 7)));
-			npcLoot.Add(notExpert.OnSuccess(new CommonDrop(ModContent.ItemType<Regenator>(), 40)));
-			npcLoot.Add(notExpert.OnSuccess(new CommonDrop(ModContent.ItemType<BittercoldStaff>(), 4)));
-			npcLoot.Add(notExpert.OnSuccess(new CommonDrop(ModContent.ItemType<EffluviumBow>(), 4)));
-			npcLoot.Add(notExpert.OnSuccess(new CommonDrop(ModContent.ItemType<GlacialCrusher>(), 4)));
-			npcLoot.Add(notExpert.OnSuccess(new CommonDrop(ModContent.ItemType<Icebreaker>(), 4)));
-			npcLoot.Add(notExpert.OnSuccess(new CommonDrop(ModContent.ItemType<IceStar>(), 4)));
-			npcLoot.Add(notExpert.OnSuccess(new CommonDrop(ModContent.ItemType<Avalanche>(), 4)));
-			npcLoot.Add(notExpert.OnSuccess(new CommonDrop(ModContent.ItemType<SnowstormStaff>(), 4)));
-			npcLoot.Add(notExpert.OnSuccess(new CommonDrop(ItemID.SoulofMight, 1, 20, 41)));
-			npcLoot.Add(notExpert.OnSuccess(new CommonDrop(ModContent.ItemType<CryoBar>(), 1, 15, 26)));
-			npcLoot.Add(notExpert.OnSuccess(new CommonDrop(ModContent.ItemType<EssenceofEleum>(), 1, 4, 9)));
-			npcLoot.Add(notExpert.OnSuccess(new CommonDrop(ItemID.FrostCore, 1)));
+			notExpert.OnSuccess(new CommonDrop(ItemID.FrozenKey, 5));
+			notExpert.OnSuccess(new CommonDrop(ModContent.ItemType<CryoStone>(), 10));
+			notExpert.OnSuccess(new CommonDrop(ModContent.ItemType<CryogenMask>(), 7));
+			notExpert.OnSuccess(new CommonDrop(ModContent.ItemType<Regenator>(), 40));
+			notExpert.OnSuccess(new CommonDrop(ModContent.ItemType<BittercoldStaff>(), 4));
+			notExpert.OnSuccess(new CommonDrop(ModContent.ItemType<EffluviumBow>(), 4));
+			notExpert.OnSuccess(new CommonDrop(ModContent.ItemType<GlacialCrusher>(), 4));
+			notExpert.OnSuccess(new CommonDrop(ModContent.ItemType<Icebreaker>(), 4));
+			notExpert.OnSuccess(new CommonDrop(ModContent.ItemType<IceStar>(), 4));
+			notExpert.OnSuccess(new CommonDrop(ModContent.ItemType<Avalanche>(), 4));
+			notExpert.OnSuccess(new CommonDrop(ModContent.ItemType<SnowstormStaff>(), 4));
+			notExpert.OnSuccess(new CommonDrop(ItemID.SoulofMight, 1, 20, 41));
+			notExpert.OnSuccess(new CommonDrop(ModContent.ItemType<CryoBar>(), 1, 15, 26));
+			notExpert.OnSuccess(new CommonDrop(ModContent.ItemType<EssenceofEleum>(), 1, 4, 9));
+			notExpert.OnSuccess(new CommonDrop(ItemID.FrostCore, 1));
+			npcLoot.Add(notExpert);
 		}
 
 		public override void OnHitPlayer(Player target, Player.HurtInfo hurtInfo)

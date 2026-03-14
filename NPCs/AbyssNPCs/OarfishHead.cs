@@ -1,6 +1,7 @@
 using System;
 using System.Collections.Generic;
 using System.IO;
+using CalamityModClassicPreTrailer.BiomeManagers;
 using CalamityModClassicPreTrailer.Items;
 using CalamityModClassicPreTrailer.NPCs.NPCLootConditions.CalamityBosses;
 using Microsoft.Xna.Framework;
@@ -70,6 +71,7 @@ namespace CalamityModClassicPreTrailer.NPCs.AbyssNPCs
 			NPC.netAlways = true;
 			Banner = NPC.type;
 			BannerItem = Mod.Find<ModItem>("OarfishBanner").Type;
+			SpawnModBiomes = new int[2] { ModContent.GetInstance<AbyssLayer2Biome>().Type, ModContent.GetInstance<AbyssLayer3Biome>().Type };
 		}
 
 		public override void AI()
@@ -409,8 +411,9 @@ namespace CalamityModClassicPreTrailer.NPCs.AbyssNPCs
 			LeadingConditionRule fakeCalorPlantDead = new LeadingConditionRule(new DownedCalDoppelorPlantera());
 			
 			npcLoot.Add(ItemDropRule.ByCondition(new RevCondition(), Mod.Find<ModItem>("HalibutCannon").Type, 1000000));
-			npcLoot.Add(fakeCalorPlantDead.OnSuccess(new CommonDrop(Mod.Find<ModItem>("DepthCells").Type, 2, 3, 6)));
-			npcLoot.Add(fakeCalorPlantDead.OnSuccess(ItemDropRule.ByCondition(new Conditions.IsExpert(), Mod.Find<ModItem>("DepthCells").Type, 2, 1, 3)));
+			fakeCalorPlantDead.OnSuccess(new CommonDrop(Mod.Find<ModItem>("DepthCells").Type, 2, 3, 6));
+			fakeCalorPlantDead.OnSuccess(ItemDropRule.ByCondition(new Conditions.IsExpert(), Mod.Find<ModItem>("DepthCells").Type, 2, 1, 3));
+			npcLoot.Add(fakeCalorPlantDead);
 		}
 
 		public override void HitEffect(NPC.HitInfo hit)

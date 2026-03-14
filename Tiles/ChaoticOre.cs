@@ -48,7 +48,7 @@ namespace CalamityModClassicPreTrailer.Tiles
                     {
                         if (Main.netMode != 1)
                         {
-                            Projectile.NewProjectile(new EntitySource_TileBreak(i, j), (float)(i * 16 + 16), (float)(tileLocationY * 16 + 16), 0f, 0.1f, Mod.Find<ModProjectile>("LavaChunk").Type, 25, 2f, Main.myPlayer, 0f, 0f);
+                            Projectile.NewProjectile(new EntitySource_WorldEvent(), (float)(i * 16 + 16), (float)(tileLocationY * 16 + 16), 0f, 0.1f, Mod.Find<ModProjectile>("LavaChunk").Type, 25, 2f, Main.myPlayer, 0f, 0f);
                         }
                     }
                 }

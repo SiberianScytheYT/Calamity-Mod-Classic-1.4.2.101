@@ -48,7 +48,7 @@ namespace CalamityModClassicPreTrailer.Items.Weapons.AbyssWeapons
 	        {
                 float SpeedX = velocity.X + (float)Main.rand.Next(-25, 26) * 0.05f;
                 float SpeedY = velocity.Y + (float)Main.rand.Next(-25, 26) * 0.05f;
-                Projectile.NewProjectile(Entity.GetSource_FromThis(null), position.X, position.Y, velocity.X, velocity.Y, Mod.Find<ModProjectile>("BlackAnurianPlankton").Type, (int)((double)damage * 0.5), knockback, player.whoAmI, 0.0f, 0.0f);
+                Projectile.NewProjectile(Entity.GetSource_FromThis(null), position.X, position.Y, SpeedX, SpeedY, Mod.Find<ModProjectile>("BlackAnurianPlankton").Type, (int)((double)damage * 0.5), knockback, player.whoAmI, 0.0f, 0.0f);
 	        }
             Projectile.NewProjectile(Entity.GetSource_FromThis(null), position.X, position.Y, velocity.X, velocity.Y, type, (int)((double)damage * 0.5), knockback, player.whoAmI, 0.0f, 0.0f);
             return false;

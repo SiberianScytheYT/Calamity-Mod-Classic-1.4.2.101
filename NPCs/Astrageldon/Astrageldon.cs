@@ -752,9 +752,10 @@ namespace CalamityModClassicPreTrailer.NPCs.Astrageldon
 				5, 5));
 			npcLoot.Add(ItemDropRule.BossBag(ModContent.ItemType<AstrageldonBag>()));
 			npcLoot.Add(new CommonDrop(ModContent.ItemType<AstrageldonTrophy>(), 10));
-			npcLoot.Add(notExpert.OnSuccess(new CommonDrop(ModContent.ItemType<AstralJelly>(), 1, 9, 13)));
-			npcLoot.Add(notExpert.OnSuccess(new CommonDrop(ModContent.ItemType<Stardust>(), 1, 20, 31)));
-			npcLoot.Add(notExpert.OnSuccess(new CommonDrop(ItemID.FallenStar, 1, 25, 41)));
+			notExpert.OnSuccess(new CommonDrop(ModContent.ItemType<AstralJelly>(), 1, 9, 13));
+			notExpert.OnSuccess(new CommonDrop(ModContent.ItemType<Stardust>(), 1, 20, 31));
+			notExpert.OnSuccess(new CommonDrop(ItemID.FallenStar, 1, 25, 41));
+			npcLoot.Add(notExpert);
 			npcLoot.Add(new CommonDrop(ModContent.ItemType<AureusMask>(), 7));
 			/*
 			int amount = Main.rand.Next(25, 41) / 2;

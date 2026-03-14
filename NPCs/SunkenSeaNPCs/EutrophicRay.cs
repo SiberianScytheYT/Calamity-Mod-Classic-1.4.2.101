@@ -1,6 +1,7 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.IO;
+using CalamityModClassicPreTrailer.BiomeManagers;
 using Microsoft.Xna.Framework;
 using Microsoft.Xna.Framework.Graphics;
 using Terraria;
@@ -46,6 +47,7 @@ namespace CalamityModClassicPreTrailer.NPCs.SunkenSeaNPCs
 			NPC.knockBackResist = 0f;
 			Banner = NPC.type;
 			BannerItem = Mod.Find<ModItem>("EutrophicRayBanner").Type;
+			SpawnModBiomes = new int[] { ModContent.GetInstance<SunkenSea>().Type };
 		}
 
 		public override void AI()

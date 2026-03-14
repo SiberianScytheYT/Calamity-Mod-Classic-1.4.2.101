@@ -20,6 +20,7 @@ namespace CalamityModClassicPreTrailer.Items.Providence
                 "Acceleration multiplier: 2.5\n" +
                 "Great vertical speed\n" +
                 "Flight time: 180"); */
+            ArmorIDs.Wing.Sets.Stats[Item.wingSlot] = new WingStats(180, 9.75f, 2.5f);
         }
 
         public override void SetDefaults()
@@ -36,7 +37,6 @@ namespace CalamityModClassicPreTrailer.Items.Providence
             CalamityPlayerPreTrailer modPlayer = player.GetModPlayer<CalamityPlayerPreTrailer>();
             player.moveSpeed += 0.4f;
             player.lavaMax += 240;
-            player.wingTimeMax = 180;
             modPlayer.elysianFire = true;
             if (hideVisual)
             {
@@ -51,12 +51,6 @@ namespace CalamityModClassicPreTrailer.Items.Providence
             maxCanAscendMultiplier = 1f;
             maxAscentMultiplier = 3f;
             constantAscend = 0.135f;
-        }
-
-        public override void HorizontalWingSpeeds(Player player, ref float speed, ref float acceleration)
-        {
-            speed = 9.75f;
-            acceleration *= 2.5f;
         }
     }
 }

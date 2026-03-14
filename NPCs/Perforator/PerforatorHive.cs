@@ -301,19 +301,20 @@ namespace CalamityModClassicPreTrailer.NPCs.Perforator
 				1,
 				5, 5));
 			npcLoot.Add(ItemDropRule.BossBag(ModContent.ItemType<PerforatorBag>()));
-			npcLoot.Add(notExpert.OnSuccess(new CommonDrop(ModContent.ItemType<PerforatorMask>(), 7)));
-			npcLoot.Add(notExpert.OnSuccess(new CommonDrop(ModContent.ItemType<Aorta>(), 4)));
-			npcLoot.Add(notExpert.OnSuccess(new CommonDrop(ModContent.ItemType<SausageMaker>(), 4)));
-			npcLoot.Add(notExpert.OnSuccess(new CommonDrop(ModContent.ItemType<BloodyRupture>(), 4)));
-			npcLoot.Add(notExpert.OnSuccess(new CommonDrop(ModContent.ItemType<BloodBath>(), 4)));
-			npcLoot.Add(notExpert.OnSuccess(new CommonDrop(ModContent.ItemType<VeinBurster>(), 4)));
-			npcLoot.Add(notExpert.OnSuccess(new CommonDrop(ModContent.ItemType<Eviscerator>(), 4)));
-			npcLoot.Add(notExpert.OnSuccess(new CommonDrop(ModContent.ItemType<ToothBall>(), 4)));
-			npcLoot.Add(notExpert.OnSuccess(new CommonDrop(ModContent.ItemType<BloodClotStaff>(), 4)));
-			npcLoot.Add(notExpert.OnSuccess(new CommonDrop(ModContent.ItemType<BloodSample>(), 1, 7, 15)));
-			npcLoot.Add(notExpert.OnSuccess(new CommonDrop(ItemID.Vertebrae, 1, 3, 10)));
-			npcLoot.Add(notExpert.OnSuccess(new CommonDrop(ItemID.CrimtaneBar, 1, 2, 6)));
-			npcLoot.Add(notExpert.OnSuccess(ItemDropRule.ByCondition(new Conditions.IsHardmode(), ItemID.Ichor, 1, 10, 21)));
+			notExpert.OnSuccess(new CommonDrop(ModContent.ItemType<PerforatorMask>(), 7));
+			notExpert.OnSuccess(new CommonDrop(ModContent.ItemType<Aorta>(), 4));
+			notExpert.OnSuccess(new CommonDrop(ModContent.ItemType<SausageMaker>(), 4));
+			notExpert.OnSuccess(new CommonDrop(ModContent.ItemType<BloodyRupture>(), 4));
+			notExpert.OnSuccess(new CommonDrop(ModContent.ItemType<BloodBath>(), 4));
+			notExpert.OnSuccess(new CommonDrop(ModContent.ItemType<VeinBurster>(), 4));
+			notExpert.OnSuccess(new CommonDrop(ModContent.ItemType<Eviscerator>(), 4));
+			notExpert.OnSuccess(new CommonDrop(ModContent.ItemType<ToothBall>(), 4));
+			notExpert.OnSuccess(new CommonDrop(ModContent.ItemType<BloodClotStaff>(), 4));
+			notExpert.OnSuccess(new CommonDrop(ModContent.ItemType<BloodSample>(), 1, 7, 15));
+			notExpert.OnSuccess(new CommonDrop(ItemID.Vertebrae, 1, 3, 10));
+			notExpert.OnSuccess(new CommonDrop(ItemID.CrimtaneBar, 1, 2, 6));
+			notExpert.OnSuccess(ItemDropRule.ByCondition(new Conditions.IsHardmode(), ItemID.Ichor, 1, 10, 21));
+			npcLoot.Add(notExpert);
 		}
 
 		public override void HitEffect(NPC.HitInfo hit)

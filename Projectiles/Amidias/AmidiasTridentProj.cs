@@ -17,7 +17,7 @@ namespace CalamityModClassicPreTrailer.Projectiles.Amidias
 		public override void SetDefaults()
 		{
 			Projectile.width = 70;
-			Projectile.aiStyle = 19;
+			// Projectile.aiStyle = 19;
 			Projectile.DamageType = DamageClass.Melee;
 			Projectile.timeLeft = 90;
 			Projectile.height = 70;

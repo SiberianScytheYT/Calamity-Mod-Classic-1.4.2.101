@@ -9,6 +9,7 @@ using CalamityModClassicPreTrailer.Items.Placeables;
 using CalamityModClassicPreTrailer.Items.Weapons.RareVariants;
 using CalamityModClassicPreTrailer.Items.Weapons.Yharon;
 using CalamityModClassicPreTrailer.Items.Yharon;
+using CalamityModClassicPreTrailer.NPCs.NPCLootConditions.CalamityBosses;
 using Microsoft.Xna.Framework;
 using Microsoft.Xna.Framework.Graphics;
 using Terraria;
@@ -2812,30 +2813,33 @@ namespace CalamityModClassicPreTrailer.NPCs.Yharon
 		#region Loot
 		public override void ModifyNPCLoot(NPCLoot npcLoot)
 		{
-			LeadingConditionRule isExpert = new LeadingConditionRule(new Conditions.IsExpert());
-			LeadingConditionRule notExpert = new LeadingConditionRule(new Conditions.NotExpert());
+			/*
 			if (!dropLoot)
 			{
 				return;
 			}
-			npcLoot.Add(ItemDropRule.ByCondition(new DarkSunCondition(NPC), ModContent.ItemType<BossRush>(), 1));
-			npcLoot.Add(ItemDropRule.ByCondition(new DarkSunCondition(NPC), ModContent.ItemType<YharonTrophy>(), 1));
+			*/
+			LeadingConditionRule darkSun = new LeadingConditionRule(new DarkSunCondition());
+			darkSun.OnSuccess(new CommonDrop(ModContent.ItemType<BossRush>(), 1));
+			darkSun.OnSuccess(new CommonDrop(ModContent.ItemType<YharonTrophy>(), 10));
 			npcLoot.Add(ItemDropRule.ByCondition(new ArmageddonDropRuleCondition(),
 				ModContent.ItemType<YharonBag>(),
 				1,
 				5, 5));
 			npcLoot.Add(ItemDropRule.BossBag(ModContent.ItemType<YharonBag>()));
-			npcLoot.Add(isExpert.OnSuccess(ItemDropRule.ByCondition(new DarkSunCondition(NPC), ModContent.ItemType<HellcasterFragment>(), 1, 22, 29)));
-			npcLoot.Add(ItemDropRule.ByCondition(new DarkSunCondition(NPC), ModContent.ItemType<VoidVortex>(), 40));
-			npcLoot.Add(isExpert.OnSuccess(ItemDropRule.ByCondition(new DarkSunCondition(NPC), ModContent.ItemType<ForgottenDragonEgg>(), 10)));
-			npcLoot.Add(ItemDropRule.ByCondition(new DarkSunCondition(NPC), ModContent.ItemType<YharonMask>(), 7));
-			npcLoot.Add(ItemDropRule.ByCondition(new DarkSunCondition(NPC), ModContent.ItemType<AngryChickenStaff>(), 4));
-			npcLoot.Add(ItemDropRule.ByCondition(new DarkSunCondition(NPC), ModContent.ItemType<PhoenixFlameBarrage>(), 4));
-			npcLoot.Add(ItemDropRule.ByCondition(new DarkSunCondition(NPC), ModContent.ItemType<DragonsBreath>(), 4));
-			npcLoot.Add(ItemDropRule.ByCondition(new DarkSunCondition(NPC), ModContent.ItemType<DragonRage>(), 4));
-			npcLoot.Add(ItemDropRule.ByCondition(new DarkSunCondition(NPC), ModContent.ItemType<ProfanedTrident>(), 4));
-			npcLoot.Add(ItemDropRule.ByCondition(new DarkSunCondition(NPC), ModContent.ItemType<TheBurningSky>(), 4));
-			npcLoot.Add(ItemDropRule.ByCondition(new DarkSunCondition(NPC), ModContent.ItemType<ChickenCannon>(), 4));
+			darkSun.OnSuccess(ItemDropRule.ByCondition(new Conditions.IsExpert(), ModContent.ItemType<HellcasterFragment>(), 1, 22, 29));
+			darkSun.OnSuccess(new CommonDrop(ModContent.ItemType<VoidVortex>(), 40));
+			darkSun.OnSuccess(ItemDropRule.ByCondition(new Conditions.IsExpert(), ModContent.ItemType<ForgottenDragonEgg>(), 10));
+			darkSun.OnSuccess(ItemDropRule.ByCondition(new Conditions.NotExpert(), ModContent.ItemType<HellcasterFragment>(), 1, 15, 23));
+			darkSun.OnSuccess(ItemDropRule.ByCondition(new Conditions.NotExpert(), ModContent.ItemType<YharonMask>(), 7));
+			darkSun.OnSuccess(ItemDropRule.ByCondition(new Conditions.NotExpert(), ModContent.ItemType<AngryChickenStaff>(), 4));
+			darkSun.OnSuccess(ItemDropRule.ByCondition(new Conditions.NotExpert(), ModContent.ItemType<PhoenixFlameBarrage>(), 4));
+			darkSun.OnSuccess(ItemDropRule.ByCondition(new Conditions.NotExpert(), ModContent.ItemType<DragonsBreath>(), 4));
+			darkSun.OnSuccess(ItemDropRule.ByCondition(new Conditions.NotExpert(), ModContent.ItemType<DragonRage>(), 4));
+			darkSun.OnSuccess(ItemDropRule.ByCondition(new Conditions.NotExpert(), ModContent.ItemType<ProfanedTrident>(), 4));
+			darkSun.OnSuccess(ItemDropRule.ByCondition(new Conditions.NotExpert(), ModContent.ItemType<TheBurningSky>(), 4));
+			darkSun.OnSuccess(ItemDropRule.ByCondition(new Conditions.NotExpert(), ModContent.ItemType<ChickenCannon>(), 4));
+			npcLoot.Add(darkSun);
 		}
 
 		public override void BossLoot(ref string name, ref int potionType)
@@ -2849,7 +2853,7 @@ namespace CalamityModClassicPreTrailer.NPCs.Yharon
 		{
 			if (modifiers.FinalDamage.Base > NPC.lifeMax / 10)
 			{
-				modifiers.FinalDamage.Base = 0;
+				modifiers.SetMaxDamage(0);
 			}
 			double newDamage = (modifiers.FinalDamage.Base + (int)((double)NPC.defense * 0.25));
 			if (newDamage < 1.0)

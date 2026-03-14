@@ -1163,17 +1163,18 @@ namespace CalamityModClassicPreTrailer.NPCs.PlaguebringerGoliath
 				1,
 				5, 5));
 			npcLoot.Add(ItemDropRule.BossBag(ModContent.ItemType<PlaguebringerGoliathBag>()));
-			npcLoot.Add(notExpert.OnSuccess(new CommonDrop(ModContent.ItemType<PlagueCellCluster>(), 1, 10, 15)));
-			npcLoot.Add(notExpert.OnSuccess(new CommonDrop(ModContent.ItemType<BloomStone>(), 10)));
-			npcLoot.Add(notExpert.OnSuccess(new CommonDrop(ModContent.ItemType<MepheticSprayer>(), 4)));
-			npcLoot.Add(notExpert.OnSuccess(new CommonDrop(ModContent.ItemType<Malevolence>(), 4)));
-			npcLoot.Add(notExpert.OnSuccess(new CommonDrop(ModContent.ItemType<VirulentKatana>(), 4)));
-			npcLoot.Add(notExpert.OnSuccess(new CommonDrop(ModContent.ItemType<DiseasedPike>(), 4)));
-			npcLoot.Add(notExpert.OnSuccess(new CommonDrop(ModContent.ItemType<PestilentDefiler>(), 4)));
-			npcLoot.Add(notExpert.OnSuccess(new CommonDrop(ModContent.ItemType<ThePlaguebringer>(), 4)));
-			npcLoot.Add(notExpert.OnSuccess(new CommonDrop(ModContent.ItemType<PlaguebringerGoliathMask>(), 7)));
-			npcLoot.Add(notExpert.OnSuccess(new CommonDrop(ModContent.ItemType<TheHive>(), 4)));
-			npcLoot.Add(notExpert.OnSuccess(new CommonDrop(ModContent.ItemType<PlagueStaff>(), 4)));
+			notExpert.OnSuccess(new CommonDrop(ModContent.ItemType<PlagueCellCluster>(), 1, 10, 15));
+			notExpert.OnSuccess(new CommonDrop(ModContent.ItemType<BloomStone>(), 10));
+			notExpert.OnSuccess(new CommonDrop(ModContent.ItemType<MepheticSprayer>(), 4));
+			notExpert.OnSuccess(new CommonDrop(ModContent.ItemType<Malevolence>(), 4));
+			notExpert.OnSuccess(new CommonDrop(ModContent.ItemType<VirulentKatana>(), 4));
+			notExpert.OnSuccess(new CommonDrop(ModContent.ItemType<DiseasedPike>(), 4));
+			notExpert.OnSuccess(new CommonDrop(ModContent.ItemType<PestilentDefiler>(), 4));
+			notExpert.OnSuccess(new CommonDrop(ModContent.ItemType<ThePlaguebringer>(), 4));
+			notExpert.OnSuccess(new CommonDrop(ModContent.ItemType<PlaguebringerGoliathMask>(), 7));
+			notExpert.OnSuccess(new CommonDrop(ModContent.ItemType<TheHive>(), 4));
+			notExpert.OnSuccess(new CommonDrop(ModContent.ItemType<PlagueStaff>(), 4));
+			npcLoot.Add(notExpert);
 		}
 
 		public override void ApplyDifficultyAndPlayerScaling(int numPlayers, float balance, float bossAdjustment)/* tModPorter Note: bossLifeScale -> balance (bossAdjustment is different, see the docs for details) */

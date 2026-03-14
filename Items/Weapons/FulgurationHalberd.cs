@@ -35,6 +35,7 @@ namespace CalamityModClassicPreTrailer.Items.Weapons
             Item.rare = 5;
 			Item.shoot = Mod.Find<ModProjectile>("NobodyKnows").Type;
 			Item.shootSpeed = 6f;
+			ItemID.Sets.ItemsThatAllowRepeatedRightClick[Item.type] = true;
 		}
 
 		public override bool AltFunctionUse(Player player)

@@ -6298,11 +6298,11 @@ namespace CalamityModClassicPreTrailer
 					}
 				}
 			}
-			modifiers.SourceDamage *= (float)damageMult;
+			modifiers.FinalDamage *= (float)damageMult;
 			#endregion
 
 			if (yharonLore)
-				modifiers.SourceDamage *= 0.75f;
+				modifiers.FinalDamage *= 0.75f;
 
 			if ((target.damage > 5 || target.boss) && Player.whoAmI == Main.myPlayer && !target.SpawnedFromStatue)
 			{
@@ -6599,7 +6599,7 @@ namespace CalamityModClassicPreTrailer
 					Player.inventory[Player.selectedItem].pick == 0 &&
 					Player.inventory[Player.selectedItem].axe == 0)
 				{
-					modifiers.FinalDamage.Base = (int)((double)modifiers.SourceDamage.Base * 0.6);
+					modifiers.FinalDamage *= 0.6f;
 				}
 			}
 			if (proj.CountsAsClass(DamageClass.Ranged))
@@ -6607,20 +6607,20 @@ namespace CalamityModClassicPreTrailer
 				switch (proj.type)
 				{
 					case ProjectileID.CrystalShard:
-						modifiers.FinalDamage.Base = (int)((double)modifiers.SourceDamage.Base * 0.6);
+						modifiers.FinalDamage *= 0.6f;
 						break;
 					case ProjectileID.ChlorophyteBullet:
-						modifiers.FinalDamage.Base = (int)((double)modifiers.SourceDamage.Base * 0.8);
+						modifiers.FinalDamage *= 0.8f;
 						break;
 					case ProjectileID.HallowStar:
-						modifiers.FinalDamage.Base = (int)((double)modifiers.SourceDamage.Base * 0.7);
+						modifiers.FinalDamage *= 0.7f;
 						break;
 				}
 				if (proj.type == Mod.Find<ModProjectile>("VeriumBullet").Type)
-					modifiers.FinalDamage.Base = (int)((double)modifiers.SourceDamage.Base * 0.8);
+					modifiers.FinalDamage *= 0.8f;
 			}
 			if (yharonLore)
-				modifiers.FinalDamage.Base = (int)((double)modifiers.SourceDamage.Base * 0.75);
+				modifiers.FinalDamage *= 0.75f;
 			#endregion
 
 			if (tarraMage && crit && proj.CountsAsClass(DamageClass.Magic))
@@ -7506,7 +7506,7 @@ namespace CalamityModClassicPreTrailer
 						break;
 				}
 			}
-			modifiers.FinalDamage.Base = (int)((double)modifiers.SourceDamage.Base * damageMult);
+			modifiers.FinalDamage *= (float)damageMult;
 			#endregion
 
 			if (CalamityWorldPreTrailer.revenge)
@@ -7524,28 +7524,28 @@ namespace CalamityModClassicPreTrailer
 			#region MultiplicativeReductions
 			if (trinketOfChiBuff)
 			{
-				modifiers.FinalDamage.Base = modifiers.SourceDamage.Base * 0.85f;
+				modifiers.FinalDamage *= 0.85f;
 			}
 			if (purpleCandle)
 			{
-				modifiers.FinalDamage.Base = modifiers.SourceDamage.Base - Player.statDefense * 0.05f;
+				modifiers.FinalDamage -= Player.statDefense * 0.05f;
 			}
 			if (abyssalDivingSuitPlates)
 			{
-				modifiers.FinalDamage.Base = modifiers.SourceDamage.Base * 0.85f;
+				modifiers.FinalDamage *= 0.85f;
 			}
 			if (sirenIce)
 			{
-				modifiers.FinalDamage.Base = (int)((double)modifiers.SourceDamage.Base * 0.85);
+				modifiers.FinalDamage *= 0.85f;
 			}
 			if (CalamityWorldPreTrailer.revenge)
 			{
 				if (!CalamityWorldPreTrailer.downedBossAny)
-					modifiers.FinalDamage.Base = modifiers.SourceDamage.Base * 0.8f;
+					modifiers.FinalDamage *= 0.8f;
 			}
 			if (Player.mount.Active && (Player.mount.Type == Mod.Find<ModMount>("AngryDog").Type || Player.mount.Type == Mod.Find<ModMount>("OnyxExcavator").Type) && Math.Abs(Player.velocity.X) > Player.mount.RunSpeed / 2f)
 			{
-				modifiers.FinalDamage.Base = modifiers.SourceDamage.Base * 0.9f;
+				modifiers.FinalDamage *= 0.9f;
 			}
 			#endregion
 

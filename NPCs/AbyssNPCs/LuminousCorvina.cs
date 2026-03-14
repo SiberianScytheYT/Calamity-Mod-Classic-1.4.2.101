@@ -276,9 +276,10 @@ namespace CalamityModClassicPreTrailer.NPCs.AbyssNPCs
 			
 			npcLoot.Add(new CommonDrop(Mod.Find<ModItem>("Voidstone").Type, 1, 8, 16));
 			npcLoot.Add(ItemDropRule.ByCondition(new RevCondition(), Mod.Find<ModItem>("HalibutCannon").Type, 1000000));
-			npcLoot.Add(fakeCalorPlantDead.OnSuccess(new CommonDrop(Mod.Find<ModItem>("Lumenite").Type, 2)));
-			npcLoot.Add(fakeCalorPlantDead.OnSuccess(new CommonDrop(Mod.Find<ModItem>("DepthCells").Type, 2, 1, 3)));
-			npcLoot.Add(fakeCalorPlantDead.OnSuccess(ItemDropRule.ByCondition(new Conditions.IsExpert(), Mod.Find<ModItem>("DepthCells").Type, 2)));
+			fakeCalorPlantDead.OnSuccess(new CommonDrop(Mod.Find<ModItem>("Lumenite").Type, 2));
+			fakeCalorPlantDead.OnSuccess(new CommonDrop(Mod.Find<ModItem>("DepthCells").Type, 2, 1, 3));
+			fakeCalorPlantDead.OnSuccess(ItemDropRule.ByCondition(new Conditions.IsExpert(), Mod.Find<ModItem>("DepthCells").Type, 2));
+			npcLoot.Add(fakeCalorPlantDead);
 		}
 
 		public override void HitEffect(NPC.HitInfo hit)

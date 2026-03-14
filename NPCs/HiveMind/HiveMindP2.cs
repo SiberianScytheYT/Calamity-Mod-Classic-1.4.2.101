@@ -704,18 +704,19 @@ namespace CalamityModClassicPreTrailer.NPCs.HiveMind
 				1,
 				5, 5));
 			npcLoot.Add(ItemDropRule.BossBag(ModContent.ItemType<HiveMindBag>()));
-			npcLoot.Add(notExpert.OnSuccess(new CommonDrop(ModContent.ItemType<HiveMindMask>(), 7)));
-			npcLoot.Add(notExpert.OnSuccess(new CommonDrop(ModContent.ItemType<ShaderainStaff>(), 4)));
-			npcLoot.Add(notExpert.OnSuccess(new CommonDrop(ModContent.ItemType<LeechingDagger>(), 4)));
-			npcLoot.Add(notExpert.OnSuccess(new CommonDrop(ModContent.ItemType<ShadowdropStaff>(), 4)));
-			npcLoot.Add(notExpert.OnSuccess(new CommonDrop(ModContent.ItemType<PerfectDark>(), 4)));
-			npcLoot.Add(notExpert.OnSuccess(new CommonDrop(ModContent.ItemType<Shadethrower>(), 4)));
-			npcLoot.Add(notExpert.OnSuccess(new CommonDrop(ModContent.ItemType<RotBall>(), 4)));
-			npcLoot.Add(notExpert.OnSuccess(new CommonDrop(ModContent.ItemType<DankStaff>(), 4)));
-			npcLoot.Add(notExpert.OnSuccess(new CommonDrop(ModContent.ItemType<TrueShadowScale>(), 1, 25, 31)));
-			npcLoot.Add(notExpert.OnSuccess(new CommonDrop(ItemID.DemoniteBar, 1, 7, 11)));
-			npcLoot.Add(notExpert.OnSuccess(new CommonDrop(ItemID.RottenChunk, 1, 9, 16)));
-			npcLoot.Add(notExpert.OnSuccess(ItemDropRule.ByCondition(new Conditions.IsHardmode(), ItemID.CursedFlame, 1, 10, 21)));
+			notExpert.OnSuccess(new CommonDrop(ModContent.ItemType<HiveMindMask>(), 7));
+			notExpert.OnSuccess(new CommonDrop(ModContent.ItemType<ShaderainStaff>(), 4));
+			notExpert.OnSuccess(new CommonDrop(ModContent.ItemType<LeechingDagger>(), 4));
+			notExpert.OnSuccess(new CommonDrop(ModContent.ItemType<ShadowdropStaff>(), 4));
+			notExpert.OnSuccess(new CommonDrop(ModContent.ItemType<PerfectDark>(), 4));
+			notExpert.OnSuccess(new CommonDrop(ModContent.ItemType<Shadethrower>(), 4));
+			notExpert.OnSuccess(new CommonDrop(ModContent.ItemType<RotBall>(), 4));
+			notExpert.OnSuccess(new CommonDrop(ModContent.ItemType<DankStaff>(), 4));
+			notExpert.OnSuccess(new CommonDrop(ModContent.ItemType<TrueShadowScale>(), 1, 25, 31));
+			notExpert.OnSuccess(new CommonDrop(ItemID.DemoniteBar, 1, 7, 11));
+			notExpert.OnSuccess(new CommonDrop(ItemID.RottenChunk, 1, 9, 16));
+			notExpert.OnSuccess(ItemDropRule.ByCondition(new Conditions.IsHardmode(), ItemID.CursedFlame, 1, 10, 21));
+			npcLoot.Add(notExpert);
 		}
 
 		public override void OnHitPlayer(Player target, Player.HurtInfo hurtInfo)

@@ -1,6 +1,7 @@
 using System;
 using System.Collections.Generic;
 using System.IO;
+using CalamityModClassicPreTrailer.BiomeManagers;
 using CalamityModClassicPreTrailer.Items;
 using CalamityModClassicPreTrailer.NPCs.NPCLootConditions.CalamityBosses;
 using Microsoft.Xna.Framework;
@@ -42,6 +43,7 @@ namespace CalamityModClassicPreTrailer.NPCs.AbyssNPCs
 			NPC.knockBackResist = 0.15f;
 			Banner = NPC.type;
 			BannerItem = Mod.Find<ModItem>("ToxicMinnowBanner").Type;
+			SpawnModBiomes = new int[3] { ModContent.GetInstance<AbyssLayer1Biome>().Type, ModContent.GetInstance<AbyssLayer2Biome>().Type, ModContent.GetInstance<AbyssLayer3Biome>().Type };
 		}
 		
 		public override void SetBestiary(BestiaryDatabase database, BestiaryEntry bestiaryEntry)
@@ -239,8 +241,9 @@ namespace CalamityModClassicPreTrailer.NPCs.AbyssNPCs
 			LeadingConditionRule fakeCalorPlantDead = new LeadingConditionRule(new DownedCalDoppelorPlantera());
 			
 			npcLoot.Add(ItemDropRule.ByCondition(new RevCondition(), Mod.Find<ModItem>("HalibutCannon").Type, 1000000));
-			npcLoot.Add(fakeCalorPlantDead.OnSuccess(new CommonDrop(Mod.Find<ModItem>("DepthCells").Type, 2, 2, 4)));
-			npcLoot.Add(fakeCalorPlantDead.OnSuccess(ItemDropRule.ByCondition(new Conditions.IsExpert(), Mod.Find<ModItem>("DepthCells").Type, 2, 2, 4)));
+			fakeCalorPlantDead.OnSuccess(new CommonDrop(Mod.Find<ModItem>("DepthCells").Type, 2, 2, 4));
+			fakeCalorPlantDead.OnSuccess(ItemDropRule.ByCondition(new Conditions.IsExpert(), Mod.Find<ModItem>("DepthCells").Type, 2, 2, 4));
+			npcLoot.Add(fakeCalorPlantDead);
 		}
 
 		public override void HitEffect(NPC.HitInfo hit)

@@ -42,7 +42,6 @@ namespace CalamityModClassicPreTrailer.NPCs.AbyssNPCs
 			value.Position.X += 40f;
 			value.Position.Y += 20f;
 			NPCID.Sets.NPCBestiaryDrawOffset[Type] = value;
-			SpawnModBiomes = new int[] { ModContent.GetInstance<Sulphur>().Type };
 		}
 		
 		public override void SetBestiary(BestiaryDatabase database, BestiaryEntry bestiaryEntry)
@@ -85,6 +84,7 @@ namespace CalamityModClassicPreTrailer.NPCs.AbyssNPCs
 			NPC.HitSound = SoundID.NPCHit1;
 			NPC.DeathSound = SoundID.NPCDeath1;
 			NPC.netAlways = true;
+			SpawnModBiomes = new int[] { ModContent.GetInstance<Sulphur>().Type };
 			if (Main.expertMode)
 			{
 				NPC.scale = 1.15f;

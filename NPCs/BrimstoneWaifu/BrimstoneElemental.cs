@@ -547,17 +547,17 @@ namespace CalamityModClassicPreTrailer.NPCs.BrimstoneWaifu
 				1,
 				5, 5));
 			npcLoot.Add(ItemDropRule.BossBag(ModContent.ItemType<BrimstoneWaifuBag>()));
-			npcLoot.Add(notExpert.OnSuccess(ItemDropRule.ByCondition(new ProvCondition(), ModContent.ItemType<Bloodstone>(), 1, 20, 31)));
-			npcLoot.Add(notExpert.OnSuccess(new CommonDrop(ModContent.ItemType<RoseStone>(), 10)));
-			npcLoot.Add(notExpert.OnSuccess(new CommonDrop(ItemID.SoulofFright, 1, 20, 41)));
-			npcLoot.Add(notExpert.OnSuccess(new CommonDrop(ModContent.ItemType<EssenceofChaos>(), 1, 4, 9)));
-			npcLoot.Add(notExpert.OnSuccess(ItemDropRule.OneFromOptions(1, new int[]
+			notExpert.OnSuccess(ItemDropRule.ByCondition(new ProvCondition(), ModContent.ItemType<Bloodstone>(), 1, 20, 31));
+			notExpert.OnSuccess(new CommonDrop(ModContent.ItemType<RoseStone>(), 10));
+			notExpert.OnSuccess(new CommonDrop(ItemID.SoulofFright, 1, 20, 41));
+			notExpert.OnSuccess(new CommonDrop(ModContent.ItemType<EssenceofChaos>(), 1, 4, 9));
+			notExpert.OnSuccess(ItemDropRule.OneFromOptions(1, new int[]
 				{
 					ModContent.ItemType<Abaddon>(),
 					ModContent.ItemType<Brimlance>(),
 					ModContent.ItemType<SeethingDischarge>(),
-				})));
-			
+				}));
+			npcLoot.Add(notExpert);
 		}
 
 		public override void ApplyDifficultyAndPlayerScaling(int numPlayers, float balance, float bossAdjustment)/* tModPorter Note: bossLifeScale -> balance (bossAdjustment is different, see the docs for details) */

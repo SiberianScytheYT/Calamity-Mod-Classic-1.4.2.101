@@ -236,7 +236,7 @@ namespace CalamityModClassicPreTrailer.NPCs.BrimstoneWaifu
 			{
 				multiplier = 0.2;
 			}
-			modifiers.FinalDamage.Base = (int)((double)modifiers.SourceDamage.Base * multiplier);
+			modifiers.FinalDamage *= (float)multiplier;
 		}
 
 		public override void FindFrame(int frameHeight)

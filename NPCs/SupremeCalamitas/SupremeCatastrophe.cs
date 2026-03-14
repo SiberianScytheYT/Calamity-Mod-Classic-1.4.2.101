@@ -205,7 +205,7 @@ namespace CalamityModClassicPreTrailer.NPCs.SupremeCalamitas
 		{
 			if (modifiers.FinalDamage.Base > NPC.lifeMax / 2)
 			{
-				modifiers.FinalDamage.Base = 0;
+				modifiers.SetMaxDamage(0);
 			}
 			double newDamage = (modifiers.FinalDamage.Base + (int)(NPC.defense * 0.25));
 			float protection = (CalamityWorldPreTrailer.death ? 0.75f : 0.7f); //45%

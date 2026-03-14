@@ -596,33 +596,34 @@ namespace CalamityModClassicPreTrailer.NPCs.Scavenger
 				5, 5));
 			npcLoot.Add(ItemDropRule.BossBag(ModContent.ItemType<RavagerBag>()));
 			npcLoot.Add(new CommonDrop(ModContent.ItemType<RavagerTrophy>(), 10));
-			npcLoot.Add(notExpert.OnSuccess(ItemDropRule.ByCondition(new ProvCondition(), ModContent.ItemType<Bloodstone>(), 1, 50, 61)));
-			npcLoot.Add(notExpert.OnSuccess(ItemDropRule.ByCondition(new ProvCondition(), ModContent.ItemType<VerstaltiteBar>(), 1, 5, 11)));
-			npcLoot.Add(notExpert.OnSuccess(ItemDropRule.ByCondition(new ProvCondition(), ModContent.ItemType<DraedonBar>(), 1, 5, 11)));
-			npcLoot.Add(notExpert.OnSuccess(ItemDropRule.ByCondition(new ProvCondition(), ModContent.ItemType<CruptixBar>(), 1, 5, 11)));
-			npcLoot.Add(notExpert.OnSuccess(ItemDropRule.ByCondition(new ProvCondition(), ModContent.ItemType<CoreofCinder>(), 1, 1, 4)));
-			npcLoot.Add(notExpert.OnSuccess(ItemDropRule.ByCondition(new ProvCondition(), ModContent.ItemType<CoreofEleum>(), 1, 1, 4)));
-			npcLoot.Add(notExpert.OnSuccess(ItemDropRule.ByCondition(new ProvCondition(), ModContent.ItemType<CoreofChaos>(), 1, 1, 4)));
-			npcLoot.Add(notExpert.OnSuccess(ItemDropRule.ByCondition(new ProvCondition(), ModContent.ItemType<BarofLife>(), 2)));
-			npcLoot.Add(notExpert.OnSuccess(ItemDropRule.ByCondition(new ProvCondition(), ModContent.ItemType<CoreofCalamity>(), 3)));
+			notExpert.OnSuccess(ItemDropRule.ByCondition(new ProvCondition(), ModContent.ItemType<Bloodstone>(), 1, 50, 61));
+			notExpert.OnSuccess(ItemDropRule.ByCondition(new ProvCondition(), ModContent.ItemType<VerstaltiteBar>(), 1, 5, 11));
+			notExpert.OnSuccess(ItemDropRule.ByCondition(new ProvCondition(), ModContent.ItemType<DraedonBar>(), 1, 5, 11));
+			notExpert.OnSuccess(ItemDropRule.ByCondition(new ProvCondition(), ModContent.ItemType<CruptixBar>(), 1, 5, 11));
+			notExpert.OnSuccess(ItemDropRule.ByCondition(new ProvCondition(), ModContent.ItemType<CoreofCinder>(), 1, 1, 4));
+			notExpert.OnSuccess(ItemDropRule.ByCondition(new ProvCondition(), ModContent.ItemType<CoreofEleum>(), 1, 1, 4));
+			notExpert.OnSuccess(ItemDropRule.ByCondition(new ProvCondition(), ModContent.ItemType<CoreofChaos>(), 1, 1, 4));
+			notExpert.OnSuccess(ItemDropRule.ByCondition(new ProvCondition(), ModContent.ItemType<BarofLife>(), 2));
+			notExpert.OnSuccess(ItemDropRule.ByCondition(new ProvCondition(), ModContent.ItemType<CoreofCalamity>(), 3));
 			
-			npcLoot.Add(notExpert.OnSuccess(new CommonDrop(ModContent.ItemType<VerstaltiteBar>(), 1, 1, 4)));
-			npcLoot.Add(notExpert.OnSuccess(new CommonDrop(ModContent.ItemType<DraedonBar>(), 1, 1, 4)));
-			npcLoot.Add(notExpert.OnSuccess(new CommonDrop(ModContent.ItemType<CruptixBar>(), 1, 1, 4)));
-			npcLoot.Add(notExpert.OnSuccess(new CommonDrop(ModContent.ItemType<CoreofCinder>(), 1, 1, 3)));
-			npcLoot.Add(notExpert.OnSuccess(new CommonDrop(ModContent.ItemType<CoreofEleum>(), 1, 1, 3)));
-			npcLoot.Add(notExpert.OnSuccess(new CommonDrop(ModContent.ItemType<CoreofChaos>(), 1, 1, 3)));
+			notExpert.OnSuccess(new CommonDrop(ModContent.ItemType<VerstaltiteBar>(), 1, 1, 4));
+			notExpert.OnSuccess(new CommonDrop(ModContent.ItemType<DraedonBar>(), 1, 1, 4));
+			notExpert.OnSuccess(new CommonDrop(ModContent.ItemType<CruptixBar>(), 1, 1, 4));
+			notExpert.OnSuccess(new CommonDrop(ModContent.ItemType<CoreofCinder>(), 1, 1, 3));
+			notExpert.OnSuccess(new CommonDrop(ModContent.ItemType<CoreofEleum>(), 1, 1, 3));
+			notExpert.OnSuccess(new CommonDrop(ModContent.ItemType<CoreofChaos>(), 1, 1, 3));
 			
-			npcLoot.Add(notExpert.OnSuccess(new CommonDrop(ModContent.ItemType<BloodPact>(), 3)));
-			npcLoot.Add(notExpert.OnSuccess(new CommonDrop(ModContent.ItemType<FleshTotem>(), 3)));
-			npcLoot.Add(notExpert.OnSuccess(ItemDropRule.OneFromOptions(1, new int[]
+			notExpert.OnSuccess(new CommonDrop(ModContent.ItemType<BloodPact>(), 3));
+			notExpert.OnSuccess(new CommonDrop(ModContent.ItemType<FleshTotem>(), 3));
+			notExpert.OnSuccess(ItemDropRule.OneFromOptions(1, new int[]
 			{
 				ModContent.ItemType<Hematemesis>(),
 				ModContent.ItemType<RealmRavager>(),
 				ModContent.ItemType<SpikecragStaff>(),
 				ModContent.ItemType<UltimusCleaver>(),
 				ModContent.ItemType<CraniumSmasher>(),
-			})));
+			}));
+			npcLoot.Add(notExpert);
 		}
 	}
 }

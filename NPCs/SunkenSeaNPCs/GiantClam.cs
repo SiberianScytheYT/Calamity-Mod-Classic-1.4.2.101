@@ -400,13 +400,14 @@ namespace CalamityModClassicPreTrailer.NPCs.SunkenSeaNPCs
 			npcLoot.Add(new CommonDrop(Mod.Find<ModItem>("GiantPearl").Type, 3));
 			npcLoot.Add(ItemDropRule.ByCondition(new RevCondition(), Mod.Find<ModItem>("AmidiasPendant").Type, 2));
 			npcLoot.Add(ItemDropRule.ByCondition(new Conditions.IsHardmode(), Mod.Find<ModItem>("MolluskHusk").Type, 1, 6, 12));
-			npcLoot.Add(isHardmode.OnSuccess((ItemDropRule.OneFromOptions(1, new int[]
+			isHardmode.OnSuccess(ItemDropRule.OneFromOptions(1, new int[]
 			{
 				ModContent.ItemType<Poseidon>(),
 				ModContent.ItemType<ClamCrusher>(),
 				ModContent.ItemType<ClamorRifle>(),
 				ModContent.ItemType<ShellfishStaff>(),
-			}))));
+			}));
+			npcLoot.Add(isHardmode);
 		}
 
 		public override void OnKill()

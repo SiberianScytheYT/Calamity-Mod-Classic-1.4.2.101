@@ -38,7 +38,6 @@ namespace CalamityModClassicPreTrailer.NPCs.AbyssNPCs
 			value.Position.X += 50f;
 			value.Position.Y += 35f;
 			NPCID.Sets.NPCBestiaryDrawOffset[Type] = value;
-			SpawnModBiomes = new int[] { ModContent.GetInstance<Sulphur>().Type };
 		}
 		
 		public override void SetBestiary(BestiaryDatabase database, BestiaryEntry bestiaryEntry)
@@ -76,6 +75,7 @@ namespace CalamityModClassicPreTrailer.NPCs.AbyssNPCs
 			NPC.netAlways = true;
 			Banner = NPC.type;
 			BannerItem = Mod.Find<ModItem>("AquaticSeekerBanner").Type;
+			SpawnModBiomes = new int[] { ModContent.GetInstance<Sulphur>().Type };
 		}
 
 		public override void AI()

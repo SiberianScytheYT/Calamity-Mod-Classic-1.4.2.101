@@ -44,7 +44,6 @@ namespace CalamityModClassicPreTrailer.NPCs.AstrumDeus
 			value.Position.X += 55f;
 			value.Position.Y += 23f;
 			NPCID.Sets.NPCBestiaryDrawOffset[Type] = value;
-			SpawnModBiomes = new int[] { ModContent.GetInstance<Astral>().Type };
 		}
 		
 		public override void SetBestiary(BestiaryDatabase database, BestiaryEntry bestiaryEntry)
@@ -98,6 +97,7 @@ namespace CalamityModClassicPreTrailer.NPCs.AstrumDeus
                 Music = MusicLoader.GetMusicSlot("CalamityModClassicPreTrailerMusic/Sounds/Music/AstrumDeus");
             else
                 Music = MusicID.Boss3;
+            SpawnModBiomes = new int[] { ModContent.GetInstance<Astral>().Type };
         }
 		
 		public override void AI()

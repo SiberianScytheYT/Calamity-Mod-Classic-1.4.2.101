@@ -647,8 +647,9 @@ namespace CalamityModClassicPreTrailer.NPCs.AbyssNPCs
 			npcLoot.Add(new CommonDrop(Mod.Find<ModItem>("CloakingGland").Type, 1, 2, 4));
 			npcLoot.Add(ItemDropRule.ByCondition(new RevCondition(), Mod.Find<ModItem>("HalibutCannon").Type, 1000000));
 			npcLoot.Add(ItemDropRule.ByCondition(new RevCondition(), Mod.Find<ModItem>("ReaperTooth").Type, 1, 3, 5));
-			npcLoot.Add(fakeCalorPlantDead.OnSuccess(new CommonDrop(Mod.Find<ModItem>("DepthCells").Type, 2, 10, 18)));
-			npcLoot.Add(fakeCalorPlantDead.OnSuccess(ItemDropRule.ByCondition(new Conditions.IsExpert(), Mod.Find<ModItem>("DepthCells").Type, 2, 4, 6)));
+			fakeCalorPlantDead.OnSuccess(new CommonDrop(Mod.Find<ModItem>("DepthCells").Type, 2, 10, 18));
+			fakeCalorPlantDead.OnSuccess(ItemDropRule.ByCondition(new Conditions.IsExpert(), Mod.Find<ModItem>("DepthCells").Type, 2, 4, 6));
+			npcLoot.Add(fakeCalorPlantDead);
 			npcLoot.Add(ItemDropRule.ByCondition(new DownedPolterghast(), Mod.Find<ModItem>("TheReaper").Type, 100));
 			npcLoot.Add(ItemDropRule.ByCondition(new DownedPolterghast(), Mod.Find<ModItem>("Valediction").Type, 3));
 		}

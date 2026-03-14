@@ -1026,7 +1026,11 @@ NPCs: {
 		DisplayName: Archmage
 	}
 
-	Yharon.DisplayName: Jungle Dragon, Yharon
+	Yharon: {
+		DisplayName: Jungle Dragon, Yharon
+		SpawnInfo: Use a [i:CalamityModClassicPreTrailer/ChickenEgg] in the Jungle Biome
+	}
+
 	DetonatingFlare2.DisplayName: Detonating Flame
 	DetonatingFlare.DisplayName: Detonating Flame
 	DevourerofGodsTailS.DisplayName: The Devourer of Gods
@@ -1034,13 +1038,23 @@ NPCs: {
 	DevourerofGodsTail.DisplayName: The Devourer of Gods
 	DevourerofGodsHeadS.DisplayName: The Devourer of Gods
 	DevourerofGodsHead2.DisplayName: Cosmic Guardian
-	DevourerofGodsHead.DisplayName: The Devourer of Gods
+
+	DevourerofGodsHead: {
+		DisplayName: The Devourer of Gods
+		SpawnInfo: Use a [i:CalamityModClassicPreTrailer/CosmicWorm]
+	}
+
 	DevourerofGodsBodyS.DisplayName: The Devourer of Gods
 	DevourerofGodsBody2.DisplayName: Cosmic Guardian
 	DevourerofGodsBody.DisplayName: The Devourer of Gods
 	SupremeCatastrophe.DisplayName: Catastrophe
 	SupremeCataclysm.DisplayName: Cataclysm
-	SupremeCalamitas.DisplayName: Supreme Calamitas
+
+	SupremeCalamitas: {
+		DisplayName: Supreme Calamitas
+		SpawnInfo: Use an [i:CalamityModClassicPreTrailer/EyeofExtinction]
+	}
+
 	SoulSeekerSupreme.DisplayName: Soul Seeker
 	SoulSeeker.DisplayName: Soul Seeker
 	SCalWormTail.DisplayName: Sepulcher
@@ -1065,7 +1079,12 @@ NPCs: {
 	StormWeaverTailNaked.DisplayName: Storm Weaver
 	StormWeaverTail.DisplayName: Storm Weaver
 	StormWeaverHeadNaked.DisplayName: Storm Weaver
-	StormWeaverHead.DisplayName: Storm Weaver
+
+	StormWeaverHead: {
+		DisplayName: Storm Weaver
+		SpawnInfo: Use a [i:CalamityModClassicPreTrailer/RuneofCos] in Space
+	}
+
 	StormWeaverBodyNaked.DisplayName: Storm Weaver
 	StormWeaverBody.DisplayName: Storm Weaver
 	StasisProbeNaked.DisplayName: Stasis Probe
@@ -1077,7 +1096,12 @@ NPCs: {
 	SlimeGodSplit.DisplayName: Ebonian Slime God
 	SlimeGodRunSplit.DisplayName: Crimulan Slime God
 	SlimeGodRun.DisplayName: Crimulan Slime God
-	SlimeGodCore.DisplayName: The Slime God
+
+	SlimeGodCore: {
+		DisplayName: The Slime God
+		SpawnInfo: Use an [i:CalamityModClassicPreTrailer/OverloadedSludge]
+	}
+
 	SlimeGod.DisplayName: Ebonian Slime God
 	ScavengerLegRight.DisplayName: Ravager
 	ScavengerLegLeft.DisplayName: Ravager
@@ -1085,24 +1109,49 @@ NPCs: {
 	ScavengerHead.DisplayName: Ravager
 	ScavengerClawRight.DisplayName: Ravager
 	ScavengerClawLeft.DisplayName: Ravager
-	ScavengerBody.DisplayName: Ravager
+
+	ScavengerBody: {
+		DisplayName: Ravager
+		SpawnInfo: Use an [i:CalamityModClassicPreTrailer/AncientMedallion]
+	}
+
 	RockPillar.DisplayName: Rock Pillar
 	FlamePillar.DisplayName: Flame Pillar
 	ProvSpawnOffense.DisplayName: A Profaned Guardian
 	ProvSpawnHealer.DisplayName: A Profaned Guardian
 	ProvSpawnDefense.DisplayName: A Profaned Guardian
-	Providence.DisplayName: Providence, the Profaned Goddess
+
+	Providence: {
+		DisplayName: Providence, the Profaned Goddess
+		SpawnInfo: Use a [i:CalamityModClassicPreTrailer/ProfanedCore] in the Hallow or Underworld Biomes
+	}
+
 	ProfanedGuardianBoss3.DisplayName: Profaned Guardian
 	ProfanedGuardianBoss2.DisplayName: Profaned Guardian
-	ProfanedGuardianBoss.DisplayName: Profaned Guardian
+
+	ProfanedGuardianBoss: {
+		DisplayName: Profaned Guardian
+		SpawnInfo: Use a [i:CalamityModClassicPreTrailer/ProfanedShard] in the Hallow or Underworld Biomes
+	}
+
 	PolterPhantom.DisplayName: Polterghast
 	PolterghastHook.DisplayName: Polterghast Hook
-	Polterghast.DisplayName: Polterghast
+
+	Polterghast: {
+		DisplayName: Polterghast
+		SpawnInfo: Use a [i:CalamityModClassicPreTrailer/NecroplasmicBeacon] in the Dungeon or kill 30 phantom spirits
+	}
+
 	PhantomFuckYou.DisplayName: Phantom
 	PlaguebringerShade.DisplayName: Plaguebringer
 	PlagueMine.DisplayName: Plague Mine
 	PlagueHomingMissile.DisplayName: Plague Homing Missile
-	PlaguebringerGoliath.DisplayName: The Plaguebringer Goliath
+
+	PlaguebringerGoliath: {
+		DisplayName: The Plaguebringer Goliath
+		SpawnInfo: Use an [i:CalamityModClassicPreTrailer/Abomination] in the Jungle Biome
+	}
+
 	PlagueBeeLargeG.DisplayName: Plague Charger
 	PlagueBeeLarge.DisplayName: Plague Charger
 	PlagueBeeG.DisplayName: Plague Charger
@@ -1110,7 +1159,12 @@ NPCs: {
 	PerforatorTailSmall.DisplayName: The Perforator
 	PerforatorTailMedium.DisplayName: The Perforator
 	PerforatorTailLarge.DisplayName: The Perforator
-	PerforatorHive.DisplayName: The Perforator Hive
+
+	PerforatorHive: {
+		DisplayName: The Perforator Hive
+		SpawnInfo: By killing a Cyst in the World's Evil Biome
+	}
+
 	PerforatorHeadSmall.DisplayName: The Perforator
 	PerforatorHeadMedium.DisplayName: The Perforator
 	PerforatorHeadLarge.DisplayName: The Perforator
@@ -1178,10 +1232,20 @@ NPCs: {
 	Siren.DisplayName: The Siren
 	Parasea.DisplayName: Parasea
 	LeviathanStart.DisplayName: ???
-	Leviathan.DisplayName: The Leviathan
+
+	Leviathan: {
+		DisplayName: The Leviathan
+		SpawnInfo: By killing an unknown entity in the Ocean Biome
+	}
+
 	AquaticAberration.DisplayName: Aquatic Aberration
 	HiveMindP2.DisplayName: The Hive Mind
-	HiveMind.DisplayName: The Hive Mind
+
+	HiveMind: {
+		DisplayName: The Hive Mind
+		SpawnInfo: By killing a Cyst in the World's Evil Biome
+	}
+
 	HiveCyst.DisplayName: Hive Cyst
 	HiveBlob2.DisplayName: Hive Blob
 	HiveBlob.DisplayName: Hive Blob
@@ -1194,23 +1258,48 @@ NPCs: {
 	DesertScourgeTailSmall.DisplayName: Desert Scourge
 	DesertScourgeTail.DisplayName: Desert Scourge
 	DesertScourgeHeadSmall.DisplayName: Desert Scourge
-	DesertScourgeHead.DisplayName: Desert Scourge
+
+	DesertScourgeHead: {
+		DisplayName: Desert Scourge
+		SpawnInfo: Use a [i:CalamityModClassicPreTrailer/DriedSeafood] in the Desert Biome
+	}
+
 	DesertScourgeBodySmall.DisplayName: Desert Scourge
 	DesertScourgeBody.DisplayName: Desert Scourge
 	IceMass.DisplayName: Aurora Spirit
 	CryogenIce.DisplayName: Cryogen's Shield
-	Cryogen.DisplayName: Cryogen
+
+	Cryogen: {
+		DisplayName: Cryogen
+		SpawnInfo: Use a [i:CalamityModClassicPreTrailer/CryoKey] in the Snow Biome
+	}
+
 	Cryocore2.DisplayName: Cryocore
 	Cryocore.DisplayName: Cryocore
-	CrabulonIdle.DisplayName: Crabulon
+
+	CrabulonIdle: {
+		DisplayName: Crabulon
+		SpawnInfo: Use a [i:CalamityModClassicPreTrailer/DecapoditaSprout] in the Mushroom Biome
+	}
+
 	CrabShroom.DisplayName: Crab Shroom
 	SignusBomb.DisplayName: Cosmic Mine
-	CosmicWraith.DisplayName: Signus, Envoy of the Devourer
+
+	CosmicWraith: {
+		DisplayName: Signus, Envoy of the Devourer
+		SpawnInfo: Use a [i:CalamityModClassicPreTrailer/RuneofCos] in the Underworld
+	}
+
 	CosmicLantern.DisplayName: Cosmic Lantern
 	DarkEnergy3.DisplayName: Dark Energy
 	DarkEnergy2.DisplayName: Dark Energy
 	DarkEnergy.DisplayName: Dark Energy
-	CeaselessVoid.DisplayName: Ceaseless Void
+
+	CeaselessVoid: {
+		DisplayName: Ceaseless Void
+		SpawnInfo: Use a [i:CalamityModClassicPreTrailer/RuneofCos] in the Dungeon
+	}
+
 	SoulSlurper.DisplayName: Soul Slurper
 	ScryllarRage.DisplayName: Scryllar
 	Scryllar.DisplayName: Scryllar
@@ -1220,10 +1309,24 @@ NPCs: {
 	CalamitasRun3.DisplayName: Calamitas
 	CalamitasRun2.DisplayName: Catastrophe
 	CalamitasRun.DisplayName: Cataclysm
-	Calamitas.DisplayName: Calamitas
+
+	Calamitas: {
+		DisplayName: Calamitas
+		SpawnInfo: Use an [i:CalamityModClassicPreTrailer/BlightedEyeball] at Night
+	}
+
 	Bumblefuck2.DisplayName: Bumblebirb
-	Bumblefuck.DisplayName: Bumblebirb
-	BrimstoneElemental.DisplayName: Brimstone Elemental
+
+	Bumblefuck: {
+		DisplayName: Bumblebirb
+		SpawnInfo: Use [i:CalamityModClassicPreTrailer/BirbPheromones] in the Jungle Biome
+	}
+
+	BrimstoneElemental: {
+		DisplayName: A Brimstone Elemental
+		SpawnInfo: Use a [i:CalamityModClassicPreTrailer/CharredIdol] in the Hell Crag
+	}
+
 	Brimling.DisplayName: Brimling
 	AstrumDeusTailSpectral.DisplayName: Astrum Deus
 	AstrumDeusTail.DisplayName: Astrum Deus
@@ -1231,7 +1334,12 @@ NPCs: {
 	AstrumDeusProbe2.DisplayName: Astrum Deus Probe
 	AstrumDeusProbe.DisplayName: Astrum Deus Probe
 	AstrumDeusHeadSpectral.DisplayName: Astrum Deus
-	AstrumDeusHead.DisplayName: Astrum Deus
+
+	AstrumDeusHead: {
+		DisplayName: Astrum Deus
+		SpawnInfo: Use a [i:CalamityModClassicPreTrailer/Starcore] at Night
+	}
+
 	AstrumDeusBodySpectral.DisplayName: Astrum Deus
 	AstrumDeusBody.DisplayName: Astrum Deus
 	StellarCulex.DisplayName: Stellar Culex
@@ -1251,7 +1359,12 @@ NPCs: {
 	AstralachneaGround.DisplayName: Astralachnea
 	Aries.DisplayName: Aries
 	AstrageldonSlime.DisplayName: Aureus Spawn
-	Astrageldon.DisplayName: Astrum Aureus
+
+	Astrageldon: {
+		DisplayName: Astrum Aureus
+		SpawnInfo: Use an [i:CalamityModClassicPreTrailer/AstralChunk] at Night
+	}
+
 	Viperfish.DisplayName: Viperfish
 	Trasher.DisplayName: Trasher
 	ToxicMinnow.DisplayName: Toxic Minnow
@@ -1296,7 +1409,12 @@ NPCs: {
 	AquaticSeekerHead.DisplayName: Aquatic Seeker
 	AquaticSeekerBody.DisplayName: Aquatic Seeker
 	AquaticScourgeTail.DisplayName: Aquatic Scourge
-	AquaticScourgeHead.DisplayName: Aquatic Scourge
+
+	AquaticScourgeHead: {
+		DisplayName: Aquatic Scourge
+		SpawnInfo: Use a [i:CalamityModClassicPreTrailer/Seafood] in the Sulphuric Sea or wait for it to spawn in the Sulphuric Sea
+	}
+
 	AquaticScourgeBodyAlt.DisplayName: Aquatic Scourge
 	AquaticScourgeBody.DisplayName: Aquatic Scourge
 	AquaticParasite.DisplayName: Aquatic Parasite
