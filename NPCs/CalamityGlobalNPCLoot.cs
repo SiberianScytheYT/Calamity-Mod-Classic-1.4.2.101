@@ -2326,82 +2326,91 @@ namespace CalamityModClassicPreTrailer.NPCs
 			}
 			else if (npc.type == Mod.Find<ModNPC>("SlimeGodCore").Type || npc.type == Mod.Find<ModNPC>("SlimeGodSplit").Type || npc.type == Mod.Find<ModNPC>("SlimeGodRunSplit").Type) //boss 4
 			{
-				if (npc.type == Mod.Find<ModNPC>("SlimeGodCore").Type && !NPC.AnyNPCs(Mod.Find<ModNPC>("SlimeGodSplit").Type) && !NPC.AnyNPCs(Mod.Find<ModNPC>("SlimeGodRunSplit").Type)
-				    && !NPC.AnyNPCs(Mod.Find<ModNPC>("SlimeGod").Type) && !NPC.AnyNPCs(Mod.Find<ModNPC>("SlimeGodRun").Type))
+				if (npc.type == Mod.Find<ModNPC>("SlimeGodCore").Type)
 				{
 					LeadingConditionRule revActive = new LeadingConditionRule(new RevCondition());
 					LeadingConditionRule purifiedJam = new LeadingConditionRule(new CanGetPurifiedJam(npc));
-					revActive.OnSuccess(purifiedJam.OnSuccess(npcLoot.Add(ItemDropRule.ByCondition(new NotDownedSlimeGod(),Mod.Find<ModItem>("PurifiedJam").Type, 1, 6, 9)))); 
-					npcLoot.Add(ItemDropRule.ByCondition(new NotDownedSlimeGod(),Mod.Find<ModItem>("MagnumRounds").Type, 1, 3, 3));
-					npcLoot.Add(ItemDropRule.ByCondition(new NotDownedSlimeGod(),Mod.Find<ModItem>("GrenadeRounds").Type, 1)); 
-					npcLoot.Add(ItemDropRule.ByCondition(new NotDownedSlimeGod(),Mod.Find<ModItem>("Knowledge15").Type, 1));
+					LeadingConditionRule corePresent = new LeadingConditionRule(new CorePresent(npc));
+					corePresent.OnSuccess(revActive.OnSuccess(purifiedJam.OnSuccess(ItemDropRule.ByCondition(new NotDownedSlimeGod(),Mod.Find<ModItem>("PurifiedJam").Type, 1, 6, 9)))); 
+					corePresent.OnSuccess(ItemDropRule.ByCondition(new NotDownedSlimeGod(),Mod.Find<ModItem>("MagnumRounds").Type, 1, 3, 3));
+					corePresent.OnSuccess(ItemDropRule.ByCondition(new NotDownedSlimeGod(),Mod.Find<ModItem>("GrenadeRounds").Type, 1)); 
+					corePresent.OnSuccess(ItemDropRule.ByCondition(new NotDownedSlimeGod(),Mod.Find<ModItem>("Knowledge15").Type, 1));
 					
-					npcLoot.Add(new CommonDrop(Mod.Find<ModItem>("SlimeGodTrophy").Type, 10)); 
-						npcLoot.Add(ItemDropRule.ByCondition(new Conditions.NotExpert(),Mod.Find<ModItem>("StaticRefiner").Type, 1)); 
-						npcLoot.Add(ItemDropRule.ByCondition(new Conditions.NotExpert(),Mod.Find<ModItem>("PurifiedGel").Type, 1, 2, 25, 41)); 
-						npcLoot.Add(ItemDropRule.ByCondition(new Conditions.NotExpert(),ItemID.Gel, 1, 180, 251)); 
-						npcLoot.Add(ItemDropRule.ByCondition(new Conditions.NotExpert(),Mod.Find<ModItem>("OverloadedBlaster").Type, 4)); 
-						npcLoot.Add(ItemDropRule.ByCondition(new Conditions.NotExpert(),Mod.Find<ModItem>("GelDart").Type, 4, 80, 101)); 
-						notExpert.OnSuccess(ItemDropRule.OneFromOptions(7, new int[]
+					corePresent.OnSuccess(new CommonDrop(Mod.Find<ModItem>("SlimeGodTrophy").Type, 10)); 
+					corePresent.OnSuccess(ItemDropRule.ByCondition(new Conditions.NotExpert(),Mod.Find<ModItem>("StaticRefiner").Type, 1)); 
+					corePresent.OnSuccess(ItemDropRule.ByCondition(new Conditions.NotExpert(),Mod.Find<ModItem>("PurifiedGel").Type, 1, 2, 25, 41)); 
+					corePresent.OnSuccess(ItemDropRule.ByCondition(new Conditions.NotExpert(),ItemID.Gel, 1, 180, 251)); 
+					corePresent.OnSuccess(ItemDropRule.ByCondition(new Conditions.NotExpert(),Mod.Find<ModItem>("OverloadedBlaster").Type, 4)); 
+					corePresent.OnSuccess(ItemDropRule.ByCondition(new Conditions.NotExpert(),Mod.Find<ModItem>("GelDart").Type, 4, 80, 101)); 
+					corePresent.OnSuccess(notExpert.OnSuccess(ItemDropRule.OneFromOptions(7, new int[]
 						{
 							ModContent.ItemType<SlimeGodMask>(),
 							ModContent.ItemType<SlimeGodMask2>()
-						}));
+						})));
 						npcLoot.Add(notExpert);
+						npcLoot.Add(revActive);
+						npcLoot.Add(purifiedJam);
+						npcLoot.Add(corePresent);
 						npcLoot.Add(ItemDropRule.ByCondition(new Conditions.NotExpert(),Mod.Find<ModItem>("AbyssalTome").Type, 4)); 
 						npcLoot.Add(ItemDropRule.ByCondition(new Conditions.NotExpert(),Mod.Find<ModItem>("EldritchTome").Type, 4)); 
 						npcLoot.Add(ItemDropRule.ByCondition(new Conditions.NotExpert(),Mod.Find<ModItem>("CrimslimeStaff").Type, 4)); 
 						npcLoot.Add(ItemDropRule.ByCondition(new Conditions.NotExpert(),Mod.Find<ModItem>("CorroslimeStaff").Type, 4)); 
 				}
-				else if (npc.type == Mod.Find<ModNPC>("SlimeGodSplit").Type && !NPC.AnyNPCs(Mod.Find<ModNPC>("SlimeGodCore").Type) && !NPC.AnyNPCs(Mod.Find<ModNPC>("SlimeGodRunSplit").Type) &&
-				         NPC.CountNPCS(Mod.Find<ModNPC>("SlimeGodSplit").Type) < 2 && !NPC.AnyNPCs(Mod.Find<ModNPC>("SlimeGodRun").Type))
+				else if (npc.type == Mod.Find<ModNPC>("SlimeGodSplit").Type)
 				{
 					LeadingConditionRule revActive = new LeadingConditionRule(new RevCondition());
 					LeadingConditionRule purifiedJam = new LeadingConditionRule(new CanGetPurifiedJam(npc));
-					revActive.OnSuccess(purifiedJam.OnSuccess(npcLoot.Add(ItemDropRule.ByCondition(new NotDownedSlimeGod(),Mod.Find<ModItem>("PurifiedJam").Type, 1, 6, 9)))); 
-					npcLoot.Add(ItemDropRule.ByCondition(new NotDownedSlimeGod(),Mod.Find<ModItem>("MagnumRounds").Type, 1, 3, 3));
-					npcLoot.Add(ItemDropRule.ByCondition(new NotDownedSlimeGod(),Mod.Find<ModItem>("GrenadeRounds").Type, 1)); 
-					npcLoot.Add(ItemDropRule.ByCondition(new NotDownedSlimeGod(),Mod.Find<ModItem>("Knowledge15").Type, 1));
+					LeadingConditionRule ebonianPresent = new LeadingConditionRule(new EbonianPresent(npc));
+					ebonianPresent.OnSuccess(revActive.OnSuccess(purifiedJam.OnSuccess(ItemDropRule.ByCondition(new NotDownedSlimeGod(),Mod.Find<ModItem>("PurifiedJam").Type, 1, 6, 9)))); 
+					ebonianPresent.OnSuccess(ItemDropRule.ByCondition(new NotDownedSlimeGod(),Mod.Find<ModItem>("MagnumRounds").Type, 1, 3, 3));
+					ebonianPresent.OnSuccess(ItemDropRule.ByCondition(new NotDownedSlimeGod(),Mod.Find<ModItem>("GrenadeRounds").Type, 1)); 
+					ebonianPresent.OnSuccess(ItemDropRule.ByCondition(new NotDownedSlimeGod(),Mod.Find<ModItem>("Knowledge15").Type, 1));
 					
-					npcLoot.Add(new CommonDrop(Mod.Find<ModItem>("SlimeGodTrophy").Type, 10)); 
-					npcLoot.Add(ItemDropRule.ByCondition(new Conditions.NotExpert(),Mod.Find<ModItem>("StaticRefiner").Type, 1)); 
-					npcLoot.Add(ItemDropRule.ByCondition(new Conditions.NotExpert(),Mod.Find<ModItem>("PurifiedGel").Type, 1, 2, 25, 41)); 
-					npcLoot.Add(ItemDropRule.ByCondition(new Conditions.NotExpert(),ItemID.Gel, 1, 180, 251)); 
-					npcLoot.Add(ItemDropRule.ByCondition(new Conditions.NotExpert(),Mod.Find<ModItem>("OverloadedBlaster").Type, 4)); 
-					npcLoot.Add(ItemDropRule.ByCondition(new Conditions.NotExpert(),Mod.Find<ModItem>("GelDart").Type, 4, 80, 101)); 
-					notExpert.OnSuccess(ItemDropRule.OneFromOptions(7, new int[]
+					ebonianPresent.OnSuccess(new CommonDrop(Mod.Find<ModItem>("SlimeGodTrophy").Type, 10)); 
+					ebonianPresent.OnSuccess(ItemDropRule.ByCondition(new Conditions.NotExpert(),Mod.Find<ModItem>("StaticRefiner").Type, 1)); 
+					ebonianPresent.OnSuccess(ItemDropRule.ByCondition(new Conditions.NotExpert(),Mod.Find<ModItem>("PurifiedGel").Type, 1, 2, 25, 41)); 
+					ebonianPresent.OnSuccess(ItemDropRule.ByCondition(new Conditions.NotExpert(),ItemID.Gel, 1, 180, 251)); 
+					ebonianPresent.OnSuccess(ItemDropRule.ByCondition(new Conditions.NotExpert(),Mod.Find<ModItem>("OverloadedBlaster").Type, 4)); 
+					ebonianPresent.OnSuccess(ItemDropRule.ByCondition(new Conditions.NotExpert(),Mod.Find<ModItem>("GelDart").Type, 4, 80, 101)); 
+					ebonianPresent.OnSuccess(notExpert.OnSuccess(ItemDropRule.OneFromOptions(7, new int[]
 					{
 						ModContent.ItemType<SlimeGodMask>(),
 						ModContent.ItemType<SlimeGodMask2>()
-					}));
+					})));
 					npcLoot.Add(notExpert);
+					npcLoot.Add(revActive);
+					npcLoot.Add(purifiedJam);
+					npcLoot.Add(ebonianPresent);
 					npcLoot.Add(ItemDropRule.ByCondition(new Conditions.NotExpert(),Mod.Find<ModItem>("AbyssalTome").Type, 4)); 
 					npcLoot.Add(ItemDropRule.ByCondition(new Conditions.NotExpert(),Mod.Find<ModItem>("EldritchTome").Type, 4)); 
 					npcLoot.Add(ItemDropRule.ByCondition(new Conditions.NotExpert(),Mod.Find<ModItem>("CrimslimeStaff").Type, 4)); 
 					npcLoot.Add(ItemDropRule.ByCondition(new Conditions.NotExpert(),Mod.Find<ModItem>("CorroslimeStaff").Type, 4)); 
 				}
-				else if (npc.type == Mod.Find<ModNPC>("SlimeGodRunSplit").Type && !NPC.AnyNPCs(Mod.Find<ModNPC>("SlimeGodCore").Type) && !NPC.AnyNPCs(Mod.Find<ModNPC>("SlimeGodSplit").Type) &&
-				         NPC.CountNPCS(Mod.Find<ModNPC>("SlimeGodRunSplit").Type) < 2 && !NPC.AnyNPCs(Mod.Find<ModNPC>("SlimeGod").Type))
+				else if (npc.type == Mod.Find<ModNPC>("SlimeGodRunSplit").Type)
 				{
 					LeadingConditionRule revActive = new LeadingConditionRule(new RevCondition());
 					LeadingConditionRule purifiedJam = new LeadingConditionRule(new CanGetPurifiedJam(npc));
-					revActive.OnSuccess(purifiedJam.OnSuccess(npcLoot.Add(ItemDropRule.ByCondition(new NotDownedSlimeGod(),Mod.Find<ModItem>("PurifiedJam").Type, 1, 6, 9)))); 
-					npcLoot.Add(ItemDropRule.ByCondition(new NotDownedSlimeGod(),Mod.Find<ModItem>("MagnumRounds").Type, 1, 3, 3));
-					npcLoot.Add(ItemDropRule.ByCondition(new NotDownedSlimeGod(),Mod.Find<ModItem>("GrenadeRounds").Type, 1)); 
-					npcLoot.Add(ItemDropRule.ByCondition(new NotDownedSlimeGod(),Mod.Find<ModItem>("Knowledge15").Type, 1));
+					LeadingConditionRule crimulanPresent = new LeadingConditionRule(new CrimulanPresent(npc));
+					crimulanPresent.OnSuccess(revActive.OnSuccess(purifiedJam.OnSuccess(ItemDropRule.ByCondition(new NotDownedSlimeGod(),Mod.Find<ModItem>("PurifiedJam").Type, 1, 6, 9)))); 
+					crimulanPresent.OnSuccess(ItemDropRule.ByCondition(new NotDownedSlimeGod(),Mod.Find<ModItem>("MagnumRounds").Type, 1, 3, 3));
+					crimulanPresent.OnSuccess(ItemDropRule.ByCondition(new NotDownedSlimeGod(),Mod.Find<ModItem>("GrenadeRounds").Type, 1)); 
+					crimulanPresent.OnSuccess(ItemDropRule.ByCondition(new NotDownedSlimeGod(),Mod.Find<ModItem>("Knowledge15").Type, 1));
 					
-					npcLoot.Add(new CommonDrop(Mod.Find<ModItem>("SlimeGodTrophy").Type, 10)); 
-					npcLoot.Add(ItemDropRule.ByCondition(new Conditions.NotExpert(),Mod.Find<ModItem>("StaticRefiner").Type, 1)); 
-					npcLoot.Add(ItemDropRule.ByCondition(new Conditions.NotExpert(),Mod.Find<ModItem>("PurifiedGel").Type, 1, 2, 25, 41)); 
-					npcLoot.Add(ItemDropRule.ByCondition(new Conditions.NotExpert(),ItemID.Gel, 1, 180, 251)); 
-					npcLoot.Add(ItemDropRule.ByCondition(new Conditions.NotExpert(),Mod.Find<ModItem>("OverloadedBlaster").Type, 4)); 
-					npcLoot.Add(ItemDropRule.ByCondition(new Conditions.NotExpert(),Mod.Find<ModItem>("GelDart").Type, 4, 80, 101)); 
-					notExpert.OnSuccess(ItemDropRule.OneFromOptions(7, new int[]
+					crimulanPresent.OnSuccess(new CommonDrop(Mod.Find<ModItem>("SlimeGodTrophy").Type, 10)); 
+					crimulanPresent.OnSuccess(ItemDropRule.ByCondition(new Conditions.NotExpert(),Mod.Find<ModItem>("StaticRefiner").Type, 1)); 
+					crimulanPresent.OnSuccess(ItemDropRule.ByCondition(new Conditions.NotExpert(),Mod.Find<ModItem>("PurifiedGel").Type, 1, 2, 25, 41)); 
+					crimulanPresent.OnSuccess(ItemDropRule.ByCondition(new Conditions.NotExpert(),ItemID.Gel, 1, 180, 251)); 
+					crimulanPresent.OnSuccess(ItemDropRule.ByCondition(new Conditions.NotExpert(),Mod.Find<ModItem>("OverloadedBlaster").Type, 4)); 
+					crimulanPresent.OnSuccess(ItemDropRule.ByCondition(new Conditions.NotExpert(),Mod.Find<ModItem>("GelDart").Type, 4, 80, 101)); 
+					crimulanPresent.OnSuccess(notExpert.OnSuccess(ItemDropRule.OneFromOptions(7, new int[]
 					{
 						ModContent.ItemType<SlimeGodMask>(),
 						ModContent.ItemType<SlimeGodMask2>()
-					}));
+					})));
 					npcLoot.Add(notExpert);
+					npcLoot.Add(revActive);
+					npcLoot.Add(purifiedJam);
+					npcLoot.Add(crimulanPresent);
 					npcLoot.Add(ItemDropRule.ByCondition(new Conditions.NotExpert(),Mod.Find<ModItem>("AbyssalTome").Type, 4)); 
 					npcLoot.Add(ItemDropRule.ByCondition(new Conditions.NotExpert(),Mod.Find<ModItem>("EldritchTome").Type, 4)); 
 					npcLoot.Add(ItemDropRule.ByCondition(new Conditions.NotExpert(),Mod.Find<ModItem>("CrimslimeStaff").Type, 4)); 

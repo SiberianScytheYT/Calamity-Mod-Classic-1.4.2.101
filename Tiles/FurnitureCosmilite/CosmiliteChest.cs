@@ -89,10 +89,7 @@ namespace CalamityModClassicPreTrailer.Tiles.FurnitureCosmilite
             num = fail ? 1 : 3;
         }
 
-        public override void KillMultiTile(int i, int j, int frameX, int frameY)
-		{
-			Chest.DestroyChest(i, j);
-		}
+        public override void KillMultiTile(int i, int j, int frameX, int frameY) => Chest.DestroyChest(i, j);
 
 		public override bool RightClick(int i, int j)
 		{

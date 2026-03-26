@@ -25,7 +25,7 @@ namespace CalamityModClassicPreTrailer.Tiles
  			AddMapEntry(new Color(120, 85, 60), name);
 		}
 
-		public override void KillMultiTile(int i, int j, int frameX, int frameY)
+		/*public override void KillMultiTile(int i, int j, int frameX, int frameY)
 		{
 			int item = 0;
 			switch (frameX / 54)
@@ -104,6 +104,6 @@ namespace CalamityModClassicPreTrailer.Tiles
 			{
 				Item.NewItem(new EntitySource_TileBreak(i, j), i * 16, j * 16, 48, 48, item);
 			}
-		}
+		}*/
 	}
 }

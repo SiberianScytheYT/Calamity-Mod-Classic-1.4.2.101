@@ -234,9 +234,6 @@ namespace CalamityModClassicPreTrailer.Tiles.FurnitureEutrophic
 			num = fail ? 1 : 3;
 		}
 
-		public override void KillMultiTile(int i, int j, int frameX, int frameY)
-		{
-			Chest.DestroyChest(i, j);
-		}
+		public override void KillMultiTile(int i, int j, int frameX, int frameY) => Chest.DestroyChest(i, j);
 	}
 }

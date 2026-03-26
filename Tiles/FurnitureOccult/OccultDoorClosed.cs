@@ -67,10 +67,10 @@ namespace CalamityModClassicPreTrailer.Tiles.FurnitureOccult
 			return true;
 		}
 
-		public override void KillMultiTile(int i, int j, int frameX, int frameY)
+		/*public override void KillMultiTile(int i, int j, int frameX, int frameY)
 		{
 			Item.NewItem(new EntitySource_TileBreak(i, j), i * 16, j * 16, 16, 48, Mod.Find<ModItem>("OccultDoor").Type);
-		}
+		}*/
 
 		public override void MouseOver(int i, int j)
 		{

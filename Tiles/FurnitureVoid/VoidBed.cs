@@ -45,10 +45,10 @@ namespace CalamityModClassicPreTrailer.Tiles.FurnitureVoid
             num = fail ? 1 : 3;
         }
 
-        public override void KillMultiTile(int i, int j, int frameX, int frameY)
+        /*public override void KillMultiTile(int i, int j, int frameX, int frameY)
 		{
 			Item.NewItem(new EntitySource_TileBreak(i, j), i * 16, j * 16, 64, 32, Mod.Find<ModItem>("VoidBed").Type);
-		}
+		}*/
 
 		public override bool RightClick(int i, int j)
 		{

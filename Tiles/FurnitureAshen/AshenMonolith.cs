@@ -150,10 +150,10 @@ namespace CalamityModClassicPreTrailer.Tiles.FurnitureAshen
 			num = fail ? 1 : 3;
 		}
 
-		public override void KillMultiTile(int i, int j, int frameX, int frameY)
+		/*public override void KillMultiTile(int i, int j, int frameX, int frameY)
 		{
 			Item.NewItem(new EntitySource_TileBreak(i, j), i * 16, j * 16, 48, 32, Mod.Find<ModItem>("AshenMonolith").Type);
-		}
+		}*/
 
 		public override void PostDraw(int i, int j, SpriteBatch spriteBatch)
 		{

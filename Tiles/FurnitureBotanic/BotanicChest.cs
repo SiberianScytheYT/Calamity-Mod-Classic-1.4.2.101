@@ -86,10 +86,7 @@ namespace CalamityModClassicPreTrailer.Tiles.FurnitureBotanic
 			}
 		}
 
-		public override void KillMultiTile(int i, int j, int frameX, int frameY)
-		{
-			Chest.DestroyChest(i, j);
-		}
+		public override void KillMultiTile(int i, int j, int frameX, int frameY) => Chest.DestroyChest(i, j);
 
 		public override bool RightClick(int i, int j)
 		{

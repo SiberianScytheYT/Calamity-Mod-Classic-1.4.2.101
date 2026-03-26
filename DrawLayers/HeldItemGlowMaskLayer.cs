@@ -103,7 +103,7 @@ public class HeldItemGlowMaskLayer : PlayerDrawLayer
 					origin4 = new Vector2((float)(TextureAssets.Item[item.type].Value.Width + num107), (float)(TextureAssets.Item[item.type].Value.Height / 2));
 				}
 				DrawData data = new DrawData(texture,
-					new Vector2((float)((int)(vector.X - Main.screenPosition.X + vector13.X)), (float)((int)(vector.Y - Main.screenPosition.Y + vector13.Y))),
+					new Vector2((float)((int)(vector.X - Main.screenPosition.X + vector13.X)), (float)((int)(vector.Y - Main.screenPosition.Y + vector13.Y))) - new Vector2((float)texture.Width * 0.5f, 0f),
 					new Microsoft.Xna.Framework.Rectangle?(new Microsoft.Xna.Framework.Rectangle(0, 0, TextureAssets.Item[item.type].Value.Width, TextureAssets.Item[item.type].Value.Height)),
 					Color.White,
 					drawPlayer.itemRotation,
