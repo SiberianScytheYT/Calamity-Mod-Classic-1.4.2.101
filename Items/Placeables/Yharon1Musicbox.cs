@@ -30,9 +30,9 @@ namespace CalamityModClassicPreTrailer.Items.Placeables
 	    public override void AddRecipes()
 	    {
             Recipe recipe = CreateRecipe(1);
-			recipe.AddIngredient(Mod.Find<ModItem>("DarksunFragment").Type, 5);
-			recipe.AddIngredient(Mod.Find<ModItem>("CosmiliteBar").Type, 3);
-			recipe.AddTile(Mod.Find<ModTile>("DraedonsForge").Type);
+			recipe.AddIngredient(null, "DarksunFragment", 5);
+			recipe.AddIngredient(null, "CosmiliteBar", 3);
+			recipe.AddTile(null, "DraedonsForge");
 			recipe.Register();
 	    }
 	}

@@ -30,9 +30,9 @@ namespace CalamityModClassicPreTrailer.Items.Placeables
         public override void AddRecipes()
         {
             Recipe recipe = CreateRecipe(1);
-            recipe.AddIngredient(Mod.Find<ModItem>("BrimstoneSlag").Type, 12);
-            recipe.AddIngredient(Mod.Find<ModItem>("EssenceofChaos").Type, 3);
-            recipe.AddTile(Mod.Find<ModTile>("AshenAltar").Type);
+            recipe.AddIngredient(null, "BrimstoneSlag", 12);
+            recipe.AddIngredient(null, "EssenceofChaos", 3);
+            recipe.AddTile(null, "AshenAltar");
             recipe.Register();
         }
     }
