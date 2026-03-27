@@ -7,7 +7,7 @@ using Terraria.Localization;
 using Terraria.ModLoader;
 using Terraria.ObjectData;
 
-namespace CalamityModClassicPreTrailerMusic.Tiles
+namespace CalamityModClassicPreTrailer.Tiles.MusicBoxes
 {
 	public class CultistMusicbox : ModTile
 	{

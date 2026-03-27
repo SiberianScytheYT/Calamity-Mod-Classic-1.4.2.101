@@ -6,7 +6,7 @@ using Terraria.ModLoader;
 using Terraria.ObjectData;
 using Terraria.DataStructures;
 
-namespace CalamityModClassicPreTrailerMusic.Tiles
+namespace CalamityModClassicPreTrailer.Tiles.MusicBoxes
 {
 	public class LeviathanMusicbox : ModTile
 	{
