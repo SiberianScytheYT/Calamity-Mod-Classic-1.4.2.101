@@ -80,6 +80,7 @@ using Phangasm = CalamityModClassicPreTrailer.Projectiles.Ranged.Phangasm;
 using SlimeGod = CalamityModClassicPreTrailer.Buffs.SlimeGod;
 using StarfleetMK2 = CalamityModClassicPreTrailer.Projectiles.Ranged.StarfleetMK2;
 using TelluricGlare = CalamityModClassicPreTrailer.Projectiles.Ranged.TelluricGlare;
+using static Terraria.ModLoader.MusicLoader;
 
 namespace CalamityModClassicPreTrailer
 {
