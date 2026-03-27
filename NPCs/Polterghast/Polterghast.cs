@@ -77,11 +77,7 @@ namespace CalamityModClassicPreTrailer.NPCs.Polterghast
 			NPC.noGravity = true;
 			NPC.noTileCollide = true;
 			NPC.netAlways = true;
-			Mod CalamityModClassicPreTrailerMusic = ModLoader.HasMod("CalamityModClassicPreTrailerMusic") ? ModLoader.GetMod("CalamityModClassicPreTrailerMusic") : null;
-			if (CalamityModClassicPreTrailerMusic != null)
-				Music = MusicLoader.GetMusicSlot("CalamityModClassicPreTrailerMusic/Sounds/Music/RUIN");
-			else
-				Music = MusicID.Plantera;
+			Music = MusicLoader.GetMusicSlot("CalamityModClassicPreTrailer/Sounds/Music/RUIN");
 			NPC.HitSound = SoundID.NPCHit7;
 			NPC.DeathSound = SoundID.NPCDeath39;
 		}

@@ -5,9 +5,8 @@ using Terraria.ModLoader;
 namespace CalamityModClassicPreTrailer.BiomeManagers
 {
 	public class SunkenSea : ModBiome
-	{
-		Mod _musicMod = ModLoader.HasMod("CalamityModClassicPreTrailerMusic") ? ModLoader.GetMod("CalamityModClassicPreTrailerMusic") : null;
-		public override int Music => (_musicMod != null) ? MusicLoader.GetMusicSlot(_musicMod, "Sounds/Music/SunkenSea") : MusicID.Temple;
+	{ 
+		public override int Music => MusicLoader.GetMusicSlot(Mod, "Sounds/Music/SunkenSea");
 		public override string BestiaryIcon => "CalamityModClassicPreTrailer/BiomeManagers/SunkenSeaIcon";
 		public override SceneEffectPriority Priority => SceneEffectPriority.Environment;
 		public override ModWaterStyle WaterStyle => ModContent.Find<ModWaterStyle>("CalamityModClassicPreTrailer/SunkenSeaWater");

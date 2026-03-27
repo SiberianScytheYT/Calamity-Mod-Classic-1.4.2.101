@@ -67,11 +67,7 @@ namespace CalamityModClassicPreTrailer.NPCs.ProfanedGuardianBoss
 			NPC.noTileCollide = true;
 			AIType = -1;
 			NPC.boss = true;
-            Mod CalamityModClassicPreTrailerMusic = ModLoader.HasMod("CalamityModClassicPreTrailerMusic") ? ModLoader.GetMod("CalamityModClassicPreTrailerMusic") : null;
-            if (CalamityModClassicPreTrailerMusic != null)
-                Music = MusicLoader.GetMusicSlot("CalamityModClassicPreTrailerMusic/Sounds/Music/Guardians");
-            else
-                Music = MusicID.Boss1;
+            Music = MusicLoader.GetMusicSlot("CalamityModClassicPreTrailer/Sounds/Music/Guardians");
 			NPCID.Sets.TrailCacheLength[NPC.type] = 8;
 			NPCID.Sets.TrailingMode[NPC.type] = 1;
 			for (int k = 0; k < NPC.buffImmune.Length; k++)

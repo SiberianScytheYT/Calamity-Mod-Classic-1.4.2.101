@@ -62,11 +62,7 @@ namespace CalamityModClassicPreTrailer.NPCs.ProfanedGuardianBoss
 			NPC.canGhostHeal = false;
 			AIType = -1;
 			NPC.boss = true;
-            Mod CalamityModClassicPreTrailerMusic = ModLoader.HasMod("CalamityModClassicPreTrailerMusic") ? ModLoader.GetMod("CalamityModClassicPreTrailerMusic") : null;
-            if (CalamityModClassicPreTrailerMusic != null)
-                Music = MusicLoader.GetMusicSlot("CalamityModClassicPreTrailerMusic/Sounds/Music/Guardians");
-            else
-                Music = MusicID.Boss1;
+            Music = MusicLoader.GetMusicSlot("CalamityModClassicPreTrailer/Sounds/Music/Guardians");
             for (int k = 0; k < NPC.buffImmune.Length; k++)
 			{
 				NPC.buffImmune[k] = true;

@@ -64,11 +64,7 @@ namespace CalamityModClassicPreTrailer.NPCs.TheDevourerofGods
 			{
 				NPC.buffImmune[k] = true;
 			}
-			Mod CalamityModClassicPreTrailerMusic = ModLoader.HasMod("CalamityModClassicPreTrailerMusic") ? ModLoader.GetMod("CalamityModClassicPreTrailerMusic") : null;
-			if (CalamityModClassicPreTrailerMusic != null)
-				Music = MusicLoader.GetMusicSlot("CalamityModClassicPreTrailerMusic/Sounds/Music/UniversalCollapse");
-			else
-				Music = MusicID.LunarBoss;
+			Music = MusicLoader.GetMusicSlot("CalamityModClassicPreTrailer/Sounds/Music/UniversalCollapse");
 			NPC.dontCountMe = true;
 		}
 

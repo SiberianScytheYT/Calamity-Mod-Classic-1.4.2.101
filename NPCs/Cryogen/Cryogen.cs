@@ -92,11 +92,7 @@ namespace CalamityModClassicPreTrailer.NPCs.Cryogen
 			NPC.noTileCollide = true;
 			NPC.HitSound = SoundID.NPCHit5;
 			NPC.DeathSound = SoundID.NPCDeath15;
-			Mod CalamityModClassicPreTrailerMusic = ModLoader.HasMod("CalamityModClassicPreTrailerMusic") ? ModLoader.GetMod("CalamityModClassicPreTrailerMusic") : null;
-			if (CalamityModClassicPreTrailerMusic != null)
-				Music = MusicLoader.GetMusicSlot("CalamityModClassicPreTrailerMusic/Sounds/Music/Cryogen");
-			else
-				Music = MusicID.FrostMoon;
+			Music = MusicLoader.GetMusicSlot("CalamityModClassicPreTrailer/Sounds/Music/Cryogen");
 		}
 
 		public override void AI()

@@ -48,18 +48,11 @@ namespace CalamityModClassicPreTrailer.NPCs.CeaselessVoid
 			{
 				NPC.lifeMax = 400;
 			}
-			Mod CalamityModClassicPreTrailerMusic = ModLoader.HasMod("CalamityModClassicPreTrailerMusic") ? ModLoader.GetMod("CalamityModClassicPreTrailerMusic") : null;
-			if (CalamityModClassicPreTrailerMusic != null)
-				Music = MusicLoader.GetMusicSlot("CalamityModClassicPreTrailerMusic/Sounds/Music/ScourgeofTheUniverse");
-			else
-				Music = MusicID.Boss3;
+			Music = MusicLoader.GetMusicSlot("CalamityModClassicPreTrailer/Sounds/Music/ScourgeofTheUniverse");
 			if (CalamityWorldPreTrailer.DoGSecondStageCountdown <= 0)
 			{
 				NPC.value = Item.buyPrice(0, 35, 0, 0);
-				if (CalamityModClassicPreTrailerMusic != null)
-					Music = MusicLoader.GetMusicSlot("CalamityModClassicPreTrailerMusic/Sounds/Music/Void");
-				else
-					Music = MusicID.Boss3;
+				Music = MusicLoader.GetMusicSlot("CalamityModClassicPreTrailer/Sounds/Music/Void");
 			}
 			NPC.aiStyle = -1; //new
 			AIType = -1; //new

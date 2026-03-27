@@ -50,11 +50,7 @@ namespace CalamityModClassicPreTrailer.NPCs.DesertScourge
 				NPC.buffImmune[k] = true;
 			}
 			NPC.boss = true;
-            Mod CalamityModClassicPreTrailerMusic = ModLoader.HasMod("CalamityModClassicPreTrailerMusic") ? ModLoader.GetMod("CalamityModClassicPreTrailerMusic") : null;
-            if (CalamityModClassicPreTrailerMusic != null)
-                Music = MusicLoader.GetMusicSlot("CalamityModClassicPreTrailerMusic/Sounds/Music/DesertScourge");
-            else
-                Music = MusicID.Boss1;
+			Music = MusicLoader.GetMusicSlot("CalamityModClassicPreTrailer/Sounds/Music/DesertScourge");
             NPC.behindTiles = true;
 			NPC.noGravity = true;
 			NPC.noTileCollide = true;

@@ -6,12 +6,8 @@ using Terraria.ModLoader;
 namespace CalamityModClassicPreTrailer.BiomeManagers
 {
 	public class AbyssLayer3Biome : ModBiome
-	{
-		Mod _musicMod = ModLoader.HasMod("CalamityModClassicPreTrailerMusic") ? ModLoader.GetMod("CalamityModClassicPreTrailerMusic") : null;
-
-		public override int Music => (_musicMod != null)
-			? MusicLoader.GetMusicSlot(_musicMod, "Sounds/Music/TheDeepAbyss")
-			: MusicID.Hell;
+	{ 
+		public override int Music => MusicLoader.GetMusicSlot(Mod, "Sounds/Music/TheDeepAbyss");
 
 		public override SceneEffectPriority Priority => SceneEffectPriority.BiomeHigh;
 		public override string BackgroundPath => "CalamityModClassicPreTrailer/Backgrounds/MapBackgrounds/AbyssMap23";

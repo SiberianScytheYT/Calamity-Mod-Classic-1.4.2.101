@@ -88,11 +88,7 @@ namespace CalamityModClassicPreTrailer.NPCs.TheDevourerofGods
 			{
 				NPC.buffImmune[k] = true;
 			}
-			Mod CalamityModClassicPreTrailerMusic = ModLoader.HasMod("CalamityModClassicPreTrailerMusic") ? ModLoader.GetMod("CalamityModClassicPreTrailerMusic") : null;
-			if (CalamityModClassicPreTrailerMusic != null)
-				Music = MusicLoader.GetMusicSlot("CalamityModClassicPreTrailerMusic/Sounds/Music/ScourgeofTheUniverse");
-			else
-				Music = MusicID.Boss3;
+			Music = MusicLoader.GetMusicSlot("CalamityModClassicPreTrailer/Sounds/Music/ScourgeofTheUniverse");
 			if (Main.expertMode)
 			{
 				NPC.scale = 1.5f;

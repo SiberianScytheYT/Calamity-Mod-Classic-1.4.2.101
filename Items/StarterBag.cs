@@ -50,9 +50,7 @@ namespace CalamityModClassicPreTrailer.Items
             itemLoot.Add(new CommonDrop(ItemID.Bomb, 1, 10, 10)); //speedruns lul needs
             itemLoot.Add(new CommonDrop(ModContent.ItemType<Death>(), 1));
             itemLoot.Add(new CommonDrop(ModContent.ItemType<DefiledRune>(), 1));
-			Mod CalamityModClassicPreTrailerMusic = ModLoader.HasMod("CalamityModClassicPreTrailerMusic") ? ModLoader.GetMod("CalamityModClassicPreTrailerMusic") : null;
-			if (CalamityModClassicPreTrailerMusic != null)
-				itemLoot.Add(new CommonDrop(CalamityModClassicPreTrailerMusic.Find<ModItem>("CalamityMusicbox").Type, 1));
+			itemLoot.Add(new CommonDrop(Mod.Find<ModItem>("CalamityMusicbox").Type, 1));
 		}
 	}
 }

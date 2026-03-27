@@ -114,11 +114,7 @@ namespace CalamityModClassicPreTrailer.NPCs.SupremeCalamitas
 			NPC.noGravity = true;
 			NPC.noTileCollide = true;
 			NPC.HitSound = SoundID.NPCHit4;
-			Mod CalamityModClassicPreTrailerMusic = ModLoader.HasMod("CalamityModClassicPreTrailerMusic") ? ModLoader.GetMod("CalamityModClassicPreTrailerMusic") : null;
-			if (CalamityModClassicPreTrailerMusic != null)
-				Music = MusicLoader.GetMusicSlot("CalamityModClassicPreTrailerMusic/Sounds/Music/SCG");
-			else
-				Music = MusicID.Boss2;
+			Music = MusicLoader.GetMusicSlot("CalamityModClassicPreTrailer/Sounds/Music/SCG");
 		}
 
 		public override void AI()
@@ -537,11 +533,7 @@ namespace CalamityModClassicPreTrailer.NPCs.SupremeCalamitas
 			}
 			if (!startThirdAttack && ((double)NPC.life <= (double)NPC.lifeMax * 0.5))
 			{
-				Mod CalamityModClassicPreTrailerMusic = ModLoader.HasMod("CalamityModClassicPreTrailerMusic") ? ModLoader.GetMod("CalamityModClassicPreTrailerMusic") : null;
-				if (CalamityModClassicPreTrailerMusic != null)
-					Music = MusicLoader.GetMusicSlot("CalamityModClassicPreTrailerMusic/Sounds/Music/SCL");
-				else
-					Music = MusicID.Boss3;
+				Music = MusicLoader.GetMusicSlot("CalamityModClassicPreTrailer/Sounds/Music/SCL");
 				string key = "Everything was going well until you came along.";
 				Color messageColor = Color.Orange;
 				if (Main.netMode == 0)
@@ -610,11 +602,7 @@ namespace CalamityModClassicPreTrailer.NPCs.SupremeCalamitas
 			}
 			if (!startFourthAttack && ((double)NPC.life <= (double)NPC.lifeMax * 0.3))
 			{
-				Mod CalamityModClassicPreTrailerMusic = ModLoader.HasMod("CalamityModClassicPreTrailerMusic") ? ModLoader.GetMod("CalamityModClassicPreTrailerMusic") : null;
-				if (CalamityModClassicPreTrailerMusic != null)
-					Music = MusicLoader.GetMusicSlot("CalamityModClassicPreTrailerMusic/Sounds/Music/SCE");
-				else
-					Music = MusicID.LunarBoss;
+				Music = MusicLoader.GetMusicSlot("CalamityModClassicPreTrailer/Sounds/Music/SCE");
 				string key = "Hmm...perhaps I should let the little ones out to play for a while.";
 				Color messageColor = Color.Orange;
 				if (Main.netMode == 0)
@@ -708,11 +696,7 @@ namespace CalamityModClassicPreTrailer.NPCs.SupremeCalamitas
 			{
 				if (gettingTired5)
 				{
-					Mod CalamityModClassicPreTrailerMusic = ModLoader.HasMod("CalamityModClassicPreTrailerMusic") ? ModLoader.GetMod("CalamityModClassicPreTrailerMusic") : null;
-					if (CalamityModClassicPreTrailerMusic != null)
-						Music = MusicLoader.GetMusicSlot("CalamityModClassicPreTrailerMusic/Sounds/Music/SCA");
-					else
-						Music = MusicID.Eerie;
+					Music = MusicLoader.GetMusicSlot("CalamityModClassicPreTrailer/Sounds/Music/SCA");
 					NPC.noGravity = false;
 					NPC.noTileCollide = false;
 					NPC.damage = 0;

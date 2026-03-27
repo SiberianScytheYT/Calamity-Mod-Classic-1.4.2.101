@@ -78,11 +78,7 @@ namespace CalamityModClassicPreTrailer.NPCs.AbyssNPCs
                 detectsPlayer = true;
                 NPC.damage = Main.expertMode ? 104 : 65;
                 NPC.boss = true;
-                Mod CalamityModClassicPreTrailerMusic = ModLoader.HasMod("CalamityModClassicPreTrailerMusic") ? ModLoader.GetMod("CalamityModClassicPreTrailerMusic") : null;
-                if (CalamityModClassicPreTrailerMusic != null)
-                    Music = MusicLoader.GetMusicSlot("CalamityModClassicPreTrailerMusic/Sounds/Music/AquaticScourge");
-                else
-                    Music = MusicID.Boss2;
+                Music = MusicLoader.GetMusicSlot("CalamityModClassicPreTrailer/Sounds/Music/AquaticScourge");
             }
             else
             {

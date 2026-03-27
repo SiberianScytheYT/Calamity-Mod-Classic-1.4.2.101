@@ -7,11 +7,10 @@ using Terraria.ModLoader;
 namespace CalamityModClassicPreTrailer.BiomeManagers.Scenes
 {
     public class SirenLure : ModSceneEffect
-    {
-        Mod _musicMod = ModLoader.HasMod("CalamityModClassicPreTrailerMusic") ? ModLoader.GetMod("CalamityModClassicPreTrailerMusic") : null;
+    { 
         public override SceneEffectPriority Priority => SceneEffectPriority.BossLow;
         public int NPCType => ModContent.NPCType<LeviathanStart>();
-        public override int Music => MusicLoader.GetMusicSlot(_musicMod, "Sounds/Music/SirenLure");
+        public override int Music => MusicLoader.GetMusicSlot(Mod, "Sounds/Music/SirenLure");
         public virtual int MusicDistance => 1600;
 
         public virtual bool SetSceneEffect(Player player)

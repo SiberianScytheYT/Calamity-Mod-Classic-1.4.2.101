@@ -60,11 +60,7 @@ namespace CalamityModClassicPreTrailer.NPCs.SlimeGod
 			NPC.noTileCollide = false;
 			NPC.HitSound = SoundID.NPCHit1;
 			NPC.DeathSound = SoundID.NPCDeath1;
-            Mod CalamityModClassicPreTrailerMusic = ModLoader.HasMod("CalamityModClassicPreTrailerMusic") ? ModLoader.GetMod("CalamityModClassicPreTrailerMusic") : null;
-            if (CalamityModClassicPreTrailerMusic != null)
-                Music = MusicLoader.GetMusicSlot("CalamityModClassicPreTrailerMusic/Sounds/Music/SlimeGod");
-            else
-                Music = MusicID.Boss1;
+            Music = MusicLoader.GetMusicSlot("CalamityModClassicPreTrailer/Sounds/Music/SlimeGod");
             NPC.aiStyle = -1;
 			AIType = -1;
 		}

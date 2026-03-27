@@ -99,11 +99,7 @@ namespace CalamityModClassicPreTrailer.NPCs.Providence
 			NPC.netAlways = true;
 			NPC.chaseable = true;
 			NPC.canGhostHeal = false;
-			Mod CalamityModClassicPreTrailerMusic = ModLoader.HasMod("CalamityModClassicPreTrailerMusic") ? ModLoader.GetMod("CalamityModClassicPreTrailerMusic") : null;
-			if (CalamityModClassicPreTrailerMusic != null)
-				Music = MusicLoader.GetMusicSlot("CalamityModClassicPreTrailerMusic/Sounds/Music/ProvidenceTheme");
-			else
-				Music = MusicID.LunarBoss;
+			Music = MusicLoader.GetMusicSlot("CalamityModClassicPreTrailer/Sounds/Music/ProvidenceTheme");
 			NPC.HitSound = SoundID.NPCHit44;
 			NPC.DeathSound = SoundID.NPCDeath46;
 		}

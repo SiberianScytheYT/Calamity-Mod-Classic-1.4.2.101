@@ -5,10 +5,8 @@ using Terraria.ModLoader;
 namespace CalamityModClassicPreTrailer.BiomeManagers
 {
 	public class Crag : ModBiome
-	{
-		Mod _musicMod = ModLoader.HasMod("CalamityModClassicPreTrailerMusic") ? ModLoader.GetMod("CalamityModClassicPreTrailerMusic") : null;
-
-		public override int Music => (_musicMod != null) ? MusicLoader.GetMusicSlot(_musicMod, "Sounds/Music/Crag") : MusicID.Eerie;
+	{ 
+		public override int Music => MusicLoader.GetMusicSlot(Mod, "Sounds/Music/Crag");
 		
 		public override SceneEffectPriority Priority => SceneEffectPriority.Environment;
 		

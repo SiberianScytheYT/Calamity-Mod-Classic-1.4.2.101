@@ -70,11 +70,7 @@ namespace CalamityModClassicPreTrailer.NPCs.Perforator
 			NPC.noTileCollide = true;
 			NPC.HitSound = SoundID.NPCHit13;
 			NPC.DeathSound = SoundID.NPCDeath19;
-			Mod CalamityModClassicPreTrailerMusic = ModLoader.HasMod("CalamityModClassicPreTrailerMusic") ? ModLoader.GetMod("CalamityModClassicPreTrailerMusic") : null;
-			if (CalamityModClassicPreTrailerMusic != null)
-				Music = MusicLoader.GetMusicSlot("CalamityModClassicPreTrailerMusic/Sounds/Music/BloodCoagulant");
-			else
-				Music = MusicID.Boss2;
+			Music = MusicLoader.GetMusicSlot("CalamityModClassicPreTrailer/Sounds/Music/BloodCoagulant");
 		}
 
 		public override void FindFrame(int frameHeight)

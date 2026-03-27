@@ -71,11 +71,7 @@ namespace CalamityModClassicPreTrailer.NPCs.Crabulon
 			NPC.buffImmune[Mod.Find<ModBuff>("TemporalSadness").Type] = true;
 			NPC.noGravity = false;
 			NPC.noTileCollide = false;
-			Mod CalamityModClassicPreTrailerMusic = ModLoader.HasMod("CalamityModClassicPreTrailerMusic") ? ModLoader.GetMod("CalamityModClassicPreTrailerMusic") : null;
-			if (CalamityModClassicPreTrailerMusic != null)
-				Music = MusicLoader.GetMusicSlot("CalamityModClassicPreTrailerMusic/Sounds/Music/Crabulon");
-			else
-				Music = MusicID.Boss4;
+			Music = MusicLoader.GetMusicSlot("CalamityModClassicPreTrailer/Sounds/Music/Crabulon");
 			NPC.boss = true;
 			NPC.knockBackResist = 0f;
 			NPC.value = Item.buyPrice(0, 4, 0, 0);

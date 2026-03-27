@@ -90,17 +90,10 @@ namespace CalamityModClassicPreTrailer.NPCs.Yharon
 			NPC.noGravity = true;
 			NPC.noTileCollide = true;
 			NPC.netAlways = true;
-			Mod CalamityModClassicPreTrailerMusic = ModLoader.HasMod("CalamityModClassicPreTrailerMusic") ? ModLoader.GetMod("CalamityModClassicPreTrailerMusic") : null;
-			if (CalamityModClassicPreTrailerMusic != null)
-				Music = MusicLoader.GetMusicSlot("CalamityModClassicPreTrailerMusic/Sounds/Music/YHARON");
-			else
-				Music = MusicID.Boss1;
+			Music = MusicLoader.GetMusicSlot("CalamityModClassicPreTrailer/Sounds/Music/YHARON");
 			if (CalamityWorldPreTrailer.downedBuffedMothron || CalamityWorldPreTrailer.bossRushActive)
 			{
-				if (CalamityModClassicPreTrailerMusic != null)
-					Music = MusicLoader.GetMusicSlot("CalamityModClassicPreTrailerMusic/Sounds/Music/YHARONREBIRTH");
-				else
-					Music = MusicID.Boss3;
+				Music = MusicLoader.GetMusicSlot("CalamityModClassicPreTrailer/Sounds/Music/YHARONREBIRTH");
 			}
 			NPC.HitSound = SoundID.NPCHit56;
 			NPC.DeathSound = SoundID.NPCDeath60;
@@ -1887,11 +1880,7 @@ namespace CalamityModClassicPreTrailer.NPCs.Yharon
 			}
 			if (!moveCloser)
 			{
-				Mod CalamityModClassicPreTrailerMusic = ModLoader.HasMod("CalamityModClassicPreTrailerMusic") ? ModLoader.GetMod("CalamityModClassicPreTrailerMusic") : null;
-				if (CalamityModClassicPreTrailerMusic != null)
-					Music = MusicLoader.GetMusicSlot("CalamityModClassicPreTrailerMusic/Sounds/Music/DragonGod");
-				else
-					Music = MusicID.LunarBoss;
+				Music = MusicLoader.GetMusicSlot("CalamityModClassicPreTrailer/Sounds/Music/DragonGod");
 				moveCloser = true;
 				string key = "The air is getting warmer around you.";
 				Color messageColor = Color.Orange;

@@ -82,11 +82,7 @@ namespace CalamityModClassicPreTrailer.NPCs.BrimstoneWaifu
 			NPC.netAlways = true;
 			NPC.HitSound = SoundID.NPCHit23;
 			NPC.DeathSound = SoundID.NPCDeath39;
-			Mod CalamityModClassicPreTrailerMusic = ModLoader.HasMod("CalamityModClassicPreTrailerMusic") ? ModLoader.GetMod("CalamityModClassicPreTrailerMusic") : null;
-			if (CalamityModClassicPreTrailerMusic != null)
-				Music = MusicLoader.GetMusicSlot("CalamityModClassicPreTrailerMusic/Sounds/Music/LeftAlone");
-			else
-				Music = MusicID.Boss4;
+			Music = MusicLoader.GetMusicSlot("CalamityModClassicPreTrailer/Sounds/Music/LeftAlone");
 			if (CalamityWorldPreTrailer.downedProvidence)
 			{
 				NPC.damage = 210;

@@ -58,17 +58,10 @@ namespace CalamityModClassicPreTrailer.NPCs.StormWeaver
 			NPC.height = 74; //216
 			NPC.defense = 99999;
             NPC.lifeMax = 20000;
-            Mod CalamityModClassicPreTrailerMusic = ModLoader.HasMod("CalamityModClassicPreTrailerMusic") ? ModLoader.GetMod("CalamityModClassicPreTrailerMusic") : null;
-            if (CalamityModClassicPreTrailerMusic != null)
-                Music = MusicLoader.GetMusicSlot("CalamityModClassicPreTrailerMusic/Sounds/Music/ScourgeofTheUniverse");
-            else
-                Music = MusicID.Boss3;
+            Music = MusicLoader.GetMusicSlot("CalamityModClassicPreTrailer/Sounds/Music/ScourgeofTheUniverse");
             if (CalamityWorldPreTrailer.DoGSecondStageCountdown <= 0)
             {
-                if (CalamityModClassicPreTrailerMusic != null)
-                    Music = MusicLoader.GetMusicSlot("CalamityModClassicPreTrailerMusic/Sounds/Music/Weaver");
-                else
-                    Music = MusicID.Boss3;
+	            Music = MusicLoader.GetMusicSlot("CalamityModClassicPreTrailer/Sounds/Music/Weaver");
                 NPC.lifeMax = 100000;
             }
             if (CalamityWorldPreTrailer.bossRushActive)

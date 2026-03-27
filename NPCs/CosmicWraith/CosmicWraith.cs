@@ -58,19 +58,12 @@ namespace CalamityModClassicPreTrailer.NPCs.CosmicWraith
 			NPC.width = 130;
 			NPC.height = 130;
 			NPC.defense = 70;
-			Mod CalamityModClassicPreTrailerMusic = ModLoader.HasMod("CalamityModClassicPreTrailerMusic") ? ModLoader.GetMod("CalamityModClassicPreTrailerMusic") : null;
-			if (CalamityModClassicPreTrailerMusic != null)
-				Music = MusicLoader.GetMusicSlot("CalamityModClassicPreTrailerMusic/Sounds/Music/ScourgeofTheUniverse");
-			else
-				Music = MusicID.Boss4;
+			Music = MusicLoader.GetMusicSlot("CalamityModClassicPreTrailer/Sounds/Music/ScourgeofTheUniverse");
 			NPC.lifeMax = CalamityWorldPreTrailer.revenge ? 109500 : 70000;
 			if (CalamityWorldPreTrailer.DoGSecondStageCountdown <= 0)
 			{
 				NPC.value = Item.buyPrice(0, 35, 0, 0);
-				if (CalamityModClassicPreTrailerMusic != null)
-					Music = MusicLoader.GetMusicSlot("CalamityModClassicPreTrailerMusic/Sounds/Music/Signus");
-				else
-					Music = MusicID.Boss4;
+				Music = MusicLoader.GetMusicSlot("CalamityModClassicPreTrailer/Sounds/Music/Signus");
 				NPC.lifeMax = CalamityWorldPreTrailer.revenge ? 445500 : 280000;
 				if (CalamityWorldPreTrailer.death)
 				{

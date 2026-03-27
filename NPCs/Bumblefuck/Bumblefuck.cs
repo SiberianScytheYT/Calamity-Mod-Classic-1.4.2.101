@@ -72,11 +72,7 @@ namespace CalamityModClassicPreTrailer.NPCs.Bumblefuck
 			NPC.buffImmune[Mod.Find<ModBuff>("WhisperingDeath").Type] = false;
 			NPC.buffImmune[Mod.Find<ModBuff>("SilvaStun").Type] = false;
 			NPC.boss = true;
-			Mod CalamityModClassicPreTrailerMusic = ModLoader.HasMod("CalamityModClassicPreTrailerMusic") ? ModLoader.GetMod("CalamityModClassicPreTrailerMusic") : null;
-			if (CalamityModClassicPreTrailerMusic != null)
-				Music = MusicLoader.GetMusicSlot("CalamityModClassicPreTrailerMusic/Sounds/Music/Murderswarm");
-			else
-				Music = MusicID.Boss4;
+			Music = MusicLoader.GetMusicSlot("CalamityModClassicPreTrailer/Sounds/Music/Murderswarm");
 			NPC.lavaImmune = true;
 			NPC.noGravity = true;
 			NPC.value = Item.buyPrice(0, 30, 0, 0);

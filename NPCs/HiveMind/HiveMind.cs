@@ -54,11 +54,7 @@ namespace CalamityModClassicPreTrailer.NPCs.HiveMind
             NPC.value = 0f;
             NPC.HitSound = SoundID.NPCHit1;
 			NPC.DeathSound = SoundID.NPCDeath1;
-            Mod CalamityModClassicPreTrailerMusic = ModLoader.HasMod("CalamityModClassicPreTrailerMusic") ? ModLoader.GetMod("CalamityModClassicPreTrailerMusic") : null;
-            if (CalamityModClassicPreTrailerMusic != null)
-                Music = MusicLoader.GetMusicSlot("CalamityModClassicPreTrailerMusic/Sounds/Music/HiveMind");
-            else
-                Music = MusicID.Boss2;
+			Music = MusicLoader.GetMusicSlot("CalamityModClassicPreTrailer/Sounds/Music/HiveMind");
         }
 
         public override void FindFrame(int frameHeight)

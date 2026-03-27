@@ -46,9 +46,7 @@ namespace CalamityModClassicPreTrailer.NPCs.Leviathan
 			NPC.chaseable = false;
 			NPC.HitSound = SoundID.NPCHit1;
 			NPC.rarity = 2;
-            Mod CalamityModClassicPreTrailerMusic = ModLoader.HasMod("CalamityModClassicPreTrailerMusic") ? ModLoader.GetMod("CalamityModClassicPreTrailerMusic") : null;
-            if (CalamityModClassicPreTrailerMusic != null)
-                Music = MusicLoader.GetMusicSlot("CalamityModClassicPreTrailerMusic/Sounds/Music/SirenLure");
+			Music = MusicLoader.GetMusicSlot("CalamityModClassicPreTrailer/Sounds/Music/SirenLure");
 		}
 		
 		public override void FindFrame(int frameHeight)

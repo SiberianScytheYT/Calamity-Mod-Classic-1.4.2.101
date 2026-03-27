@@ -7,8 +7,7 @@ namespace CalamityModClassicPreTrailer.BiomeManagers
 {
 	public class AbyssLayer1Biome : ModBiome
 	{
-		Mod _musicMod = ModLoader.HasMod("CalamityModClassicPreTrailerMusic") ? ModLoader.GetMod("CalamityModClassicPreTrailerMusic") : null;
-        public override int Music => (_musicMod != null) ? MusicLoader.GetMusicSlot(_musicMod, "Sounds/Music/TheAbyss") : MusicID.Hell;
+		public override int Music => MusicLoader.GetMusicSlot(Mod, "Sounds/Music/TheAbyss");
 		public override SceneEffectPriority Priority => SceneEffectPriority.BiomeHigh;
 		public override string BackgroundPath => "CalamityModClassicPreTrailer/Backgrounds/MapBackgrounds/AbyssMap1";
 		public override string BestiaryIcon => "CalamityModClassicPreTrailer/BiomeManagers/AbyssIcon";

@@ -82,11 +82,7 @@ namespace CalamityModClassicPreTrailer.NPCs.Scavenger
 			NPC.value = Item.buyPrice(0, 25, 0, 0);
 			NPC.HitSound = SoundID.NPCHit41;
 			NPC.DeathSound = SoundID.NPCDeath14;
-			Mod CalamityModClassicPreTrailerMusic = ModLoader.HasMod("CalamityModClassicPreTrailerMusic") ? ModLoader.GetMod("CalamityModClassicPreTrailerMusic") : null;
-			if (CalamityModClassicPreTrailerMusic != null)
-				Music = MusicLoader.GetMusicSlot("CalamityModClassicPreTrailerMusic/Sounds/Music/Ravager");
-			else
-				Music = MusicID.Boss4;
+			Music = MusicLoader.GetMusicSlot("CalamityModClassicPreTrailer/Sounds/Music/Ravager");
 			if (CalamityWorldPreTrailer.downedProvidence)
 			{
 				NPC.defense = 180;

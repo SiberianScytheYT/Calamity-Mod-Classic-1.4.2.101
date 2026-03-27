@@ -79,11 +79,7 @@ namespace CalamityModClassicPreTrailer.NPCs.Astrageldon
 			NPC.buffImmune[Mod.Find<ModBuff>("SilvaStun").Type] = false;
 			NPC.boss = true;
 			NPC.DeathSound = SoundID.NPCDeath14;
-			Mod CalamityModClassicPreTrailerMusic = ModLoader.HasMod("CalamityModClassicPreTrailerMusic") ? ModLoader.GetMod("CalamityModClassicPreTrailerMusic") : null;
-			if (CalamityModClassicPreTrailerMusic != null)
-				Music = MusicLoader.GetMusicSlot("CalamityModClassicPreTrailerMusic/Sounds/Music/Astrageldon");
-			else
-				Music = MusicID.Boss3;
+			Music = MusicLoader.GetMusicSlot("CalamityModClassicPreTrailer/Sounds/Music/Astrageldon");
 			if (NPC.downedMoonlord && CalamityWorldPreTrailer.revenge)
 			{
 				NPC.lifeMax = 400000;

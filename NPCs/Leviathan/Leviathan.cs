@@ -78,11 +78,7 @@ namespace CalamityModClassicPreTrailer.NPCs.Leviathan
 			NPC.noGravity = true;
 			NPC.boss = true;
 			NPC.netAlways = true;
-			Mod CalamityModClassicPreTrailerMusic = ModLoader.HasMod("CalamityModClassicPreTrailerMusic") ? ModLoader.GetMod("CalamityModClassicPreTrailerMusic") : null;
-			if (CalamityModClassicPreTrailerMusic != null)
-				Music = MusicLoader.GetMusicSlot("CalamityModClassicPreTrailerMusic/Sounds/Music/LeviathanAndSiren");
-			else
-				Music = MusicID.Boss3;
+			Music = MusicLoader.GetMusicSlot("CalamityModClassicPreTrailer/Sounds/Music/LeviathanAndSiren");
 		}
 
 		public override void AI()
