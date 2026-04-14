@@ -42,20 +42,12 @@ namespace CalamityModClassicPreTrailer.Items.BrimstoneWaifu
 						ModContent.ItemType<HeartofDarkness>(),
 					}))));
 			Main.LocalPlayer.TryGettingDevArmor(null);
-			switch (Main.rand.Next(3))
+			itemLoot.Add(new CommonDrop(ModContent.ItemType<Abaddon>(), 1));
+			ItemDropRule.OneFromOptions(1, new int[]
 			{
-				case 0:
-					itemLoot.Add(new CommonDrop(ModContent.ItemType<Abaddon>(), 1));
-					break;
-				case 1:
-					itemLoot.Add(new CommonDrop(ModContent.ItemType<Abaddon>(), 1));
-					itemLoot.Add(new CommonDrop(ModContent.ItemType<Brimlance>(), 1));
-					break;
-				case 2:
-					itemLoot.Add(new CommonDrop(ModContent.ItemType<Abaddon>(), 1));
-					itemLoot.Add(new CommonDrop(ModContent.ItemType<SeethingDischarge>(), 1));
-					break;
-			}
+				ModContent.ItemType<Brimlance>(),
+				ModContent.ItemType<SeethingDischarge>()
+			});
 			itemLoot.Add(ItemDropRule.ByCondition(new ProvCondition(), ModContent.ItemType<Bloodstone>(), 1, 25, 36));
 			itemLoot.Add(new CommonDrop(ModContent.ItemType<RoseStone>(), 10));
 			itemLoot.Add(new CommonDrop(ItemID.SoulofFright, 1, 25, 41));
