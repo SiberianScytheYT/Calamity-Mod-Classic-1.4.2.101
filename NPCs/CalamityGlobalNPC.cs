@@ -1400,6 +1400,7 @@ namespace CalamityModClassicPreTrailer.NPCs
 		}
 		#endregion
 
+		/*
 		#region CanBeHitBy
 		public override bool? CanBeHitByItem(NPC npc, Player player, Item item)
 		{
@@ -1419,6 +1420,7 @@ namespace CalamityModClassicPreTrailer.NPCs
 			return null;
 		}
 		#endregion
+		*/
 
 		#region CanHitPlayer
 		public override bool CanHitPlayer(NPC npc, Player target, ref int cooldownSlot)
@@ -1585,6 +1587,7 @@ namespace CalamityModClassicPreTrailer.NPCs
 			if (npc.type == NPCID.TargetDummy || npc.type == Mod.Find<ModNPC>("SuperDummy").Type)
 			{
 				npc.chaseable = !CalamityPlayerPreTrailer.areThereAnyDamnBosses;
+				npc.dontTakeDamage = CalamityPlayerPreTrailer.areThereAnyDamnBosses;
 			}
 			if (npc.type == NPCID.TheDestroyer || npc.type == NPCID.TheDestroyerBody || npc.type == NPCID.TheDestroyerTail ||
 				npc.type == NPCID.EaterofWorldsHead || npc.type == NPCID.EaterofWorldsBody || npc.type == NPCID.EaterofWorldsTail)
