@@ -394,7 +394,7 @@ namespace CalamityModClassicPreTrailer.NPCs.SunkenSeaNPCs
 		public override void ModifyNPCLoot(NPCLoot npcLoot)
 		{
 			
-			LeadingConditionRule isHardmode = new LeadingConditionRule(new Conditions.IsExpert());
+			LeadingConditionRule isHardmode = new LeadingConditionRule(new Conditions.IsHardmode());
 			
 			npcLoot.Add(new CommonDrop(Mod.Find<ModItem>("Navystone").Type, 1, 25, 36));
 			npcLoot.Add(new CommonDrop(Mod.Find<ModItem>("GiantPearl").Type, 3));

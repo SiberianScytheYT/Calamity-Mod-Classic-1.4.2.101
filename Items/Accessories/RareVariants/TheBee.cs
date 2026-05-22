@@ -33,8 +33,8 @@ namespace CalamityModClassicPreTrailer.Items.Accessories.RareVariants
 		public override void UpdateAccessory(Player player, bool hideVisual)
 		{
 			// thanks the bee very cool
-			player.starCloakItem_beeCloakOverrideItem.active = true;
-			player.starCloakItem.active = true;
+			player.starCloakItem_beeCloakOverrideItem = Item;
+			player.starCloakItem = Item;
 			CalamityPlayerPreTrailer modPlayer = player.GetModPlayer<CalamityPlayerPreTrailer>();
 			modPlayer.theBee = true;
 		}

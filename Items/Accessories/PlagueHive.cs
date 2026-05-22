@@ -47,7 +47,7 @@ namespace CalamityModClassicPreTrailer.Items.Accessories
         {
             CalamityPlayerPreTrailer modPlayer = player.GetModPlayer<CalamityPlayerPreTrailer>();
             player.buffImmune[Mod.Find<ModBuff>("Plague").Type] = true;
-            player.starCloakItem_beeCloakOverrideItem.active = true;
+            player.starCloakItem_beeCloakOverrideItem = Item;
             modPlayer.uberBees = true;
             player.strongBees = true;
             modPlayer.alchFlask = true;
