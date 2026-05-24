@@ -35,7 +35,7 @@ namespace CalamityModClassicPreTrailer.Walls
 			if (Main.tile[i, j].WallType == Mod.Find<ModWall>("AstralMonolithWall").Type)
 			{
 				drawWall = false;
-				Texture2D sprite = ModContent.Request<Texture2D>("Walls/AstralMonolithWall").Value;
+				Texture2D sprite = ModContent.Request<Texture2D>("CalamityModClassicPreTrailer/Walls/AstralMonolithWall").Value;
 				Color lightColor = Lighting.GetColor(i, j);
 				//Initialize the default draw offset of the post drawn sections, then update it to not have the 4 tile offset if camera mode is enabled
 				Vector2 drawOffset = new Vector2(i * 16 - Main.screenPosition.X + GetDrawOffset(), j * 16 - Main.screenPosition.Y + GetDrawOffset());
