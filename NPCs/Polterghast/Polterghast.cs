@@ -695,9 +695,9 @@ namespace CalamityModClassicPreTrailer.NPCs.Polterghast
 			potionType = ItemID.SuperHealingPotion;
 		}
 
-		public override void ModifyIncomingHit(ref NPC.HitModifiers modifiers)
+		public void ModifyHitInfo(ref NPC.HitInfo info)
 		{
-			double newDamage = (modifiers.FinalDamage.Base + (int)((double)NPC.defense * 0.25));
+			double newDamage = (info.Damage + (int)((double)NPC.defense * 0.25));
 			float protection = 0.1f + //.1
 					((double)NPC.life <= (double)NPC.lifeMax * 0.75 ? 0.05f : 0f) + //.15
 					((double)NPC.life <= (double)NPC.lifeMax * (CalamityWorldPreTrailer.revenge ? 0.5 : 0.33) ? 0.05f : 0f) + //.2
@@ -722,7 +722,12 @@ namespace CalamityModClassicPreTrailer.NPCs.Polterghast
 					newDamage = 1.0;
 				}
 			}
-			modifiers.FinalDamage.Base = (float)newDamage;
+			info.Damage = (int)newDamage;
+		}
+
+		public override void ModifyIncomingHit(ref NPC.HitModifiers modifiers)
+		{
+			modifiers.ModifyHitInfo += ModifyHitInfo;
 		}
 
 		public override void FindFrame(int frameHeight)

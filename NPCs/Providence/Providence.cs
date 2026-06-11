@@ -979,9 +979,9 @@ namespace CalamityModClassicPreTrailer.NPCs.Providence
 			potionType = ItemID.SuperHealingPotion;
 		}
 
-		public override void ModifyIncomingHit(ref NPC.HitModifiers modifiers)
+		public void ModifyHitInfo(ref NPC.HitInfo info)
 		{
-			double newDamage = (modifiers.FinalDamage.Base + (int)((double)NPC.defense * 0.25));
+			double newDamage = (info.Damage + (int)((double)NPC.defense * 0.25));
 			float protection = (((NPC.ichor || NPC.onFire2) ? 0.2f : 0.25f) +
 					((NPC.ai[0] == 2f || NPC.ai[0] == 5f || NPC.ai[0] == 7f) ? 0.65f : 0f)); //0.85 or 0.9
 			if (newDamage < 1.0)
@@ -996,7 +996,12 @@ namespace CalamityModClassicPreTrailer.NPCs.Providence
 					newDamage = 1.0;
 				}
 			}
-			modifiers.FinalDamage.Base = (float)newDamage;
+			info.Damage = (int)newDamage;
+		}
+
+		public override void ModifyIncomingHit(ref NPC.HitModifiers modifiers)
+		{
+			modifiers.ModifyHitInfo += ModifyHitInfo;
 		}
 
 		public override bool PreDraw(SpriteBatch spriteBatch, Vector2 screenPos, Color drawColor)

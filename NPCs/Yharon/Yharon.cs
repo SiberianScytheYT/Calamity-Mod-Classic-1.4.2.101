@@ -2838,13 +2838,13 @@ namespace CalamityModClassicPreTrailer.NPCs.Yharon
 		#endregion
 
 		#region DamageFormula
-		public override void ModifyIncomingHit(ref NPC.HitModifiers modifiers)
+		public void ModifyHitInfo(ref NPC.HitInfo info)
 		{
-			if (modifiers.FinalDamage.Base > NPC.lifeMax / 10)
+			if (info.Damage > NPC.lifeMax / 10)
 			{
-				modifiers.SetMaxDamage(0);
+				info.Damage = 1;
 			}
-			double newDamage = (modifiers.FinalDamage.Base + (int)((double)NPC.defense * 0.25));
+			double newDamage = (info.Damage + (int)((double)NPC.defense * 0.25));
 			if (newDamage < 1.0)
 			{
 				newDamage = 1.0;
@@ -2868,7 +2868,12 @@ namespace CalamityModClassicPreTrailer.NPCs.Yharon
 					newDamage = 1.0;
 				}
 			}
-			modifiers.FinalDamage.Base = (float)newDamage;
+			info.Damage = (int)newDamage;
+		}
+		
+		public override void ModifyIncomingHit(ref NPC.HitModifiers modifiers)
+		{
+			modifiers.ModifyHitInfo += ModifyHitInfo;
 		}
 		#endregion
 

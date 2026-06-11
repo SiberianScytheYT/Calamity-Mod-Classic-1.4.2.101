@@ -7558,7 +7558,7 @@ namespace CalamityModClassicPreTrailer
 
 			if ((godSlayerDamage && modifiers.SourceDamage.Base <= 80) || modifiers.SourceDamage.Base < 1)
 			{
-				modifiers.SourceDamage.Base = 1f;
+				modifiers.SetMaxDamage(1);
 			}
 
 			#region HealingEffects

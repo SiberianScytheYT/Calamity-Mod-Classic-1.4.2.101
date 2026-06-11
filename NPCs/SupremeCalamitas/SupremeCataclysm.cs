@@ -201,13 +201,13 @@ namespace CalamityModClassicPreTrailer.NPCs.SupremeCalamitas
 			}
 		}
 
-		public override void ModifyIncomingHit(ref NPC.HitModifiers modifiers)
+		public void ModifyHitInfo(ref NPC.HitInfo info)
 		{
-			if (modifiers.FinalDamage.Base > NPC.lifeMax / 2)
+			if (info.Damage > NPC.lifeMax / 2)
 			{
-				modifiers.SetMaxDamage(0);
+				info.Damage = 1;
 			}
-			double newDamage = (modifiers.FinalDamage.Base + (int)(NPC.defense * 0.25));
+			double newDamage = (info.Damage + (int)(NPC.defense * 0.25));
 			float protection = (CalamityWorldPreTrailer.death ? 0.75f : 0.7f); //45%
 			if (CalamityWorldPreTrailer.bossRushActive)
 			{
@@ -233,7 +233,12 @@ namespace CalamityModClassicPreTrailer.NPCs.SupremeCalamitas
 					newDamage = 1.0;
 				}
 			}
-			modifiers.FinalDamage.Base = (float)newDamage;
+			info.Damage = (int)newDamage;
+		}
+
+		public override void ModifyIncomingHit(ref NPC.HitModifiers modifiers)
+		{
+			modifiers.ModifyHitInfo += ModifyHitInfo;
 		}
 
 		public override bool PreDraw(SpriteBatch spriteBatch, Vector2 screenPos, Color drawColor)
