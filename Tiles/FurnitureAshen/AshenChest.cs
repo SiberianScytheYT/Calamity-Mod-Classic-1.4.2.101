@@ -42,7 +42,7 @@ namespace CalamityModClassicPreTrailer.Tiles.FurnitureAshen
 			 TileID.Sets.BasicChest[Type] = true;
 		}
 		
-		
+		public override LocalizedText DefaultContainerName(int frameX, int frameY) => ItemLoader.GetItem(Mod.Find<ModItem>("AshenChest").Type).GetLocalization("DisplayName");
 
         public override bool CreateDust(int i, int j, ref int type)
         {

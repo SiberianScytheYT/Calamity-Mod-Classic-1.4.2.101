@@ -35,7 +35,7 @@ namespace CalamityModClassicPreTrailer.Items.Accessories
             player.GetDamage(DamageClass.Ranged) += 0.1f;
             player.GetCritChance(DamageClass.Ranged) += 5;
             player.pickSpeed -= 0.15f;
-            player.GetKnockback(DamageClass.Summon).Base += 0.5f;
+            player.GetKnockback(DamageClass.Summon) += 0.5f;
         }
 
         public override void AddRecipes()

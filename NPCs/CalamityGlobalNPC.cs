@@ -1455,16 +1455,16 @@ namespace CalamityModClassicPreTrailer.NPCs
 		#endregion
 
 		#region StrikeNPC
-		public override void ModifyIncomingHit(NPC npc, ref NPC.HitModifiers modifiers)
+		public override void OnHitNPC(NPC npc, NPC target, NPC.HitInfo hit)
 		{
 			if (npc.type == NPCID.TheDestroyer || npc.type == NPCID.TheDestroyerBody || npc.type == NPCID.TheDestroyerTail ||
 				npc.type == NPCID.EaterofWorldsHead || npc.type == NPCID.EaterofWorldsBody || npc.type == NPCID.EaterofWorldsTail)
 			{
 				if (newAI[1] < 480f || newAI[2] > 0f)
-					modifiers.FinalDamage.Base *= 0.01f;
+					hit.Damage = (int)(hit.Damage * 0.01f);
 			}
 
-			double yellowCandleDamageBoost = modifiers.FinalDamage.Base * 0.05f; //get value before DR
+			double yellowCandleDamageBoost = hit.Damage * 0.05f; //get value before DR
 
 			int newDefense = npc.defense -
 					(pFlames ? 4 : 0) -
@@ -1484,7 +1484,7 @@ namespace CalamityModClassicPreTrailer.NPCs
 
 			if (protection > 0f)
 			{
-				double newDamage = modifiers.FinalDamage.Base + ((double)npc.defense * 0.25); //defense damage boost 150 * .25 = 45 + 150 = 195 damage  180 defense
+				double newDamage = hit.Damage + ((double)npc.defense * 0.25); //defense damage boost 150 * .25 = 45 + 150 = 195 damage  180 defense
 
 				if (marked)
 					protection *= 0.5f;
@@ -1506,14 +1506,14 @@ namespace CalamityModClassicPreTrailer.NPCs
 						newDamage = 1.0;
 				}
 
-				modifiers.FinalDamage.Base = (float)newDamage;
+				hit.Damage = (int)newDamage;
 				protection = defProtection;
 			}
 
 			if (protection < 0.99f)
 			{
 				if (yellowCandle)
-					modifiers.FinalDamage.Base += (float)yellowCandleDamageBoost;
+					hit.Damage += (int)yellowCandleDamageBoost;
 			}
 			//vanilla defense calc 78 - (180 / 2 = 90) = 0, boosted to 1 by calc
 		}

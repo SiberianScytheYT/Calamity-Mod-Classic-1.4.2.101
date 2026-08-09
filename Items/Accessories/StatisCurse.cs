@@ -34,7 +34,7 @@ namespace CalamityModClassicPreTrailer.Items.Accessories
             CalamityPlayerPreTrailer modPlayer = player.GetModPlayer<CalamityPlayerPreTrailer>();
             modPlayer.shadowMinions = true;
             modPlayer.tearMinions = true;
-            player.GetKnockback(DamageClass.Summon).Base += 2.5f;
+            player.GetKnockback(DamageClass.Summon) += 2.5f;
             player.GetDamage(DamageClass.Summon) += 0.1f;
             player.maxMinions += 3;
         }

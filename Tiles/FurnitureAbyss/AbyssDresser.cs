@@ -42,6 +42,8 @@ namespace CalamityModClassicPreTrailer.Tiles.FurnitureAbyss
 			AdjTiles = new int[] { TileID.Dressers };
 			TileID.Sets.BasicDresser[Type] = true;
 		}
+		
+		public override LocalizedText DefaultContainerName(int frameX, int frameY) => ItemLoader.GetItem(Mod.Find<ModItem>("AbyssDresser").Type).GetLocalization("DisplayName");
 
         public override bool CreateDust(int i, int j, ref int type)
         {

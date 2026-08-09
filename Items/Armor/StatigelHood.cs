@@ -63,7 +63,7 @@ namespace CalamityModClassicPreTrailer.Items.Armor
 
         public override void UpdateEquip(Player player)
         {
-            player.GetKnockback(DamageClass.Summon).Base += 1.5f;
+            player.GetKnockback(DamageClass.Summon) += 1.5f;
             player.maxMinions++;
         }
 

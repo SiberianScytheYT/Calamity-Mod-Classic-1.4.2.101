@@ -25,7 +25,7 @@ namespace CalamityModClassicPreTrailer.Items.CalamityCustomThrowingDamage
 
 		public override void ModifyWeaponDamage(Player player, ref StatModifier damage)
 		{
-			damage.Base *= (float)(CalamityCustomThrowingDamagePlayer.ModPlayer(player).throwingDamage + 5E-06f); //plus one otherwise weird shit happens
+			damage *= (float)(CalamityCustomThrowingDamagePlayer.ModPlayer(player).throwingDamage);// + 5E-06f); //plus one otherwise weird shit happens
 		}
 
 		public override void ModifyWeaponCrit(Player player, ref float crit)

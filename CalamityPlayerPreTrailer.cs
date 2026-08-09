@@ -4112,7 +4112,7 @@ namespace CalamityModClassicPreTrailer
 				Player.GetCritChance(DamageClass.Throwing) += 1;
 				Player.GetDamage(DamageClass.Throwing) += 0.025f;
 				Player.GetDamage(DamageClass.Summon) += 0.025f;
-				Player.GetKnockback(DamageClass.Summon).Base += 0.25f;
+				Player.GetKnockback(DamageClass.Summon) += 0.25f;
 				Player.moveSpeed += 0.1f;
 			}
 			if (eaterOfWorldsLore)
@@ -4273,7 +4273,7 @@ namespace CalamityModClassicPreTrailer
 				Player.statDefense += 4;
 				AllDamageBoost(0.04f);
 				AllCritBoost(4);
-				Player.GetKnockback(DamageClass.Summon).Base += 0.5f;
+				Player.GetKnockback(DamageClass.Summon) += 0.5f;
 				Player.moveSpeed += 0.1f;
 			}
 			if (moonLordLore)
@@ -4284,7 +4284,7 @@ namespace CalamityModClassicPreTrailer
 					Player.statDefense += 10;
 					AllDamageBoost(0.1f);
 					AllCritBoost(10);
-					Player.GetKnockback(DamageClass.Summon).Base += 1.5f;
+					Player.GetKnockback(DamageClass.Summon) += 1.5f;
 					Player.moveSpeed += 0.15f;
 				}
 			}
@@ -4647,7 +4647,7 @@ namespace CalamityModClassicPreTrailer
 			{
 				Player.statDefense -= 10;
 				AllDamageBoost(0.05f);
-				Player.GetKnockback(DamageClass.Summon).Base += 0.5f;
+				Player.GetKnockback(DamageClass.Summon) += 0.5f;
 				Player.moveSpeed += 0.05f;
 			}
 			if (rRage)
@@ -4689,7 +4689,7 @@ namespace CalamityModClassicPreTrailer
 				Player.statDefense += 5;
 				AllDamageBoost(0.06f);
 				AllCritBoost(2);
-				Player.GetKnockback(DamageClass.Summon).Base += 1f;
+				Player.GetKnockback(DamageClass.Summon) += 1f;
 				Player.moveSpeed += 0.15f;
 			}
 			if (tScale)
@@ -4702,7 +4702,7 @@ namespace CalamityModClassicPreTrailer
 			{
 				Player.maxMinions += 2;
 				AllDamageBoost(0.12f);
-				Player.GetKnockback(DamageClass.Summon).Base += 1.2f;
+				Player.GetKnockback(DamageClass.Summon) += 1.2f;
 				Player.pickSpeed -= 0.15f;
 				if (Main.dayTime)
 				{
@@ -4960,7 +4960,7 @@ namespace CalamityModClassicPreTrailer
 				Player.statDefense += integerTypeBoost;
 				AllDamageBoost(damageBoost);
 				AllCritBoost(critBoost);
-				Player.GetKnockback(DamageClass.Summon).Base += floatTypeBoost;
+				Player.GetKnockback(DamageClass.Summon) += floatTypeBoost;
 				Player.moveSpeed += floatTypeBoost;
 				Player.statLifeMax2 += Player.statLifeMax / 5 / 20 * integerTypeBoost;
 				bool lesserEffect = false;
@@ -5711,8 +5711,8 @@ namespace CalamityModClassicPreTrailer
 		}
 		#endregion
 
-		#region UseTimeMult
-		public override float UseTimeMultiplier(Item item)
+		#region UseSpeedMult
+		public override float UseSpeedMultiplier(Item item)
 		{
 			if (silvaRanged)
 			{
@@ -5866,7 +5866,7 @@ namespace CalamityModClassicPreTrailer
 						num340 *= 1.5f;
 						num342 *= (float)Player.direction;
 						num341 *= Player.gravDir;
-						Projectile.NewProjectile(Entity.GetSource_FromThis(null), (float)(hitbox.X + hitbox.Width / 2) + num342, (float)(hitbox.Y + hitbox.Height / 2) + num341, (float)Player.direction * num340, num339 * Player.gravDir, ProjectileID.Mushroom, (int)((float)item.damage * 0.25f * Player.GetDamage(DamageClass.Melee).Base), 0f, Player.whoAmI, 0f, 0f);
+						Projectile.NewProjectile(Entity.GetSource_FromThis(null), (float)(hitbox.X + hitbox.Width / 2) + num342, (float)(hitbox.Y + hitbox.Height / 2) + num341, (float)Player.direction * num340, num339 * Player.gravDir, ProjectileID.Mushroom, (int)((float)item.damage * 0.25f * Player.GetDamage(DamageClass.Melee).Additive), 0f, Player.whoAmI, 0f, 0f);
 					}
 				}
 				if (aWeapon)
@@ -7513,18 +7513,6 @@ namespace CalamityModClassicPreTrailer
 			modifiers.FinalDamage *= (float)damageMult;
 			#endregion
 
-			if (CalamityWorldPreTrailer.revenge)
-			{
-				double defenseMult = Main.hardMode ? 0.75 : 0.5;
-				double newDamage = (double)modifiers.SourceDamage.Base - ((double)Player.statDefense * defenseMult);
-				double newDamageLimit = 5.0 + (Main.hardMode ? 5.0 : 0.0) + (NPC.downedPlantBoss ? 5.0 : 0.0) + (NPC.downedMoonlord ? 5.0 : 0.0); //5, 10, 15, 20
-				if (newDamage < newDamageLimit)
-				{
-					newDamage = newDamageLimit;
-				}
-				modifiers.FinalDamage.Base = (int)newDamage;
-			}
-
 			#region MultiplicativeReductions
 			if (trinketOfChiBuff)
 			{
@@ -7556,11 +7544,6 @@ namespace CalamityModClassicPreTrailer
 			}
 			#endregion
 
-			if ((godSlayerDamage && modifiers.SourceDamage.Base <= 80) || modifiers.SourceDamage.Base < 1)
-			{
-				modifiers.FinalDamage.Base = 1f;
-			}
-
 			#region HealingEffects
 			if (revivifyTimer > 0)
 			{
@@ -7585,6 +7568,23 @@ namespace CalamityModClassicPreTrailer
 
 		public override void OnHurt(Player.HurtInfo info)
 		{
+			if (CalamityWorldPreTrailer.revenge)
+			{
+				double defenseMult = Main.hardMode ? 0.75 : 0.5;
+				double newDamage = (double)info.Damage - ((double)Player.statDefense * defenseMult);
+				double newDamageLimit = 5.0 + (Main.hardMode ? 5.0 : 0.0) + (NPC.downedPlantBoss ? 5.0 : 0.0) + (NPC.downedMoonlord ? 5.0 : 0.0); //5, 10, 15, 20
+				if (newDamage < newDamageLimit)
+				{
+					newDamage = newDamageLimit;
+				}
+				info.Damage = (int)newDamage;
+			}
+			
+			if ((godSlayerDamage && info.Damage <= 80) || info.Damage < 1)
+			{
+				info.Damage = 1;
+			}
+			
 			if(info.PvP)
 			{
 				if (omegaBlueChestplate)
@@ -8365,7 +8365,7 @@ namespace CalamityModClassicPreTrailer
 						Rectangle rect = nPC.getRect();
 						if (rectangle.Intersects(rect) && (nPC.noTileCollide || Player.CanHit(nPC)))
 						{
-							float num = 50f * Player.GetDamage(DamageClass.Melee).Base;
+							float num = 50f * Player.GetDamage(DamageClass.Melee).Additive;
 							float num2 = 3f;
 							bool crit = false;
 							if (Player.kbGlove)
@@ -8413,7 +8413,7 @@ namespace CalamityModClassicPreTrailer
 						Rectangle rect = nPC.getRect();
 						if (rectangle.Intersects(rect) && (nPC.noTileCollide || Player.CanHit(nPC)))
 						{
-							float num = 1500f * Player.GetDamage(DamageClass.Melee).Base;
+							float num = 1500f * Player.GetDamage(DamageClass.Melee).Additive;
 							float num2 = 15f;
 							bool crit = false;
 							if (Player.kbGlove)
@@ -8464,7 +8464,7 @@ namespace CalamityModClassicPreTrailer
 						Rectangle rect = nPC.getRect();
 						if (rectangle.Intersects(rect) && (nPC.noTileCollide || Player.CanHit(nPC)))
 						{
-							float num = 500f * Player.GetDamage(DamageClass.Melee).Base;
+							float num = 500f * Player.GetDamage(DamageClass.Melee).Additive;
 							float num2 = 12f;
 							bool crit = false;
 							if (Player.kbGlove)
@@ -8514,7 +8514,7 @@ namespace CalamityModClassicPreTrailer
 						Rectangle rect = nPC.getRect();
 						if (rectangle.Intersects(rect) && (nPC.noTileCollide || Player.CanHit(nPC)))
 						{
-							float num = 100f * Player.GetDamage(DamageClass.Melee).Base;
+							float num = 100f * Player.GetDamage(DamageClass.Melee).Additive;
 							float num2 = 9f;
 							bool crit = false;
 							if (Player.kbGlove)
@@ -10598,77 +10598,77 @@ namespace CalamityModClassicPreTrailer
 			if (summonLevel >= 12500)
 			{
 				Player.GetDamage(DamageClass.Summon) += 0.12f;
-				Player.GetKnockback(DamageClass.Summon).Base += 3.0f;
+				Player.GetKnockback(DamageClass.Summon) += 3.0f;
 				Player.maxMinions += 3;
 			}
 			else if (summonLevel >= 10500)
 			{
 				Player.GetDamage(DamageClass.Summon) += 0.1f;
-				Player.GetKnockback(DamageClass.Summon).Base += 3.0f;
+				Player.GetKnockback(DamageClass.Summon) += 3.0f;
 				Player.maxMinions += 2;
 			}
 			else if (summonLevel >= 9100)
 			{
 				Player.GetDamage(DamageClass.Summon) += 0.09f;
-				Player.GetKnockback(DamageClass.Summon).Base += 2.7f;
+				Player.GetKnockback(DamageClass.Summon) += 2.7f;
 				Player.maxMinions += 2;
 			}
 			else if (summonLevel >= 7800)
 			{
 				Player.GetDamage(DamageClass.Summon) += 0.08f;
-				Player.GetKnockback(DamageClass.Summon).Base += 2.4f;
+				Player.GetKnockback(DamageClass.Summon) += 2.4f;
 				Player.maxMinions += 2;
 			}
 			else if (summonLevel >= 6600)
 			{
 				Player.GetDamage(DamageClass.Summon) += 0.07f;
-				Player.GetKnockback(DamageClass.Summon).Base += 2.1f;
+				Player.GetKnockback(DamageClass.Summon) += 2.1f;
 				Player.maxMinions += 2;
 			}
 			else if (summonLevel >= 5500)
 			{
 				Player.GetDamage(DamageClass.Summon) += 0.06f;
-				Player.GetKnockback(DamageClass.Summon).Base += 1.8f;
+				Player.GetKnockback(DamageClass.Summon) += 1.8f;
 				Player.maxMinions += 2;
 			}
 			else if (summonLevel >= 4500)
 			{
 				Player.GetDamage(DamageClass.Summon) += 0.06f;
-				Player.GetKnockback(DamageClass.Summon).Base += 1.8f;
+				Player.GetKnockback(DamageClass.Summon) += 1.8f;
 				Player.maxMinions++;
 			}
 			else if (summonLevel >= 3600)
 			{
 				Player.GetDamage(DamageClass.Summon) += 0.05f;
-				Player.GetKnockback(DamageClass.Summon).Base += 1.5f;
+				Player.GetKnockback(DamageClass.Summon) += 1.5f;
 				Player.maxMinions++;
 			}
 			else if (summonLevel >= 2800)
 			{
 				Player.GetDamage(DamageClass.Summon) += 0.04f;
-				Player.GetKnockback(DamageClass.Summon).Base += 1.2f;
+				Player.GetKnockback(DamageClass.Summon) += 1.2f;
 				Player.maxMinions++;
 			}
 			else if (summonLevel >= 2100)
 			{
 				Player.GetDamage(DamageClass.Summon) += 0.04f;
-				Player.GetKnockback(DamageClass.Summon).Base += 0.9f;
+				Player.GetKnockback(DamageClass.Summon) += 0.9f;
 				Player.maxMinions++;
 			}
 			else if (summonLevel >= 1500)
 			{
 				Player.GetDamage(DamageClass.Summon) += 0.03f;
-				Player.GetKnockback(DamageClass.Summon).Base += 0.6f;
+				Player.GetKnockback(DamageClass.Summon) += 0.6f;
 			}
 			else if (summonLevel >= 1000)
 			{
 				Player.GetDamage(DamageClass.Summon) += 0.03f;
-				Player.GetKnockback(DamageClass.Summon).Base += 0.3f;
+				Player.GetKnockback(DamageClass.Summon) += 0.3f;
 			}
 			else if (summonLevel >= 600)
 			{
 				Player.GetDamage(DamageClass.Summon) += 0.02f;
-				Player.GetKnockback(DamageClass.Summon).Base += 0.3f;
+				Player.GetKnockback(DamageClass.Summon) += 0.3f;
 			}
 			else if (summonLevel >= 300)
 				Player.GetDamage(DamageClass.Summon) += 0.02f;

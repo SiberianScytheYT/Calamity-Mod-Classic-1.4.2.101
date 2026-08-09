@@ -41,8 +41,7 @@ namespace CalamityModClassicPreTrailer.Tiles.FurnitureVoid
 			AdjTiles = new int[] { TileID.Containers };
 			 TileID.Sets.BasicChest[Type] = true;
 		}
-		
-		
+		public override LocalizedText DefaultContainerName(int frameX, int frameY) => ItemLoader.GetItem(Mod.Find<ModItem>("VoidChest").Type).GetLocalization("DisplayName");
 
         public override bool CreateDust(int i, int j, ref int type)
         {

@@ -42,6 +42,8 @@ namespace CalamityModClassicPreTrailer.Tiles.FurniturePlaguedPlate
 			TileID.Sets.BasicDresser[Type] = true;
 		}
 
+		public override LocalizedText DefaultContainerName(int frameX, int frameY) => ItemLoader.GetItem(Mod.Find<ModItem>("PlaguedPlateDresser").Type).GetLocalization("DisplayName");
+		
 		public override bool HasSmartInteract(int i, int j, SmartInteractScanSettings settings)
 		{
 			return true;

@@ -216,7 +216,7 @@ namespace CalamityModClassicPreTrailer.NPCs.AstralBiomeNPCs
             if (Collision.SolidCollision(NPC.position, NPC.width, NPC.height))
             {
                 if (Main.netMode != NetmodeID.MultiplayerClient)
-                NPC.StrikeInstantKill();
+                    NPC.StrikeInstantKill();
             }
         }
 
@@ -225,7 +225,7 @@ namespace CalamityModClassicPreTrailer.NPCs.AstralBiomeNPCs
             if (target.damage > 0)
             { 
                 if (Main.netMode != NetmodeID.MultiplayerClient)
-                NPC.StrikeInstantKill();
+                    NPC.StrikeInstantKill();
             }
         }
 

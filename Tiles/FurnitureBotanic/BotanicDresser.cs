@@ -44,6 +44,8 @@ namespace CalamityModClassicPreTrailer.Tiles.FurnitureBotanic
 			TileID.Sets.BasicDresser[Type] = true;
 		}
 
+		public override LocalizedText DefaultContainerName(int frameX, int frameY) => ItemLoader.GetItem(Mod.Find<ModItem>("BotanicDresser").Type).GetLocalization("DisplayName");
+
         public override bool CreateDust(int i, int j, ref int type)
         {
             Dust.NewDust(new Vector2(i, j) * 16f, 16, 16, ModContent.DustType<BloomTileGold>(), 0f, 0f, 1, new Color(255, 255, 255), 1f);

@@ -44,6 +44,8 @@ namespace CalamityModClassicPreTrailer.Tiles.FurnitureSilva
 			TileID.Sets.BasicDresser[Type] = true;
 		}
 
+		public override LocalizedText DefaultContainerName(int frameX, int frameY) => ItemLoader.GetItem(Mod.Find<ModItem>("SilvaDresser").Type).GetLocalization("DisplayName");
+		
         public override bool CreateDust(int i, int j, ref int type)
         {
             Dust.NewDust(new Vector2(i, j) * 16f, 16, 16, ModContent.DustType<SilvaTileGold>(), 0f, 0f, 1, new Color(255, 255, 255), 1f);
