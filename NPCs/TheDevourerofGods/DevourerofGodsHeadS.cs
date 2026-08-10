@@ -1115,6 +1115,24 @@ namespace CalamityModClassicPreTrailer.NPCs.TheDevourerofGods
 				modifiers.SetMaxDamage(0);
 			}
 		}
+		
+		public override void OnHitNPC(NPC npc, NPC.HitInfo hit)
+		{
+			if (hit.Damage > NPC.lifeMax / 2)
+			{
+				string key = "You think...you can butcher...ME!?";
+				Color messageColor = Color.Cyan;
+				if (Main.netMode == 0)
+				{
+					Main.NewText(Language.GetTextValue(key), messageColor);
+				}
+				else if (Main.netMode == 2)
+				{
+					ChatHelper.BroadcastChatMessage(NetworkText.FromKey(key), messageColor);
+				}
+				hit.Damage = 0;
+			}
+		}
 
 		public override bool? DrawHealthBar(byte hbPosition, ref float scale, ref Vector2 position)
 		{

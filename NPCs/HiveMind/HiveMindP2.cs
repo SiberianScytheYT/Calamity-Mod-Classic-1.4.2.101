@@ -615,9 +615,9 @@ namespace CalamityModClassicPreTrailer.NPCs.HiveMind
 			return NPC.alpha <= 0; //no damage when not fully visible
 		}
 
-		public override void ModifyIncomingHit(ref NPC.HitModifiers modifiers)
+		public override void OnHitNPC(NPC target, NPC.HitInfo hit)
 		{
-			if (phase2timer < 0 && modifiers.FinalDamage.Base > 1)
+			if (phase2timer < 0 && hit.Damage > 1)
 			{
 				NPC.velocity *= -4f;
 				ReelBack();

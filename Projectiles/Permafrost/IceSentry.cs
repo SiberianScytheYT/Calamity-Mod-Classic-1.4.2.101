@@ -36,15 +36,15 @@ namespace CalamityModClassicPreTrailer.Projectiles.Permafrost
         {
 			if (setDamage)
 			{
-				Projectile.GetGlobalProjectile<CalamityGlobalProjectile>().spawnedPlayerMinionDamageValue = Main.player[Projectile.owner].GetDamage(DamageClass.Summon).Base;
+				Projectile.GetGlobalProjectile<CalamityGlobalProjectile>().spawnedPlayerMinionDamageValue = Main.player[Projectile.owner].GetDamage(DamageClass.Summon).Additive;
 				Projectile.GetGlobalProjectile<CalamityGlobalProjectile>().spawnedPlayerMinionProjectileDamageValue = Projectile.damage;
 				setDamage = false;
 			}
-			if (Main.player[Projectile.owner].GetDamage(DamageClass.Summon).Base != Projectile.GetGlobalProjectile<CalamityGlobalProjectile>().spawnedPlayerMinionDamageValue)
+			if (Main.player[Projectile.owner].GetDamage(DamageClass.Summon).Additive != Projectile.GetGlobalProjectile<CalamityGlobalProjectile>().spawnedPlayerMinionDamageValue)
 			{
 				int damage2 = (int)(((float)Projectile.GetGlobalProjectile<CalamityGlobalProjectile>().spawnedPlayerMinionProjectileDamageValue /
 					Projectile.GetGlobalProjectile<CalamityGlobalProjectile>().spawnedPlayerMinionDamageValue) *
-					Main.player[Projectile.owner].GetDamage(DamageClass.Summon).Base);
+					Main.player[Projectile.owner].GetDamage(DamageClass.Summon).Additive);
 				Projectile.damage = damage2;
 			}
 

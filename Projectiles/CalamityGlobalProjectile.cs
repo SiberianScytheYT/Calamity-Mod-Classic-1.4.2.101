@@ -120,13 +120,13 @@ namespace CalamityModClassicPreTrailer.Projectiles
 			{
 				if (setDamageValues)
 				{
-					spawnedPlayerMinionDamageValue = Main.player[projectile.owner].GetDamage(DamageClass.Summon).Base;
+					spawnedPlayerMinionDamageValue = Main.player[projectile.owner].GetDamage(DamageClass.Summon).Additive;
 					spawnedPlayerMinionProjectileDamageValue = projectile.damage;
 					setDamageValues = false;
 				}
-				if (Main.player[projectile.owner].GetDamage(DamageClass.Summon).Base != spawnedPlayerMinionDamageValue)
+				if (Main.player[projectile.owner].GetDamage(DamageClass.Summon).Additive != spawnedPlayerMinionDamageValue)
 				{
-					int damage2 = (int)(((float)spawnedPlayerMinionProjectileDamageValue / spawnedPlayerMinionDamageValue) * Main.player[projectile.owner].GetDamage(DamageClass.Summon).Base);
+					int damage2 = (int)(((float)spawnedPlayerMinionProjectileDamageValue / spawnedPlayerMinionDamageValue) * Main.player[projectile.owner].GetDamage(DamageClass.Summon).Additive);
 					projectile.damage = damage2;
 				}
 			}

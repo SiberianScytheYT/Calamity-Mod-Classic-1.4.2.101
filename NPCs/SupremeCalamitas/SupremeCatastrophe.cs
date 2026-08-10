@@ -193,11 +193,11 @@ namespace CalamityModClassicPreTrailer.NPCs.SupremeCalamitas
 		{
 			if (projectile.type == Mod.Find<ModProjectile>("AngryChicken").Type)
 			{
-				modifiers.FinalDamage.Base /= 2;
+				modifiers.FinalDamage /= 2;
 			}
 			if (projectile.type == Mod.Find<ModProjectile>("ApothMark").Type || projectile.type == Mod.Find<ModProjectile>("ApothJaws").Type)
 			{
-				modifiers.FinalDamage.Base /= 3;
+				modifiers.FinalDamage /= 3;
 			}
 		}
 

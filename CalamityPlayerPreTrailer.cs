@@ -5926,6 +5926,28 @@ namespace CalamityModClassicPreTrailer
 		#region OnHitNPC
 		public override void OnHitNPCWithItem(Item item, NPC target, NPC.HitInfo hit, int damageDone)/* tModPorter If you don't need the Item, consider using OnHitNPC instead */
 		{
+			if (CalamityWorldPreTrailer.revenge && Config.AdrenalineAndRage)
+			{
+				if (item.CountsAsClass(DamageClass.Melee))
+				{
+					int stressGain = (int)(hit.Damage * 0.1);
+					int stressMaxGain = 10;
+					if (stressGain < 1)
+					{
+						stressGain = 1;
+					}
+					if (stressGain > stressMaxGain)
+					{
+						stressGain = stressMaxGain;
+					}
+					stress += stressGain;
+					if (stress >= stressMax)
+					{
+						stress = stressMax;
+					}
+				}
+			}
+			
 			if (unstablePrism && hit.Crit)
 			{
 				for (int num252 = 0; num252 < 3; num252++)
@@ -6128,6 +6150,29 @@ namespace CalamityModClassicPreTrailer
 		#region OnHitNPCWithProj
 		public override void OnHitNPCWithProj(Projectile proj, NPC target, NPC.HitInfo hit, int damageDone)/* tModPorter If you don't need the Projectile, consider using OnHitNPC instead */
 		{
+			bool isTrueMelee = proj.GetGlobalProjectile<CalamityGlobalProjectile>().trueMelee;
+			if (CalamityWorldPreTrailer.revenge && Config.AdrenalineAndRage)
+			{
+				if (isTrueMelee)
+				{
+					int stressGain = (int)(hit.Damage * 0.1);
+					int stressMaxGain = 10;
+					if (stressGain < 1)
+					{
+						stressGain = 1;
+					}
+					if (stressGain > stressMaxGain)
+					{
+						stressGain = stressMaxGain;
+					}
+					stress += stressGain;
+					if (stress >= stressMax)
+					{
+						stress = stressMax;
+					}
+				}
+			}
+			
 			if (proj.GetGlobalProjectile<CalamityGlobalProjectile>().rogue)
 			{
 				hit.Crit = (Main.rand.Next(1, 101) < CalamityCustomThrowingDamagePlayer.ModPlayer(Player).throwingCrit);
@@ -6552,27 +6597,6 @@ namespace CalamityModClassicPreTrailer
 						}
 					}
 				}
-				if (CalamityWorldPreTrailer.revenge && Config.AdrenalineAndRage)
-				{
-					if (item.CountsAsClass(DamageClass.Melee))
-					{
-						int stressGain = (int)((double)modifiers.SourceDamage.Base * 0.1);
-						int stressMaxGain = 10;
-						if (stressGain < 1)
-						{
-							stressGain = 1;
-						}
-						if (stressGain > stressMaxGain)
-						{
-							stressGain = stressMaxGain;
-						}
-						stress += stressGain;
-						if (stress >= stressMax)
-						{
-							stress = stressMax;
-						}
-					}
-				}
 			}
 		}
 
@@ -6872,27 +6896,6 @@ namespace CalamityModClassicPreTrailer
 							{
 								LevelPacket(false, 4);
 							}
-						}
-					}
-				}
-				if (CalamityWorldPreTrailer.revenge && Config.AdrenalineAndRage)
-				{
-					if (isTrueMelee)
-					{
-						int stressGain = (int)((double)target.damage * 0.1);
-						int stressMaxGain = 10;
-						if (stressGain < 1)
-						{
-							stressGain = 1;
-						}
-						if (stressGain > stressMaxGain)
-						{
-							stressGain = stressMaxGain;
-						}
-						stress += stressGain;
-						if (stress >= stressMax)
-						{
-							stress = stressMax;
 						}
 					}
 				}
@@ -7543,31 +7546,31 @@ namespace CalamityModClassicPreTrailer
 				modifiers.FinalDamage *= 0.9f;
 			}
 			#endregion
+		}
 
+		public override void OnHurt(Player.HurtInfo info)
+		{
 			#region HealingEffects
 			if (revivifyTimer > 0)
 			{
-				int healAmt = (int)modifiers.SourceDamage.Base / 20;
+				int healAmt = (int)info.Damage / 20;
 				Player.statLife += healAmt;
 				Player.HealEffect(healAmt);
 			}
 			if (daedalusAbsorb && Main.rand.Next(10) == 0)
 			{
-				int healAmt = (int)modifiers.SourceDamage.Base / 2;
+				int healAmt = (int)info.Damage / 2;
 				Player.statLife += healAmt;
 				Player.HealEffect(healAmt);
 			}
 			if (absorber)
 			{
-				int healAmt = (int)modifiers.SourceDamage.Base / 20;
+				int healAmt = (int)info.Damage / 20;
 				Player.statLife += healAmt;
 				Player.HealEffect(healAmt);
 			}
 			#endregion
-		}
-
-		public override void OnHurt(Player.HurtInfo info)
-		{
+			
 			if (CalamityWorldPreTrailer.revenge)
 			{
 				double defenseMult = Main.hardMode ? 0.75 : 0.5;

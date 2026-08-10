@@ -47,7 +47,7 @@ namespace CalamityModClassicPreTrailer.Projectiles.SunkenSea
 		{
 			if (spawnDust)
 			{
-				Projectile.GetGlobalProjectile<CalamityGlobalProjectile>().spawnedPlayerMinionDamageValue = Main.player[Projectile.owner].GetDamage(DamageClass.Summon).Base;
+				Projectile.GetGlobalProjectile<CalamityGlobalProjectile>().spawnedPlayerMinionDamageValue = Main.player[Projectile.owner].GetDamage(DamageClass.Summon).Additive;
 				Projectile.GetGlobalProjectile<CalamityGlobalProjectile>().spawnedPlayerMinionProjectileDamageValue = Projectile.damage;
 				int num501 = 20;
 				for (int num502 = 0; num502 < num501; num502++)
@@ -86,11 +86,11 @@ namespace CalamityModClassicPreTrailer.Projectiles.SunkenSea
 			if (Projectile.ai[0] == 0f)
 			{
 				Projectile.damage = 70;
-				if (Main.player[Projectile.owner].GetDamage(DamageClass.Summon).Base != Projectile.GetGlobalProjectile<CalamityGlobalProjectile>().spawnedPlayerMinionDamageValue)
+				if (Main.player[Projectile.owner].GetDamage(DamageClass.Summon).Additive != Projectile.GetGlobalProjectile<CalamityGlobalProjectile>().spawnedPlayerMinionDamageValue)
 				{
 					int damage2 = (int)(((float)Projectile.GetGlobalProjectile<CalamityGlobalProjectile>().spawnedPlayerMinionProjectileDamageValue /
 						Projectile.GetGlobalProjectile<CalamityGlobalProjectile>().spawnedPlayerMinionDamageValue) *
-						Main.player[Projectile.owner].GetDamage(DamageClass.Summon).Base);
+						Main.player[Projectile.owner].GetDamage(DamageClass.Summon).Additive);
 					Projectile.damage = damage2;
 				}
 				float[] var0 = Projectile.ai;

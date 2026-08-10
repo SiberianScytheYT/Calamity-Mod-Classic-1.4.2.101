@@ -229,9 +229,9 @@ namespace CalamityModClassicPreTrailer.NPCs.AstralBiomeNPCs
             }
         }
 
-        public override void ModifyHitPlayer(Player target, ref Player.HurtModifiers modifiers)
+        public override void OnHitPlayer(Player target, Player.HurtInfo hurtInfo)
         {
-            if (modifiers.SourceDamage.Base > 0)
+            if (hurtInfo.Damage > 0)
             {
                 if (Main.netMode != NetmodeID.MultiplayerClient)
                     NPC.StrikeInstantKill();

@@ -375,6 +375,15 @@ namespace CalamityModClassicPreTrailer.NPCs.TheDevourerofGods
 			double protection = CalamityWorldPreTrailer.death ? 0.03 : 0.045;
 			modifiers.FinalDamage *= (float)protection;
 		}
+		public override void OnHitNPC(NPC npc, NPC.HitInfo hit)
+		{
+			if (hit.Damage > NPC.lifeMax / 2)
+			{
+				hit.Damage = 0;
+			}
+			double protection = CalamityWorldPreTrailer.death ? 0.03 : 0.045;
+			hit.Damage = (int)(hit.Damage * protection);
+		}
 
 		public override bool CheckActive()
 		{

@@ -44,7 +44,7 @@ namespace CalamityModClassicPreTrailer.Projectiles.Summon
             }
             if (count == 0f)
         	{
-				Projectile.GetGlobalProjectile<CalamityGlobalProjectile>().spawnedPlayerMinionDamageValue = Main.player[Projectile.owner].GetDamage(DamageClass.Summon).Base;
+				Projectile.GetGlobalProjectile<CalamityGlobalProjectile>().spawnedPlayerMinionDamageValue = Main.player[Projectile.owner].GetDamage(DamageClass.Summon).Additive;
 				Projectile.GetGlobalProjectile<CalamityGlobalProjectile>().spawnedPlayerMinionProjectileDamageValue = Projectile.damage;
 				SoundEngine.PlaySound(SoundID.Item20, Projectile.position);
 				for (int num621 = 0; num621 < 5; num621++)
@@ -67,11 +67,11 @@ namespace CalamityModClassicPreTrailer.Projectiles.Summon
 				}
 				count += 1f;
         	}
-			if (Main.player[Projectile.owner].GetDamage(DamageClass.Summon).Base != Projectile.GetGlobalProjectile<CalamityGlobalProjectile>().spawnedPlayerMinionDamageValue)
+			if (Main.player[Projectile.owner].GetDamage(DamageClass.Summon).Additive != Projectile.GetGlobalProjectile<CalamityGlobalProjectile>().spawnedPlayerMinionDamageValue)
 			{
 				int damage2 = (int)(((float)Projectile.GetGlobalProjectile<CalamityGlobalProjectile>().spawnedPlayerMinionProjectileDamageValue /
 					Projectile.GetGlobalProjectile<CalamityGlobalProjectile>().spawnedPlayerMinionDamageValue) *
-					Main.player[Projectile.owner].GetDamage(DamageClass.Summon).Base);
+					Main.player[Projectile.owner].GetDamage(DamageClass.Summon).Additive);
 				Projectile.damage = damage2;
 			}
 			if (Projectile.owner == Main.myPlayer)

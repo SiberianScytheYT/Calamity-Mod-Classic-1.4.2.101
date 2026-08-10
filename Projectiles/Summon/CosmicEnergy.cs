@@ -41,15 +41,15 @@ namespace CalamityModClassicPreTrailer.Projectiles.Summon
             Lighting.AddLight((int)Projectile.Center.X / 16, (int)Projectile.Center.Y / 16, ((float)Main.DiscoR / 255f), ((float)Main.DiscoG / 255f), ((float)Main.DiscoB / 255f));
 			if (Projectile.localAI[0] == 0f)
 			{
-				Projectile.GetGlobalProjectile<CalamityGlobalProjectile>().spawnedPlayerMinionDamageValue = Main.player[Projectile.owner].GetDamage(DamageClass.Summon).Base;
+				Projectile.GetGlobalProjectile<CalamityGlobalProjectile>().spawnedPlayerMinionDamageValue = Main.player[Projectile.owner].GetDamage(DamageClass.Summon).Additive;
 				Projectile.GetGlobalProjectile<CalamityGlobalProjectile>().spawnedPlayerMinionProjectileDamageValue = Projectile.damage;
 				Projectile.localAI[0] += 1f;
 			}
-			if (Main.player[Projectile.owner].GetDamage(DamageClass.Summon).Base != Projectile.GetGlobalProjectile<CalamityGlobalProjectile>().spawnedPlayerMinionDamageValue)
+			if (Main.player[Projectile.owner].GetDamage(DamageClass.Summon).Additive != Projectile.GetGlobalProjectile<CalamityGlobalProjectile>().spawnedPlayerMinionDamageValue)
 			{
 				int damage2 = (int)(((float)Projectile.GetGlobalProjectile<CalamityGlobalProjectile>().spawnedPlayerMinionProjectileDamageValue /
 					Projectile.GetGlobalProjectile<CalamityGlobalProjectile>().spawnedPlayerMinionDamageValue) *
-					Main.player[Projectile.owner].GetDamage(DamageClass.Summon).Base);
+					Main.player[Projectile.owner].GetDamage(DamageClass.Summon).Additive);
 				Projectile.damage = damage2;
 			}
 			bool flag64 = Projectile.type == Mod.Find<ModProjectile>("CosmicEnergy").Type;

@@ -154,6 +154,14 @@ namespace CalamityModClassicPreTrailer.NPCs.TheDevourerofGods
 			}
 		}
 
+		public override void OnHitNPC(NPC npc, NPC.HitInfo hit)
+		{
+			if (hit.Damage > NPC.lifeMax / 2)
+			{
+				hit.Damage = 0;
+			}
+		}
+
 		public override bool CheckActive()
 		{
 			return false;
