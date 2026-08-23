@@ -10,6 +10,7 @@ using CalamityModClassicPreTrailer.Items.Weapons.RareVariants;
 using CalamityModClassicPreTrailer.Items.Weapons.Yharon;
 using CalamityModClassicPreTrailer.Items.Yharon;
 using CalamityModClassicPreTrailer.NPCs.NPCLootConditions.CalamityBosses;
+using CalamityModClassicPreTrailer.NPCs.NPCLootConditions.MiscConditions;
 using Microsoft.Xna.Framework;
 using Microsoft.Xna.Framework.Graphics;
 using Terraria;
@@ -3043,5 +3044,12 @@ namespace CalamityModClassicPreTrailer.NPCs.Yharon
 			}
 		}
 		#endregion
+	}
+	
+	public class DarkSunCondition : IItemDropRuleCondition
+	{
+		public bool CanDrop(DropAttemptInfo info) => CalamityWorldPreTrailer.downedBuffedMothron;
+		public bool CanShowItemDropInUI() => CalamityWorldPreTrailer.downedBuffedMothron;
+		public string GetConditionDescription() => "After defeating Mothron in the buffed Solar Eclipse";
 	}
 }

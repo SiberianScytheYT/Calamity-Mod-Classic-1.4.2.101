@@ -5,6 +5,8 @@ using CalamityModClassicPreTrailer.Items;
 using CalamityModClassicPreTrailer.Items.Armor;
 using CalamityModClassicPreTrailer.Items.Astrageldon;
 using CalamityModClassicPreTrailer.Items.Placeables;
+using CalamityModClassicPreTrailer.NPCs.NPCLootConditions;
+using CalamityModClassicPreTrailer.NPCs.NPCLootConditions.MiscConditions;
 using Microsoft.Xna.Framework;
 using Microsoft.Xna.Framework.Graphics;
 using Terraria;
@@ -762,10 +764,10 @@ namespace CalamityModClassicPreTrailer.NPCs.Astrageldon
 			*/
 			int min = (int)(25 * 0.5f);
 			int max = (int)(41 * 0.5f) * Main.rand.Next(1, 4);
-			npcLoot.Add(ItemDropRule.ByCondition(new MoonCondition(), 3459, 1, min, max));
-			npcLoot.Add(ItemDropRule.ByCondition(new MoonCondition(), 3458, 1, min, max));
-			npcLoot.Add(ItemDropRule.ByCondition(new MoonCondition(), 3457, 1, min, max));
-			npcLoot.Add(ItemDropRule.ByCondition(new MoonCondition(), 3456, 1, min, max));
+			npcLoot.Add(ItemDropRule.ByCondition(new DownedMoonLord(), 3459, 1, min, max));
+			npcLoot.Add(ItemDropRule.ByCondition(new DownedMoonLord(), 3458, 1, min, max));
+			npcLoot.Add(ItemDropRule.ByCondition(new DownedMoonLord(), 3457, 1, min, max));
+			npcLoot.Add(ItemDropRule.ByCondition(new DownedMoonLord(), 3456, 1, min, max));
 		}
 
 		public override void HitEffect(NPC.HitInfo hit)

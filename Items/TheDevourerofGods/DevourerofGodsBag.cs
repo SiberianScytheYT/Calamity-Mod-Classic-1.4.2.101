@@ -4,6 +4,7 @@ using CalamityModClassicPreTrailer.Items.CalamityCustomThrowingDamage;
 using CalamityModClassicPreTrailer.Items.Weapons;
 using CalamityModClassicPreTrailer.Items.Weapons.DevourerofGods;
 using CalamityModClassicPreTrailer.Items.Weapons.RareVariants;
+using CalamityModClassicPreTrailer.NPCs.NPCLootConditions.MiscConditions;
 using Microsoft.Xna.Framework;
 using Microsoft.Xna.Framework.Graphics;
 using Terraria;

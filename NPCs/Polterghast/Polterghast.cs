@@ -5,6 +5,7 @@ using CalamityModClassicPreTrailer.Items.CalamityCustomThrowingDamage;
 using CalamityModClassicPreTrailer.Items.Placeables;
 using CalamityModClassicPreTrailer.Items.Polterghast;
 using CalamityModClassicPreTrailer.Items.Weapons.Polterghast;
+using CalamityModClassicPreTrailer.NPCs.NPCLootConditions.MiscConditions;
 using Microsoft.Xna.Framework;
 using Microsoft.Xna.Framework.Graphics;
 using Terraria;

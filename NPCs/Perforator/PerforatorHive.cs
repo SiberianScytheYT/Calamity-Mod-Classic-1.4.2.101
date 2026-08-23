@@ -14,6 +14,7 @@ using CalamityModClassicPreTrailer.Items.CalamityCustomThrowingDamage;
 using CalamityModClassicPreTrailer.Items.Perforator;
 using CalamityModClassicPreTrailer.Items.Placeables;
 using CalamityModClassicPreTrailer.Items.Weapons.Perforators;
+using CalamityModClassicPreTrailer.NPCs.NPCLootConditions.MiscConditions;
 using Terraria.GameContent.Bestiary;
 using Terraria.GameContent.ItemDropRules;
 

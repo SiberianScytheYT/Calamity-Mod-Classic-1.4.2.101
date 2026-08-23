@@ -1,6 +1,7 @@
 using CalamityModClassicPreTrailer.Items.Accessories;
 using CalamityModClassicPreTrailer.Items.CalamityCustomThrowingDamage;
 using CalamityModClassicPreTrailer.Items.Weapons.Polterghast;
+using CalamityModClassicPreTrailer.NPCs.NPCLootConditions.MiscConditions;
 using Terraria;
 using Terraria.GameContent.ItemDropRules;
 using Terraria.ModLoader;

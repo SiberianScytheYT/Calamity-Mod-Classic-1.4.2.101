@@ -4,6 +4,7 @@ using System.IO;
 using CalamityModClassicPreTrailer.BiomeManagers;
 using CalamityModClassicPreTrailer.Items;
 using CalamityModClassicPreTrailer.Items.Weapons.SunkenSea;
+using CalamityModClassicPreTrailer.NPCs.NPCLootConditions.MiscConditions;
 using Microsoft.Xna.Framework;
 using Microsoft.Xna.Framework.Graphics;
 using Terraria;

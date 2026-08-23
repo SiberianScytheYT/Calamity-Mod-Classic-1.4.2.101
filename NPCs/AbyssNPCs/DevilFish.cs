@@ -5,6 +5,7 @@ using CalamityModClassicPreTrailer.BiomeManagers;
 using CalamityModClassicPreTrailer.Items;
 using CalamityModClassicPreTrailer.NPCs.NPCLootConditions;
 using CalamityModClassicPreTrailer.NPCs.NPCLootConditions.CalamityBosses;
+using CalamityModClassicPreTrailer.NPCs.NPCLootConditions.MiscConditions;
 using Microsoft.Xna.Framework;
 using Microsoft.Xna.Framework.Graphics;
 using Terraria;

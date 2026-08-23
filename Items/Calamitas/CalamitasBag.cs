@@ -2,6 +2,8 @@ using CalamityModClassicPreTrailer.Items.Accessories;
 using CalamityModClassicPreTrailer.Items.Armor;
 using CalamityModClassicPreTrailer.Items.Weapons;
 using CalamityModClassicPreTrailer.Items.Weapons.Calamitas;
+using CalamityModClassicPreTrailer.NPCs.NPCLootConditions.CalamityBosses;
+using CalamityModClassicPreTrailer.NPCs.NPCLootConditions.MiscConditions;
 using Terraria;
 using Terraria.GameContent.ItemDropRules;
 using Terraria.ModLoader;
@@ -48,7 +50,7 @@ namespace CalamityModClassicPreTrailer.Items.Calamitas
 			itemLoot.Add(new CommonDrop(ModContent.ItemType<CalamitasMask>(), 7));
 			itemLoot.Add(new CommonDrop(ModContent.ItemType<TheEyeofCalamitas>(), 3));
 			itemLoot.Add(new CommonDrop(ModContent.ItemType<BlightedEyeStaff>(), 3));
-			itemLoot.Add(ItemDropRule.ByCondition(new ProvCondition(), ModContent.ItemType<Bloodstone>(), 1, 35, 46));
+			itemLoot.Add(ItemDropRule.ByCondition(new DownedProvidence(), ModContent.ItemType<Bloodstone>(), 1, 35, 46));
 			itemLoot.Add(new CommonDrop(ModContent.ItemType<ChaosStone>(), 10));
 			itemLoot.Add(new CommonDrop(ModContent.ItemType<CalamityDust>(), 1, 14, 19));
 			itemLoot.Add(new CommonDrop(ModContent.ItemType<EssenceofChaos>(), 1, 5, 10));

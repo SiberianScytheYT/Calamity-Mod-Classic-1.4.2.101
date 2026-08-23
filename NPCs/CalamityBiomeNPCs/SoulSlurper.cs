@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.IO;
 using CalamityModClassicPreTrailer.BiomeManagers;
 using CalamityModClassicPreTrailer.Items;
+using CalamityModClassicPreTrailer.NPCs.NPCLootConditions.CalamityBosses;
 using Microsoft.Xna.Framework;
 using Microsoft.Xna.Framework.Graphics;
 using Terraria;
@@ -239,7 +240,7 @@ namespace CalamityModClassicPreTrailer.NPCs.CalamityBiomeNPCs
 		
 		public override void ModifyNPCLoot(NPCLoot npcLoot)
 		{
-			npcLoot.Add(ItemDropRule.ByCondition(new ProvCondition(), Mod.Find<ModItem>("Bloodstone").Type, 2));
+			npcLoot.Add(ItemDropRule.ByCondition(new DownedProvidence(), Mod.Find<ModItem>("Bloodstone").Type, 2));
 			npcLoot.Add(ItemDropRule.ByCondition(new Conditions.IsHardmode(), Mod.Find<ModItem>("EssenceofChaos").Type, 3));
 		}
 		

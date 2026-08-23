@@ -6,6 +6,7 @@ using CalamityModClassicPreTrailer.Items.CalamityCustomThrowingDamage;
 using CalamityModClassicPreTrailer.Items.Crabulon;
 using CalamityModClassicPreTrailer.Items.Placeables;
 using CalamityModClassicPreTrailer.Items.Weapons.Crabulon;
+using CalamityModClassicPreTrailer.NPCs.NPCLootConditions.MiscConditions;
 using Microsoft.Xna.Framework;
 using Microsoft.Xna.Framework.Graphics;
 using Terraria;

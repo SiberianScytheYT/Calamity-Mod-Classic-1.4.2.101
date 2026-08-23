@@ -5,6 +5,7 @@ using CalamityModClassicPreTrailer.Items.Bumblefuck;
 using CalamityModClassicPreTrailer.Items.Placeables;
 using CalamityModClassicPreTrailer.Items.Weapons.Bumblebirb;
 using CalamityModClassicPreTrailer.Items.Weapons.RareVariants;
+using CalamityModClassicPreTrailer.NPCs.NPCLootConditions.MiscConditions;
 using Microsoft.Xna.Framework;
 using Microsoft.Xna.Framework.Graphics;
 using Terraria;

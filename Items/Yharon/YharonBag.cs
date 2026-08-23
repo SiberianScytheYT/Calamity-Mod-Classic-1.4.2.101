@@ -4,6 +4,7 @@ using CalamityModClassicPreTrailer.Items.Armor;
 using CalamityModClassicPreTrailer.Items.CalamityCustomThrowingDamage;
 using CalamityModClassicPreTrailer.Items.Patreon;
 using CalamityModClassicPreTrailer.Items.Weapons.Yharon;
+using CalamityModClassicPreTrailer.NPCs.NPCLootConditions.MiscConditions;
 using Terraria;
 using Terraria.GameContent.ItemDropRules;
 using Terraria.ModLoader;

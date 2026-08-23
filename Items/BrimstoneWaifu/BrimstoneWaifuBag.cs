@@ -1,5 +1,7 @@
 using CalamityModClassicPreTrailer.Items.Accessories;
 using CalamityModClassicPreTrailer.Items.Weapons.BrimstoneWaifu;
+using CalamityModClassicPreTrailer.NPCs.NPCLootConditions.CalamityBosses;
+using CalamityModClassicPreTrailer.NPCs.NPCLootConditions.MiscConditions;
 using Terraria;
 using Terraria.GameContent.ItemDropRules;
 using Terraria.ModLoader;
@@ -34,7 +36,7 @@ namespace CalamityModClassicPreTrailer.Items.BrimstoneWaifu
 		{
 			LeadingConditionRule revActive = new LeadingConditionRule(new RevCondition());
 			revActive.OnSuccess(new CommonDrop(ModContent.ItemType<CharredRelic>(), 1, 1, 1, 1));
-			revActive.OnSuccess(ItemDropRule.ByCondition(new ProvCondition(), ModContent.ItemType<Brimrose>(), 1, 1, 1, 1));
+			revActive.OnSuccess(ItemDropRule.ByCondition(new DownedProvidence(), ModContent.ItemType<Brimrose>(), 1, 1, 1, 1));
 			revActive.OnSuccess((new OneFromOptionsDropRule(20, 1, new int[]
 			{
 				ModContent.ItemType<StressPills>(),
@@ -50,7 +52,7 @@ namespace CalamityModClassicPreTrailer.Items.BrimstoneWaifu
 				ModContent.ItemType<Brimlance>(),
 				ModContent.ItemType<SeethingDischarge>()
 			});
-			itemLoot.Add(ItemDropRule.ByCondition(new ProvCondition(), ModContent.ItemType<Bloodstone>(), 1, 25, 36));
+			itemLoot.Add(ItemDropRule.ByCondition(new DownedProvidence(), ModContent.ItemType<Bloodstone>(), 1, 25, 36));
 			itemLoot.Add(new CommonDrop(ModContent.ItemType<RoseStone>(), 10));
 			itemLoot.Add(new CommonDrop(ItemID.SoulofFright, 1, 25, 41));
 			itemLoot.Add(new CommonDrop(ModContent.ItemType<EssenceofChaos>(), 1, 5, 10));

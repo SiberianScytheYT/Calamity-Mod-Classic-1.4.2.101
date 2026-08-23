@@ -1,6 +1,8 @@
 using CalamityModClassicPreTrailer.Items.Accessories;
 using CalamityModClassicPreTrailer.Items.CalamityCustomThrowingDamage;
 using CalamityModClassicPreTrailer.Items.Weapons.Ravager;
+using CalamityModClassicPreTrailer.NPCs.NPCLootConditions.CalamityBosses;
+using CalamityModClassicPreTrailer.NPCs.NPCLootConditions.MiscConditions;
 using Terraria;
 using Terraria.GameContent.ItemDropRules;
 using Terraria.ModLoader;
@@ -34,7 +36,7 @@ namespace CalamityModClassicPreTrailer.Items.Scavenger
 		public override void ModifyItemLoot(ItemLoot itemLoot)
 		{
 			LeadingConditionRule revActive = new LeadingConditionRule(new RevCondition());
-			LeadingConditionRule PreProv = new LeadingConditionRule(new ProvCondition());
+			LeadingConditionRule PreProv = new LeadingConditionRule(new DownedProvidence());
 			revActive.OnSuccess(new CommonDrop(ModContent.ItemType<InfernalBlood>(), 1));
 			revActive.OnSuccess((new OneFromOptionsDropRule(20, 1, new int[]
 			{
@@ -45,16 +47,16 @@ namespace CalamityModClassicPreTrailer.Items.Scavenger
 			itemLoot.Add(revActive);
 			
 			Main.LocalPlayer.TryGettingDevArmor(null);
-			itemLoot.Add(ItemDropRule.ByCondition(new ProvCondition(), ModContent.ItemType<Bloodstone>(), 1, 60, 71));
-			itemLoot.Add(ItemDropRule.ByCondition(new ProvCondition(), ModContent.ItemType<VerstaltiteBar>(), 1, 7, 13));
-			itemLoot.Add(ItemDropRule.ByCondition(new ProvCondition(), ModContent.ItemType<DraedonBar>(), 1, 7, 13));
-			itemLoot.Add(ItemDropRule.ByCondition(new ProvCondition(), ModContent.ItemType<CruptixBar>(), 1, 7, 13));
-			itemLoot.Add(ItemDropRule.ByCondition(new ProvCondition(), ModContent.ItemType<CoreofCinder>(), 1, 2, 5));
-			itemLoot.Add(ItemDropRule.ByCondition(new ProvCondition(), ModContent.ItemType<CoreofEleum>(), 1, 2, 5));
-			itemLoot.Add(ItemDropRule.ByCondition(new ProvCondition(), ModContent.ItemType<CoreofChaos>(), 1, 2, 5));
-			itemLoot.Add(ItemDropRule.ByCondition(new ProvCondition(), ModContent.ItemType<BarofLife>(), 1));
-			itemLoot.Add(ItemDropRule.ByCondition(new ProvCondition(), ModContent.ItemType<CoreofCalamity>(), 2));
-			itemLoot.Add(ItemDropRule.ByCondition(new ProvCondition(), ModContent.ItemType<BloodflareCore>(), 1));
+			itemLoot.Add(ItemDropRule.ByCondition(new DownedProvidence(), ModContent.ItemType<Bloodstone>(), 1, 60, 71));
+			itemLoot.Add(ItemDropRule.ByCondition(new DownedProvidence(), ModContent.ItemType<VerstaltiteBar>(), 1, 7, 13));
+			itemLoot.Add(ItemDropRule.ByCondition(new DownedProvidence(), ModContent.ItemType<DraedonBar>(), 1, 7, 13));
+			itemLoot.Add(ItemDropRule.ByCondition(new DownedProvidence(), ModContent.ItemType<CruptixBar>(), 1, 7, 13));
+			itemLoot.Add(ItemDropRule.ByCondition(new DownedProvidence(), ModContent.ItemType<CoreofCinder>(), 1, 2, 5));
+			itemLoot.Add(ItemDropRule.ByCondition(new DownedProvidence(), ModContent.ItemType<CoreofEleum>(), 1, 2, 5));
+			itemLoot.Add(ItemDropRule.ByCondition(new DownedProvidence(), ModContent.ItemType<CoreofChaos>(), 1, 2, 5));
+			itemLoot.Add(ItemDropRule.ByCondition(new DownedProvidence(), ModContent.ItemType<BarofLife>(), 1));
+			itemLoot.Add(ItemDropRule.ByCondition(new DownedProvidence(), ModContent.ItemType<CoreofCalamity>(), 2));
+			itemLoot.Add(ItemDropRule.ByCondition(new DownedProvidence(), ModContent.ItemType<BloodflareCore>(), 1));
 			PreProv.OnFailedConditions(new CommonDrop(ModContent.ItemType<VerstaltiteBar>(), 1, 2, 4));
 			PreProv.OnFailedConditions(new CommonDrop(ModContent.ItemType<DraedonBar>(), 1, 2, 4));
 			PreProv.OnFailedConditions(new CommonDrop(ModContent.ItemType<CruptixBar>(), 1, 2, 4));

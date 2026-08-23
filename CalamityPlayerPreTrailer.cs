@@ -5959,8 +5959,7 @@ namespace CalamityModClassicPreTrailer
 					}
 					value15.Normalize();
 					value15 *= (float)Main.rand.Next(30, 61) * 0.1f;
-					hit.Crit = false; // rip spark stacking 2025-2026 you will be missed
-					Projectile.NewProjectile(Entity.GetSource_FromThis(null), target.Center.X, target.Center.Y, value15.X, value15.Y, Mod.Find<ModProjectile>("UnstableSpark").Type, (int)((double)item.damage * 0.15), 0f, Player.whoAmI, 0f, 0f);
+					Projectile.NewProjectile(Entity.GetSource_FromThis(), target.Center.X, target.Center.Y, value15.X, value15.Y, Mod.Find<ModProjectile>("UnstableSpark").Type, (int)((double)item.damage * 0.15), 0f, Player.whoAmI, 0f, 0f);
 				}
 			}
 			
@@ -6206,7 +6205,7 @@ namespace CalamityModClassicPreTrailer
 			{
 				tarraThrowingCrits++;
 			}
-			if (unstablePrism && hit.Crit)
+			if (unstablePrism && hit.Crit && proj.type != Mod.Find<ModProjectile>("UnstableSpark").Type) // rip spark stacking 2025-2026 you will be missed
 			{
 				for (int num252 = 0; num252 < 3; num252++)
 				{
@@ -6217,7 +6216,6 @@ namespace CalamityModClassicPreTrailer
 					}
 					value15.Normalize();
 					value15 *= (float)Main.rand.Next(30, 61) * 0.1f;
-					hit.Crit = false; // rip spark stacking 2025-2026 you will be missed
 					Projectile.NewProjectile(proj.GetSource_FromThis(), proj.oldPosition.X + (float)(proj.width / 2), proj.oldPosition.Y + (float)(proj.height / 2), value15.X, value15.Y, Mod.Find<ModProjectile>("UnstableSpark").Type, (int)((double)proj.damage * 0.15), 0f, Player.whoAmI, 0f, 0f);
 				}
 			}

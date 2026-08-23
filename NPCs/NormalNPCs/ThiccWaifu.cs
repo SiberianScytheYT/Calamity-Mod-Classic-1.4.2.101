@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using System.IO;
 using CalamityModClassicPreTrailer.Items;
+using CalamityModClassicPreTrailer.NPCs.NPCLootConditions.CalamityBosses;
 using Microsoft.Xna.Framework;
 using Microsoft.Xna.Framework.Graphics;
 using Terraria;
@@ -454,7 +455,7 @@ namespace CalamityModClassicPreTrailer.NPCs.NormalNPCs
 		public override void ModifyNPCLoot(NPCLoot npcLoot)
 		{
 			npcLoot.Add(new CommonDrop(Mod.Find<ModItem>("EssenceofCinder").Type, 1, 2, 4));
-			npcLoot.Add(ItemDropRule.ByCondition(new ProvCondition(), Mod.Find<ModItem>("Thunderstorm").Type, 100));
+			npcLoot.Add(ItemDropRule.ByCondition(new DownedProvidence(), Mod.Find<ModItem>("Thunderstorm").Type, 100));
 			npcLoot.Add(ItemDropRule.NormalvsExpert(Mod.Find<ModItem>("EyeoftheStorm").Type, 4, 3));
 			npcLoot.Add(new CommonDrop(Mod.Find<ModItem>("StormSaber").Type, 5));
 		}

@@ -3,6 +3,7 @@ using CalamityModClassicPreTrailer.Items.Accessories.RareVariants;
 using CalamityModClassicPreTrailer.Items.Armor;
 using CalamityModClassicPreTrailer.Items.CalamityCustomThrowingDamage.RareVariants;
 using CalamityModClassicPreTrailer.Items.Weapons.AstrumDeus;
+using CalamityModClassicPreTrailer.NPCs.NPCLootConditions.MiscConditions;
 using Terraria;
 using Terraria.GameContent.ItemDropRules;
 using Terraria.ModLoader;

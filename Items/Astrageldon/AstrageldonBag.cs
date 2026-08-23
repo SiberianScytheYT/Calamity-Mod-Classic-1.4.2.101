@@ -1,5 +1,7 @@
 using CalamityModClassicPreTrailer.Items.Accessories;
 using CalamityModClassicPreTrailer.Items.Armor;
+using CalamityModClassicPreTrailer.NPCs.NPCLootConditions;
+using CalamityModClassicPreTrailer.NPCs.NPCLootConditions.MiscConditions;
 using Terraria;
 using Terraria.GameContent.ItemDropRules;
 using Terraria.ModLoader;
@@ -33,7 +35,7 @@ namespace CalamityModClassicPreTrailer.Items.Astrageldon
         public override void ModifyItemLoot(ItemLoot itemLoot)
         {
 	        LeadingConditionRule revActive = new LeadingConditionRule(new RevCondition());
-	        revActive.OnSuccess(ItemDropRule.ByCondition(new MoonCondition(), ModContent.ItemType<SquishyBeanMount>()));
+	        revActive.OnSuccess(ItemDropRule.ByCondition(new DownedMoonLord(), ModContent.ItemType<SquishyBeanMount>()));
 	        revActive.OnSuccess((new OneFromOptionsDropRule(20, 1, new int[]
 	        { 
 		        ModContent.ItemType<StressPills>(),

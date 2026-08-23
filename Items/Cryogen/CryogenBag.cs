@@ -3,6 +3,7 @@ using CalamityModClassicPreTrailer.Items.Accessories.RareVariants;
 using CalamityModClassicPreTrailer.Items.Armor;
 using CalamityModClassicPreTrailer.Items.CalamityCustomThrowingDamage;
 using CalamityModClassicPreTrailer.Items.Weapons.Cryogen;
+using CalamityModClassicPreTrailer.NPCs.NPCLootConditions.MiscConditions;
 using Terraria;
 using Terraria.GameContent.ItemDropRules;
 using Terraria.ModLoader;

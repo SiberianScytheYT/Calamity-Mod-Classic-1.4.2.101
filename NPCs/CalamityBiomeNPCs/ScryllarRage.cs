@@ -9,6 +9,7 @@ using Terraria.ModLoader;
 using CalamityModClassicPreTrailer.Projectiles;
 using CalamityModClassicPreTrailer;
 using CalamityModClassicPreTrailer.Items;
+using CalamityModClassicPreTrailer.NPCs.NPCLootConditions.CalamityBosses;
 using Terraria.GameContent.ItemDropRules;
 
 namespace CalamityModClassicPreTrailer.NPCs.CalamityBiomeNPCs
@@ -263,7 +264,7 @@ namespace CalamityModClassicPreTrailer.NPCs.CalamityBiomeNPCs
 		
 		public override void ModifyNPCLoot(NPCLoot npcLoot)
 		{
-			npcLoot.Add(ItemDropRule.ByCondition(new ProvCondition(), Mod.Find<ModItem>("Bloodstone").Type, 2));
+			npcLoot.Add(ItemDropRule.ByCondition(new DownedProvidence(), Mod.Find<ModItem>("Bloodstone").Type, 2));
 			npcLoot.Add(ItemDropRule.ByCondition(new Conditions.IsHardmode(), Mod.Find<ModItem>("EssenceofChaos").Type, 3));
 		}
 		

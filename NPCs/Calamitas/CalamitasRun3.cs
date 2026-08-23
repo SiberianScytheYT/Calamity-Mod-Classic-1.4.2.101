@@ -20,6 +20,8 @@ using CalamityModClassicPreTrailer.Items.Armor;
 using CalamityModClassicPreTrailer.Items.Calamitas;
 using CalamityModClassicPreTrailer.Items.Placeables;
 using CalamityModClassicPreTrailer.Items.Weapons.Calamitas;
+using CalamityModClassicPreTrailer.NPCs.NPCLootConditions.CalamityBosses;
+using CalamityModClassicPreTrailer.NPCs.NPCLootConditions.MiscConditions;
 using Terraria.GameContent.Bestiary;
 using Terraria.GameContent.ItemDropRules;
 using Terraria.WorldBuilding;
@@ -528,7 +530,7 @@ namespace CalamityModClassicPreTrailer.NPCs.Calamitas
 			notExpert.OnSuccess(new CommonDrop(ModContent.ItemType<EssenceofChaos>(), 1, 4, 9));
 			notExpert.OnSuccess(new CommonDrop(ModContent.ItemType<CalamityDust>(), 1, 9, 15));
 			notExpert.OnSuccess(new CommonDrop(ModContent.ItemType<BlightedLens>(), 1, 1, 3));
-			notExpert.OnSuccess(ItemDropRule.ByCondition(new ProvCondition(), ModContent.ItemType<Bloodstone>(), 1, 30, 41)); 
+			notExpert.OnSuccess(ItemDropRule.ByCondition(new DownedProvidence(), ModContent.ItemType<Bloodstone>(), 1, 30, 41)); 
 			notExpert.OnSuccess(new CommonDrop(ModContent.ItemType<ChaosStone>(), 10));
 			notExpert.OnSuccess(new CommonDrop(ModContent.ItemType<CalamitasInferno>(), 4));
 			notExpert.OnSuccess(new CommonDrop(ModContent.ItemType<CalamitasMask>(), 7));

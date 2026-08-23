@@ -3,6 +3,7 @@ using CalamityModClassicPreTrailer.Items.Armor;
 using CalamityModClassicPreTrailer.Items.CalamityCustomThrowingDamage;
 using CalamityModClassicPreTrailer.Items.Placeables.FurnitureStatigel;
 using CalamityModClassicPreTrailer.Items.Weapons.SlimeGod;
+using CalamityModClassicPreTrailer.NPCs.NPCLootConditions.MiscConditions;
 using Terraria;
 using Terraria.GameContent.ItemDropRules;
 using Terraria.ID;

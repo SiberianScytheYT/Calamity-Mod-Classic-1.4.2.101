@@ -7,6 +7,7 @@ using CalamityModClassicPreTrailer.Items.CalamityCustomThrowingDamage;
 using CalamityModClassicPreTrailer.Items.DevourerMunsters;
 using CalamityModClassicPreTrailer.Items.Providence;
 using CalamityModClassicPreTrailer.Items.Weapons.Providence;
+using CalamityModClassicPreTrailer.NPCs.NPCLootConditions.MiscConditions;
 using Microsoft.Xna.Framework;
 using Microsoft.Xna.Framework.Graphics;
 using Terraria;
@@ -1171,5 +1172,33 @@ namespace CalamityModClassicPreTrailer.NPCs.Providence
 				}
 			}
 		}
+	}
+	public class HallowProvi : IItemDropRuleCondition
+	{
+		public bool inHallow()
+		{
+			foreach (var player in Main.ActivePlayers)
+			{
+				return player.ZoneHallow;
+			}
+			return false;
+		}
+		public bool CanDrop(DropAttemptInfo info) => inHallow() && Main.expertMode;
+		public bool CanShowItemDropInUI() => Main.expertMode;
+		public string GetConditionDescription() => "While in the Hallow";
+	}
+	public class HellProvi : IItemDropRuleCondition
+	{ 
+		public bool inHell()
+		{
+			foreach (var player in Main.ActivePlayers)
+			{
+				return player.ZoneUnderworldHeight;
+			}
+			return false;
+		}
+		public bool CanDrop(DropAttemptInfo info) => inHell() && Main.expertMode;
+		public bool CanShowItemDropInUI() => Main.expertMode;
+		public string GetConditionDescription() => "While in the Underworld";
 	}
 }

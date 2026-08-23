@@ -18,6 +18,7 @@ using CalamityModClassicPreTrailer.Items.Armor;
 using CalamityModClassicPreTrailer.Items.Placeables;
 using CalamityModClassicPreTrailer.Items.PlaguebringerGoliath;
 using CalamityModClassicPreTrailer.Items.Weapons.Plaguebringer;
+using CalamityModClassicPreTrailer.NPCs.NPCLootConditions.MiscConditions;
 using Terraria.GameContent.Bestiary;
 using Terraria.GameContent.ItemDropRules;
 using Terraria.WorldBuilding;

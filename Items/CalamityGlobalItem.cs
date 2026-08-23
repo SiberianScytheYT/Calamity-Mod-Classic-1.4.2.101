@@ -19,6 +19,7 @@ using CalamityModClassicPreTrailer.Items.DesertScourge;
 using CalamityModClassicPreTrailer.Items.DifficultyItems;
 using CalamityModClassicPreTrailer.Items.Weapons;
 using CalamityModClassicPreTrailer.Items.Weapons.RareVariants;
+using CalamityModClassicPreTrailer.NPCs.NPCLootConditions.MiscConditions;
 using Terraria.GameContent.ItemDropRules;
 
 namespace CalamityModClassicPreTrailer.Items

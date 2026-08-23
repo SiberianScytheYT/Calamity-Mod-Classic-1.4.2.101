@@ -6,6 +6,8 @@ using CalamityModClassicPreTrailer.Items;
 using CalamityModClassicPreTrailer.Items.BrimstoneWaifu;
 using CalamityModClassicPreTrailer.Items.Placeables;
 using CalamityModClassicPreTrailer.Items.Weapons.BrimstoneWaifu;
+using CalamityModClassicPreTrailer.NPCs.NPCLootConditions.CalamityBosses;
+using CalamityModClassicPreTrailer.NPCs.NPCLootConditions.MiscConditions;
 using Microsoft.Xna.Framework;
 using Microsoft.Xna.Framework.Graphics;
 using Terraria;
@@ -543,7 +545,7 @@ namespace CalamityModClassicPreTrailer.NPCs.BrimstoneWaifu
 				1,
 				5, 5));
 			npcLoot.Add(ItemDropRule.BossBag(ModContent.ItemType<BrimstoneWaifuBag>()));
-			notExpert.OnSuccess(ItemDropRule.ByCondition(new ProvCondition(), ModContent.ItemType<Bloodstone>(), 1, 20, 31));
+			notExpert.OnSuccess(ItemDropRule.ByCondition(new DownedProvidence(), ModContent.ItemType<Bloodstone>(), 1, 20, 31));
 			notExpert.OnSuccess(new CommonDrop(ModContent.ItemType<RoseStone>(), 10));
 			notExpert.OnSuccess(new CommonDrop(ItemID.SoulofFright, 1, 20, 41));
 			notExpert.OnSuccess(new CommonDrop(ModContent.ItemType<EssenceofChaos>(), 1, 4, 9));

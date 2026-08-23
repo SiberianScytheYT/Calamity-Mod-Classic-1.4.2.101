@@ -13,6 +13,7 @@ using Terraria.GameContent.Generation;
 using CalamityModClassicPreTrailer.Tiles;
 using CalamityModClassicPreTrailer;
 using CalamityModClassicPreTrailer.Items.Leviathan;
+using CalamityModClassicPreTrailer.NPCs.NPCLootConditions.MiscConditions;
 using Terraria.GameContent.Bestiary;
 using Terraria.GameContent.ItemDropRules;
 using Terraria.WorldBuilding;

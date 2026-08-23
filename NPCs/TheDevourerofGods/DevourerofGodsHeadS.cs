@@ -15,6 +15,7 @@ using Terraria.GameContent.Generation;
 using CalamityModClassicPreTrailer.Tiles;
 using CalamityModClassicPreTrailer;
 using CalamityModClassicPreTrailer.Items.TheDevourerofGods;
+using CalamityModClassicPreTrailer.NPCs.NPCLootConditions.MiscConditions;
 using Terraria.GameContent.ItemDropRules;
 using Terraria.WorldBuilding;
 

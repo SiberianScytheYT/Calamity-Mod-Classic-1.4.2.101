@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using System.IO;
 using CalamityModClassicPreTrailer.Items.Leviathan;
+using CalamityModClassicPreTrailer.NPCs.NPCLootConditions.MiscConditions;
 using Microsoft.Xna.Framework;
 using Microsoft.Xna.Framework.Graphics;
 using Terraria;
@@ -721,5 +722,17 @@ namespace CalamityModClassicPreTrailer.NPCs.Leviathan
 			NPC.lifeMax = (int)(NPC.lifeMax * 0.8f * balance);
 			NPC.damage = (int)(NPC.damage * 0.8f);
 		}
+	}
+	public class NoLevi : IItemDropRuleCondition
+	{
+		public bool CanDrop(DropAttemptInfo info) => !NPC.AnyNPCs(ModContent.NPCType<Leviathan>());
+		public bool CanShowItemDropInUI() => true;
+		public string GetConditionDescription() => null;
+	}
+	public class NoSiren : IItemDropRuleCondition
+	{
+		public bool CanDrop(DropAttemptInfo info) => !NPC.AnyNPCs(ModContent.NPCType<Siren>());
+		public bool CanShowItemDropInUI() => true;
+		public string GetConditionDescription() => null;
 	}
 }

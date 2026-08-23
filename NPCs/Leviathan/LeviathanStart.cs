@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.IO;
 using CalamityModClassicPreTrailer.Items;
 using CalamityModClassicPreTrailer.Items.Armor;
+using CalamityModClassicPreTrailer.NPCs.NPCLootConditions.MiscConditions;
 using Microsoft.Xna.Framework;
 using Microsoft.Xna.Framework.Graphics;
 using Terraria;

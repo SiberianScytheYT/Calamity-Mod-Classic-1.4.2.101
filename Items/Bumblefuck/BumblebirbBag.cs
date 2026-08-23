@@ -1,6 +1,7 @@
 using CalamityModClassicPreTrailer.Items.Accessories;
 using CalamityModClassicPreTrailer.Items.Weapons.Bumblebirb;
 using CalamityModClassicPreTrailer.Items.Weapons.RareVariants;
+using CalamityModClassicPreTrailer.NPCs.NPCLootConditions.MiscConditions;
 using Terraria;
 using Terraria.GameContent.ItemDropRules;
 using Terraria.ModLoader;

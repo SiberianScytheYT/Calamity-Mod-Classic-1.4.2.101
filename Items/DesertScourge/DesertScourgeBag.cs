@@ -4,7 +4,8 @@ using CalamityModClassicPreTrailer.Items.Armor;
 using CalamityModClassicPreTrailer.Items.CalamityCustomThrowingDamage;
 using CalamityModClassicPreTrailer.Items.CalamityCustomThrowingDamage.RareVariants;
 using CalamityModClassicPreTrailer.Items.Weapons.DesertScourge;
-using Terraria;
+using CalamityModClassicPreTrailer.NPCs.NPCLootConditions;
+using CalamityModClassicPreTrailer.NPCs.NPCLootConditions.MiscConditions;
 using Terraria.GameContent.ItemDropRules;
 using Terraria.ModLoader;
 using Terraria.ID;
@@ -71,7 +72,7 @@ namespace CalamityModClassicPreTrailer.Items.DesertScourge
 				ModContent.ItemType<ScourgeoftheDesert>(),
 			}));
 			itemLoot.Add(new CommonDrop(ModContent.ItemType<DeepDiver>(), 40));
-			itemLoot.Add(ItemDropRule.ByCondition(new SkeletronCondition(), ItemID.GoldenBugNet, 20));
+			itemLoot.Add(ItemDropRule.ByCondition(new DownedSkeletron(), ItemID.GoldenBugNet, 20));
 			itemLoot.Add(new CommonDrop(ModContent.ItemType<OceanCrest>(), 1));
 			itemLoot.Add(new CommonDrop(ModContent.ItemType<VictoryShard>(), 1, 10, 17));
 			itemLoot.Add(new CommonDrop(ItemID.Coral, 1, 7, 12));

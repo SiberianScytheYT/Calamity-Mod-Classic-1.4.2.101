@@ -33,6 +33,7 @@ using CalamityModClassicPreTrailer.Items.Weapons;
 using CalamityModClassicPreTrailer.Items.Weapons.RareVariants;
 using CalamityModClassicPreTrailer.NPCs.NPCLootConditions;
 using CalamityModClassicPreTrailer.NPCs.NPCLootConditions.CalamityBosses;
+using CalamityModClassicPreTrailer.NPCs.NPCLootConditions.MiscConditions;
 using CalamityModClassicPreTrailer.NPCs.Yharon;
 using CalamityModClassicPreTrailer.World;
 using Terraria.GameContent.ItemDropRules;
@@ -1670,7 +1671,7 @@ namespace CalamityModClassicPreTrailer.NPCs
 
 			if (npc.type == NPCID.BloodZombie)
 			{
-				npcLoot.Add(ItemDropRule.ByCondition(new SkeletronCondition(), Mod.Find<ModItem>("Carnage").Type, 200));
+				npcLoot.Add(ItemDropRule.ByCondition(new DownedSkeletron(), Mod.Find<ModItem>("Carnage").Type, 200));
 			}
 			else if (npc.type == NPCID.TacticalSkeleton)
 			{
@@ -1773,7 +1774,7 @@ namespace CalamityModClassicPreTrailer.NPCs
 			#region WormLootFromNearestSegment
 			if (npc.type == Mod.Find<ModNPC>("DesertScourgeHead").Type)
 			{
-				LeadingConditionRule SkeletronDead = new LeadingConditionRule(new SkeletronCondition());
+				LeadingConditionRule SkeletronDead = new LeadingConditionRule(new DownedSkeletron());
 				
 				npcLoot.Add(new CommonDrop(ItemID.LesserHealingPotion, 1, 8, 15));
 				npcLoot.Add(new CommonDrop(Mod.Find<ModItem>("DesertScourgeTrophy").Type, 10));

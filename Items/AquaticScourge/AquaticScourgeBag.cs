@@ -1,6 +1,8 @@
 using CalamityModClassicPreTrailer.Items.Accessories;
 using CalamityModClassicPreTrailer.Items.DesertScourge;
 using CalamityModClassicPreTrailer.Items.Weapons.AquaticScourge;
+using CalamityModClassicPreTrailer.NPCs.NPCLootConditions;
+using CalamityModClassicPreTrailer.NPCs.NPCLootConditions.MiscConditions;
 using Terraria;
 using Terraria.GameContent.ItemDropRules;
 using Terraria.ModLoader;
@@ -61,7 +63,7 @@ namespace CalamityModClassicPreTrailer.Items.AquaticScourge
 			itemLoot.Add(new CommonDrop(ItemID.FishingPotion, 5, 2, 4));
 			itemLoot.Add(new CommonDrop(ItemID.SonarPotion, 5, 2, 4));
 			itemLoot.Add(new CommonDrop(ModContent.ItemType<AeroStone>(), 10));
-			itemLoot.Add(ItemDropRule.ByCondition(new SkeletronCondition(), ItemID.GoldenBugNet, 20));
+			itemLoot.Add(ItemDropRule.ByCondition(new DownedSkeletron(), ItemID.GoldenBugNet, 20));
             itemLoot.Add(new CommonDrop(ModContent.ItemType<AquaticEmblem>(), 1));
             itemLoot.Add(new CommonDrop(ModContent.ItemType<VictoryShard>(), 1, 15, 26));
             itemLoot.Add(new CommonDrop(ItemID.Coral, 1, 7, 12));

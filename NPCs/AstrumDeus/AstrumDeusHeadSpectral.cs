@@ -13,6 +13,7 @@ using CalamityModClassicPreTrailer.Tiles;
 using CalamityModClassicPreTrailer;
 using CalamityModClassicPreTrailer.Dusts;
 using CalamityModClassicPreTrailer.Items.AstrumDeus;
+using CalamityModClassicPreTrailer.NPCs.NPCLootConditions.MiscConditions;
 using Terraria.GameContent.ItemDropRules;
 using Terraria.WorldBuilding;
 
