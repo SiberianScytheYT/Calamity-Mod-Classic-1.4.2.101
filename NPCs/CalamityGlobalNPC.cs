@@ -1400,28 +1400,6 @@ namespace CalamityModClassicPreTrailer.NPCs
 		}
 		#endregion
 
-		/*
-		#region CanBeHitBy
-		public override bool? CanBeHitByItem(NPC npc, Player player, Item item)
-		{
-			if (npc.type == NPCID.TargetDummy || npc.type == Mod.Find<ModNPC>("SuperDummy").Type)
-			{
-				return !CalamityPlayerPreTrailer.areThereAnyDamnBosses;
-			}
-			return null;
-		}
-
-		public override bool? CanBeHitByProjectile(NPC npc, Projectile projectile)
-		{
-			if (npc.type == NPCID.TargetDummy || npc.type == Mod.Find<ModNPC>("SuperDummy").Type)
-			{
-				return !CalamityPlayerPreTrailer.areThereAnyDamnBosses;
-			}
-			return null;
-		}
-		#endregion
-		*/
-
 		#region CanHitPlayer
 		public override bool CanHitPlayer(NPC npc, Player target, ref int cooldownSlot)
 		{
@@ -1455,10 +1433,19 @@ namespace CalamityModClassicPreTrailer.NPCs
 		#endregion
 
 		#region StrikeNPC
-		public override void OnHitNPC(NPC npc, NPC target, NPC.HitInfo hit)
+		private NPC npcToModify = null; 
+		public override void ModifyIncomingHit(NPC npc, ref NPC.HitModifiers modifiers)
 		{
+			npcToModify = npc;
+			modifiers.ModifyHitInfo += CalamityStyleDamage; // workaround to get old damage calculations working
+			//vanilla defense calc 78 - (180 / 2 = 90) = 0, boosted to 1 by calc
+		}
+
+		public void CalamityStyleDamage(ref NPC.HitInfo hit)
+		{
+			NPC npc = npcToModify;
 			if (npc.type == NPCID.TheDestroyer || npc.type == NPCID.TheDestroyerBody || npc.type == NPCID.TheDestroyerTail ||
-				npc.type == NPCID.EaterofWorldsHead || npc.type == NPCID.EaterofWorldsBody || npc.type == NPCID.EaterofWorldsTail)
+			    npc.type == NPCID.EaterofWorldsHead || npc.type == NPCID.EaterofWorldsBody || npc.type == NPCID.EaterofWorldsTail)
 			{
 				if (newAI[1] < 480f || newAI[2] > 0f)
 					hit.Damage = (int)(hit.Damage * 0.01f);
@@ -1467,11 +1454,11 @@ namespace CalamityModClassicPreTrailer.NPCs
 			double yellowCandleDamageBoost = hit.Damage * 0.05f; //get value before DR
 
 			int newDefense = npc.defense -
-					(pFlames ? 4 : 0) -
-					(wDeath ? 50 : 0) -
-					(gsInferno ? 20 : 0) -
-					(aFlames ? 10 : 0) -
-					(wCleave ? 15 : 0);
+			                 (pFlames ? 4 : 0) -
+			                 (wDeath ? 50 : 0) -
+			                 (gsInferno ? 20 : 0) -
+			                 (aFlames ? 10 : 0) -
+			                 (wCleave ? 15 : 0);
 
 			if (gState)
 				newDefense /= 2;
@@ -1515,8 +1502,8 @@ namespace CalamityModClassicPreTrailer.NPCs
 				if (yellowCandle)
 					hit.Damage += (int)yellowCandleDamageBoost;
 			}
-			//vanilla defense calc 78 - (180 / 2 = 90) = 0, boosted to 1 by calc
 		}
+
 		#endregion
 
 		#region PreAI

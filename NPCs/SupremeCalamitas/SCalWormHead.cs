@@ -49,11 +49,6 @@ namespace CalamityModClassicPreTrailer.NPCs.SupremeCalamitas
                 new FlavorTextBestiaryInfoElement("A mechanical abomination summoned by the Brimstone Witch. It's almost invincible, lest for the brimstone hearts holding it in one piece.")
             });
         }
-        
-        public override void ModifyIncomingHit(ref NPC.HitModifiers modifiers)
-        {
-            modifiers.SetMaxDamage(1);
-        }
 		
 		public override void SetDefaults()
 		{

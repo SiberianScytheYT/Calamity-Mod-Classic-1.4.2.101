@@ -189,7 +189,7 @@ namespace CalamityModClassicPreTrailer.Projectiles.Patreon
                 
                 if (dist <= radius)
                 {
-                    int finalDamage = (int)(baseDamage * owner.GetDamage(DamageClass.Melee).Base * Main.rand.NextFloat(0.85f, 1.15f));
+                    int finalDamage = (int)(baseDamage * owner.GetDamage(DamageClass.Melee).Additive * Main.rand.NextFloat(0.85f, 1.15f));
                     bool crit = Main.rand.Next(100) <= owner.GetCritChance(DamageClass.Melee) + 4;
                     target.StrikeNPC(target.CalculateHitInfo(finalDamage, 0, false, 0, DamageClass.Melee, false));
 

@@ -22,10 +22,6 @@ namespace CalamityModClassicPreTrailer.NPCs.SupremeCalamitas
 			};
 			NPCID.Sets.NPCBestiaryDrawOffset.Add(NPC.type, value);
 		}
-		public override void ModifyIncomingHit(ref NPC.HitModifiers modifiers)
-		{
-			modifiers.SetMaxDamage(1);
-		}
 		
 		public override void SetDefaults()
 		{

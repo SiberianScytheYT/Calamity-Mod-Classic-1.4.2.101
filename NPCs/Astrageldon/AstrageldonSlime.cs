@@ -205,11 +205,6 @@ namespace CalamityModClassicPreTrailer.NPCs.Astrageldon
 			}
 		}
 
-		public override void ModifyIncomingHit(ref NPC.HitModifiers modifiers)
-		{
-			modifiers.SetMaxDamage(1);
-		}
-
 		public override void FindFrame(int frameHeight)
 		{
 			NPC.frameCounter += 0.15f;

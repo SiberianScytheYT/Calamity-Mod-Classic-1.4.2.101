@@ -5959,6 +5959,7 @@ namespace CalamityModClassicPreTrailer
 					}
 					value15.Normalize();
 					value15 *= (float)Main.rand.Next(30, 61) * 0.1f;
+					hit.Crit = false; // rip spark stacking 2025-2026 you will be missed
 					Projectile.NewProjectile(Entity.GetSource_FromThis(null), target.Center.X, target.Center.Y, value15.X, value15.Y, Mod.Find<ModProjectile>("UnstableSpark").Type, (int)((double)item.damage * 0.15), 0f, Player.whoAmI, 0f, 0f);
 				}
 			}
@@ -6216,6 +6217,7 @@ namespace CalamityModClassicPreTrailer
 					}
 					value15.Normalize();
 					value15 *= (float)Main.rand.Next(30, 61) * 0.1f;
+					hit.Crit = false; // rip spark stacking 2025-2026 you will be missed
 					Projectile.NewProjectile(proj.GetSource_FromThis(), proj.oldPosition.X + (float)(proj.width / 2), proj.oldPosition.Y + (float)(proj.height / 2), value15.X, value15.Y, Mod.Find<ModProjectile>("UnstableSpark").Type, (int)((double)proj.damage * 0.15), 0f, Player.whoAmI, 0f, 0f);
 				}
 			}
@@ -7516,6 +7518,8 @@ namespace CalamityModClassicPreTrailer
 			modifiers.FinalDamage *= (float)damageMult;
 			#endregion
 
+			modifiers.ModifyHurtInfo += CustomDamage; // workaround to HurtModifiers structure, the old calculations are very difficult to adapt into the new implementation.
+			
 			#region MultiplicativeReductions
 			if (trinketOfChiBuff)
 			{
@@ -7546,6 +7550,31 @@ namespace CalamityModClassicPreTrailer
 				modifiers.FinalDamage *= 0.9f;
 			}
 			#endregion
+
+			modifiers.ModifyHurtInfo += GodSlayerCap; // same workaround. caps damage to 1 at minimum.
+		}
+
+		public void CustomDamage(ref Player.HurtInfo hit)
+		{
+			if (CalamityWorldPreTrailer.revenge)
+			{
+				double defenseMult = Main.hardMode ? 0.75 : 0.5;
+				double newDamage = (double)hit.Damage - ((double)Player.statDefense * defenseMult);
+				double newDamageLimit = 5.0 + (Main.hardMode ? 5.0 : 0.0) + (NPC.downedPlantBoss ? 5.0 : 0.0) + (NPC.downedMoonlord ? 5.0 : 0.0); //5, 10, 15, 20
+				if (newDamage < newDamageLimit)
+				{
+					newDamage = newDamageLimit;
+				}
+				hit.Damage = (int)newDamage;
+			}
+		}
+
+		public void GodSlayerCap(ref Player.HurtInfo hit)
+		{
+			if ((godSlayerDamage && hit.Damage <= 80) || hit.Damage < 1)
+			{
+				hit.Damage = 1;
+			}
 		}
 
 		public override void OnHurt(Player.HurtInfo info)
@@ -7570,23 +7599,6 @@ namespace CalamityModClassicPreTrailer
 				Player.HealEffect(healAmt);
 			}
 			#endregion
-			
-			if (CalamityWorldPreTrailer.revenge)
-			{
-				double defenseMult = Main.hardMode ? 0.75 : 0.5;
-				double newDamage = (double)info.Damage - ((double)Player.statDefense * defenseMult);
-				double newDamageLimit = 5.0 + (Main.hardMode ? 5.0 : 0.0) + (NPC.downedPlantBoss ? 5.0 : 0.0) + (NPC.downedMoonlord ? 5.0 : 0.0); //5, 10, 15, 20
-				if (newDamage < newDamageLimit)
-				{
-					newDamage = newDamageLimit;
-				}
-				info.Damage = (int)newDamage;
-			}
-			
-			if ((godSlayerDamage && info.Damage <= 80) || info.Damage < 1)
-			{
-				info.Damage = 1;
-			}
 			
 			if(info.PvP)
 			{

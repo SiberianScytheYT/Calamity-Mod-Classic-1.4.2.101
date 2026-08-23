@@ -57,7 +57,7 @@ namespace CalamityModClassicPreTrailer.Projectiles.Ranged
                         Vector2 vector15 = new Vector2((float)Main.rand.Next(-100, 101), (float)Main.rand.Next(-100, 101));
                         vector15.Normalize();
                         vector15 *= (float)Main.rand.Next(50, 401) * 0.01f;
-                        Projectile.NewProjectile(Projectile.GetSource_FromThis(), Projectile.Center.X, Projectile.Center.Y, vector15.X, vector15.Y, Mod.Find<ModProjectile>("SulphuricAcidMist2").Type, (int)(210f * Main.player[Projectile.owner].GetDamage(DamageClass.Ranged).Base), 1f, Projectile.owner, 0f, 0f);
+                        Projectile.NewProjectile(Projectile.GetSource_FromThis(), Projectile.Center.X, Projectile.Center.Y, vector15.X, vector15.Y, Mod.Find<ModProjectile>("SulphuricAcidMist2").Type, (int)(210f * Main.player[Projectile.owner].GetDamage(DamageClass.Ranged).Additive), 1f, Projectile.owner, 0f, 0f);
                         num3 = num321;
                     }
                 }

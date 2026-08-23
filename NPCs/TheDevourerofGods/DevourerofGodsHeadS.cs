@@ -1100,23 +1100,10 @@ namespace CalamityModClassicPreTrailer.NPCs.TheDevourerofGods
 
 		public override void ModifyIncomingHit(ref NPC.HitModifiers modifiers)
 		{
-			if (modifiers.FinalDamage.Base > NPC.lifeMax / 2)
-			{
-				string key = "You think...you can butcher...ME!?";
-				Color messageColor = Color.Cyan;
-				if (Main.netMode == 0)
-				{
-					Main.NewText(Language.GetTextValue(key), messageColor);
-				}
-				else if (Main.netMode == 2)
-				{
-					ChatHelper.BroadcastChatMessage(NetworkText.FromKey(key), messageColor);
-				}
-				modifiers.SetMaxDamage(0);
-			}
+			modifiers.ModifyHitInfo += ButcherBlock;
 		}
 		
-		public override void OnHitNPC(NPC npc, NPC.HitInfo hit)
+		public void ButcherBlock(ref NPC.HitInfo hit)
 		{
 			if (hit.Damage > NPC.lifeMax / 2)
 			{

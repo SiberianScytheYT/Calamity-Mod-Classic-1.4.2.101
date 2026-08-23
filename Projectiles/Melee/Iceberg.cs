@@ -53,8 +53,7 @@ namespace CalamityModClassicPreTrailer.Projectiles.Melee
 			double newDamageMult = 1.0 - ((double)Projectile.timeLeft / 300.0);
 			Projectile.damage *= (int)newDamageMult;
 			modifiers.Knockback *= 0f;
-			if (modifiers.ToHitInfo(Projectile.damage, true, modifiers.Knockback.Base, false, 0f).Crit || target.buffImmune[Mod.Find<ModBuff>("GlacialState").Type])
-				target.damage *= 2;
+			modifiers.CritDamage += 1f;
 		}
 
 		public override void OnHitNPC(NPC target, NPC.HitInfo hit, int damageDone)

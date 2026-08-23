@@ -41,11 +41,8 @@ namespace CalamityModClassicPreTrailer.Projectiles.Typeless
             }
             if (Projectile.damage > target.lifeMax / 15 && CalamityPlayerPreTrailer.areThereAnyDamnBosses)
                 Projectile.damage = target.lifeMax / 15;
-            if (modifiers.ToHitInfo(Projectile.damage, true, modifiers.Knockback.Base, false, 0f).Crit)
-            {
-                modifiers.FinalDamage *= 1.25f;
-                modifiers.Knockback *= 1.25f;
-            }
+            modifiers.CritDamage += 0.25f;
+            modifiers.Knockback += 0.25f;
         }
     }
 }

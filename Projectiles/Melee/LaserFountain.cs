@@ -35,7 +35,7 @@ namespace CalamityModClassicPreTrailer.Projectiles.Melee
         	{
 				if (Projectile.owner == Main.myPlayer)
 				{
-					int projectile1 = Projectile.NewProjectile(Projectile.GetSource_FromThis(), Projectile.Center.X, Projectile.Center.Y, SpeedX, SpeedY, Mod.Find<ModProjectile>("NebulaShot").Type, (int)(350f * Main.player[Projectile.owner].GetDamage(DamageClass.Melee).Base), Projectile.knockBack, Projectile.owner, 0f, 0f);
+					int projectile1 = Projectile.NewProjectile(Projectile.GetSource_FromThis(), Projectile.Center.X, Projectile.Center.Y, SpeedX, SpeedY, Mod.Find<ModProjectile>("NebulaShot").Type, (int)(350f * Main.player[Projectile.owner].GetDamage(DamageClass.Melee).Additive), Projectile.knockBack, Projectile.owner, 0f, 0f);
 					Main.projectile[projectile1].GetGlobalProjectile<CalamityGlobalProjectile>().forceMelee = true;
 					Main.projectile[projectile1].aiStyle = 1;
 				}

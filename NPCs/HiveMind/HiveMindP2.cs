@@ -615,15 +615,20 @@ namespace CalamityModClassicPreTrailer.NPCs.HiveMind
 			return NPC.alpha <= 0; //no damage when not fully visible
 		}
 
-		public override void OnHitNPC(NPC target, NPC.HitInfo hit)
-		{
-			if (phase2timer < 0 && hit.Damage > 1)
-			{
-				NPC.velocity *= -4f;
-				ReelBack();
-				NPC.netUpdate = true;
-			}
-		}
+		public override void ModifyIncomingHit(ref NPC.HitModifiers modifiers)
+        {
+            modifiers.ModifyHitInfo += ReelbackToggle;
+        }
+
+        public void ReelbackToggle(ref NPC.HitInfo hit)
+        {
+            if (phase2timer < 0 && hit.Damage > 1)
+            {
+                NPC.velocity *= -4f;
+                ReelBack();
+                NPC.netUpdate = true;
+            }
+        }
 
 		public override void ApplyDifficultyAndPlayerScaling(int numPlayers, float balance, float bossAdjustment)/* tModPorter Note: bossLifeScale -> balance (bossAdjustment is different, see the docs for details) */
 		{

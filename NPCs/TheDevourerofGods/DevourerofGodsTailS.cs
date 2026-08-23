@@ -445,13 +445,10 @@ namespace CalamityModClassicPreTrailer.NPCs.TheDevourerofGods
 
 		public override void ModifyIncomingHit(ref NPC.HitModifiers modifiers)
 		{
-			if (modifiers.FinalDamage.Base > NPC.lifeMax / 2)
-			{
-				modifiers.SetMaxDamage(0);
-			}
+			modifiers.ModifyHitInfo += NoDamage;
 		}
 		
-		public override void OnHitNPC(NPC npc, NPC.HitInfo hit)
+		public void NoDamage(ref NPC.HitInfo hit)
 		{
 			if (hit.Damage > NPC.lifeMax / 2)
 			{
