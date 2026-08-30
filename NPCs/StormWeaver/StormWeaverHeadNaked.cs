@@ -568,7 +568,9 @@ namespace CalamityModClassicPreTrailer.NPCs.StormWeaver
         
         public override void ModifyNPCLoot(NPCLoot npcLoot)
         {
-	        npcLoot.Add(ItemDropRule.ByCondition(new NotInDoGSentinelPhase(), Mod.Find<ModItem>("ArmoredShell").Type, 1, 5, 9));
+	        LeadingConditionRule notDoGFight = new LeadingConditionRule(new NotInDoGSentinelPhase()); 
+	        notDoGFight.OnSuccess(new PerPlayerDropRule(Mod.Find<ModItem>("ArmoredShell").Type, 1, 5, 9));
+	        npcLoot.Add(notDoGFight);
 	        npcLoot.Add(ItemDropRule.ByCondition(new NotInDoGSentinelPhase(), Mod.Find<ModItem>("WeaverTrophy").Type, 10));
 	        npcLoot.Add(ItemDropRule.ByCondition(new NotInDoGSentinelPhase(), Mod.Find<ModItem>("TheStorm").Type, 3));
 	        npcLoot.Add(ItemDropRule.ByCondition(new NotInDoGSentinelPhase(), Mod.Find<ModItem>("StormDragoon").Type, 3));

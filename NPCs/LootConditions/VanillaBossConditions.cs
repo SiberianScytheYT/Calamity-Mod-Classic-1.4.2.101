@@ -1,5 +1,6 @@
 ﻿using Terraria;
 using Terraria.GameContent.ItemDropRules;
+using Terraria.ID;
 
 namespace CalamityModClassicPreTrailer.NPCs.NPCLootConditions;
 
@@ -140,5 +141,35 @@ public class NotDownedTwins : IItemDropRuleCondition
 {
     public bool CanDrop(DropAttemptInfo info) => !NPC.downedMechBoss2;
     public bool CanShowItemDropInUI() => !NPC.downedMechBoss2;
+    public string GetConditionDescription() => null;
+}
+
+public class OneTwinPresent : IItemDropRuleCondition
+{
+    public static NPC npc;
+    public OneTwinPresent(NPC _npc)
+    {
+        npc = _npc;
+    }
+    
+    public bool CanDrop(DropAttemptInfo info)
+    {
+        int num64 = NPCID.Retinazer;
+        if (npc.type == NPCID.Retinazer)
+            num64 = NPCID.Spazmatism;
+        if (!NPC.AnyNPCs(num64))
+            return true;
+        return false;
+    }
+
+    public bool CanShowItemDropInUI()
+    {
+        int num64 = NPCID.Retinazer;
+        if (npc.type == NPCID.Retinazer)
+            num64 = NPCID.Spazmatism;
+        if (!NPC.AnyNPCs(num64))
+            return true;
+        return false;
+    }
     public string GetConditionDescription() => null;
 }

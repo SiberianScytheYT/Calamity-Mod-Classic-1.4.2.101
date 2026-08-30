@@ -1,4 +1,5 @@
-﻿using Terraria;
+﻿using CalamityModClassicPreTrailer.NPCs.Leviathan;
+using Terraria;
 using CalamityModClassicPreTrailer.NPCs.SlimeGod;
 using Terraria.GameContent.ItemDropRules;
 using Terraria.ModLoader;
@@ -252,6 +253,23 @@ public class SpecialSCalItem : IItemDropRuleCondition
 {
     public bool CanDrop(DropAttemptInfo info) => Main.LocalPlayer.GetModPlayer<CalamityPlayerPreTrailer>().sCalDeathCount == 3;
     public bool CanShowItemDropInUI() => Main.LocalPlayer.GetModPlayer<CalamityPlayerPreTrailer>().sCalDeathCount == 3;
+    public string GetConditionDescription() => null;
+}
+
+public class LeviOrSiren : IItemDropRuleCondition
+{
+    public static NPC npc;
+    private static int bossType;
+    public LeviOrSiren(NPC _npc)
+    {
+        npc = _npc;
+        bossType = npc.type == ModContent.NPCType<Siren>() ? ModContent.NPCType<Leviathan.Leviathan>() : ModContent.NPCType<Siren>();
+    }
+    
+    public bool CanDrop(DropAttemptInfo info) => !NPC.AnyNPCs(bossType);
+    
+    public bool CanShowItemDropInUI() => !NPC.AnyNPCs(bossType);
+    
     public string GetConditionDescription() => null;
 }
 

@@ -923,14 +923,19 @@ namespace CalamityModClassicPreTrailer.NPCs.Providence
 
 		public override void ModifyNPCLoot(NPCLoot npcLoot)
 		{
+			LeadingConditionRule hallow = new LeadingConditionRule(new HallowProvi());
+			LeadingConditionRule hell = new LeadingConditionRule(new HellProvi());
+
 			npcLoot.Add(new CommonDrop(Mod.Find<ModItem>("ProvidenceTrophy").Type, 10));
 			npcLoot.Add(ItemDropRule.ByCondition(new ArmageddonDropRuleCondition(),
 				ModContent.ItemType<ProvidenceBag>(),
 				1,
 				5, 5));
 			npcLoot.Add(ItemDropRule.BossBag(ModContent.ItemType<ProvidenceBag>()));
-			npcLoot.Add(ItemDropRule.ByCondition(new HallowProvi(), ModContent.ItemType<ElysianWings>(), 1, 1, 1, 1));
-			npcLoot.Add(ItemDropRule.ByCondition(new HellProvi(), ModContent.ItemType<ElysianAegis>(), 1, 1, 1, 1));
+			hallow.OnSuccess(new PerPlayerDropRule(ModContent.ItemType<ElysianWings>(), 1));
+			hell.OnSuccess(new PerPlayerDropRule(ModContent.ItemType<ElysianAegis>(), 1));
+			npcLoot.Add(hallow);
+			npcLoot.Add(hell);
 			npcLoot.Add(ItemDropRule.ByCondition(new Conditions.NotExpert(), ModContent.ItemType<UnholyEssence>(), 1, 20, 30));
 			npcLoot.Add(ItemDropRule.ByCondition(new Conditions.NotExpert(), ModContent.ItemType<DivineGeode>(), 1, 10, 16));
 			npcLoot.Add(ItemDropRule.ByCondition(new Conditions.NotExpert(), ModContent.ItemType<RuneofCos>(), 1));
@@ -1137,14 +1142,10 @@ namespace CalamityModClassicPreTrailer.NPCs.Providence
 				float randomSpread = (float)(Main.rand.Next(-50, 50) / 100);
 				if (Main.netMode != NetmodeID.Server)
 				{
-					Gore.NewGore(NPC.GetSource_FromThis(null), NPC.position,
-						NPC.velocity * randomSpread * Main.rand.NextFloat(), Mod.Find<ModGore>("Providence").Type, 1f);
-					Gore.NewGore(NPC.GetSource_FromThis(null), NPC.position,
-						NPC.velocity * randomSpread * Main.rand.NextFloat(), Mod.Find<ModGore>("Providence2").Type, 1f);
-					Gore.NewGore(NPC.GetSource_FromThis(null), NPC.position,
-						NPC.velocity * randomSpread * Main.rand.NextFloat(), Mod.Find<ModGore>("Providence3").Type, 1f);
-					Gore.NewGore(NPC.GetSource_FromThis(null), NPC.position,
-						NPC.velocity * randomSpread * Main.rand.NextFloat(), Mod.Find<ModGore>("Providence4").Type, 1f);
+					Gore.NewGore(NPC.GetSource_FromThis(null), NPC.position, NPC.velocity * randomSpread * Main.rand.NextFloat(), Mod.Find<ModGore>("Providence").Type, 1f);
+					Gore.NewGore(NPC.GetSource_FromThis(null), NPC.position, NPC.velocity * randomSpread * Main.rand.NextFloat(), Mod.Find<ModGore>("Providence2").Type, 1f);
+					Gore.NewGore(NPC.GetSource_FromThis(null), NPC.position, NPC.velocity * randomSpread * Main.rand.NextFloat(), Mod.Find<ModGore>("Providence3").Type, 1f);
+					Gore.NewGore(NPC.GetSource_FromThis(null), NPC.position, NPC.velocity * randomSpread * Main.rand.NextFloat(), Mod.Find<ModGore>("Providence4").Type, 1f);
 				}
 				NPC.position.X = NPC.position.X + (float)(NPC.width / 2);
 				NPC.position.Y = NPC.position.Y + (float)(NPC.height / 2);

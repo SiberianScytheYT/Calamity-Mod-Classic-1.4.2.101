@@ -1929,8 +1929,8 @@ namespace CalamityModClassicPreTrailer.NPCs.SupremeCalamitas
 			LeadingConditionRule isExpert = new LeadingConditionRule(new Conditions.IsExpert());
 			
 			npcLoot.Add(ItemDropRule.ByCondition(new SpecialSCalItem(), Mod.Find<ModItem>("CheatTestThing").Type, 1));
-			npcLoot.Add(ItemDropRule.ByCondition(new Conditions.IsExpert(), Mod.Find<ModItem>("CalamitousEssence").Type, 1, 30, 41));
-			npcLoot.Add(ItemDropRule.ByCondition(new Conditions.NotExpert(), Mod.Find<ModItem>("CalamitousEssence").Type, 1, 20, 31));
+			isExpert.OnSuccess(new PerPlayerDropRule(Mod.Find<ModItem>("CalamitousEssence").Type, 1, 30, 41));
+			isExpert.OnFailedConditions(new PerPlayerDropRule(Mod.Find<ModItem>("CalamitousEssence").Type, 1, 20, 31));
 			npcLoot.Add(ItemDropRule.ByCondition(new RevCondition(), Mod.Find<ModItem>("Vehemenc").Type, 1));
 			isExpert.OnSuccess(ItemDropRule.OneFromOptions(1, new int[]
 			{

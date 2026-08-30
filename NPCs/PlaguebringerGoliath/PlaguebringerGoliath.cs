@@ -1020,16 +1020,11 @@ namespace CalamityModClassicPreTrailer.NPCs.PlaguebringerGoliath
 			{
 				if (Main.netMode != NetmodeID.Server)
 				{
-					Gore.NewGore(NPC.GetSource_FromThis(null), NPC.position, NPC.velocity,
-						Mod.Find<ModGore>("Pbg").Type, 2f);
-					Gore.NewGore(NPC.GetSource_FromThis(null), NPC.position, NPC.velocity,
-						Mod.Find<ModGore>("Pbg2").Type, 2f);
-					Gore.NewGore(NPC.GetSource_FromThis(null), NPC.position, NPC.velocity,
-						Mod.Find<ModGore>("Pbg3").Type, 2f);
-					Gore.NewGore(NPC.GetSource_FromThis(null), NPC.position, NPC.velocity,
-						Mod.Find<ModGore>("Pbg4").Type, 2f);
-					Gore.NewGore(NPC.GetSource_FromThis(null), NPC.position, NPC.velocity,
-						Mod.Find<ModGore>("Pbg5").Type, 2f);
+					Gore.NewGore(NPC.GetSource_FromThis(null), NPC.position, NPC.velocity, Mod.Find<ModGore>("Pbg").Type, 2f);
+					Gore.NewGore(NPC.GetSource_FromThis(null), NPC.position, NPC.velocity, Mod.Find<ModGore>("Pbg2").Type, 2f);
+					Gore.NewGore(NPC.GetSource_FromThis(null), NPC.position, NPC.velocity, Mod.Find<ModGore>("Pbg3").Type, 2f);
+					Gore.NewGore(NPC.GetSource_FromThis(null), NPC.position, NPC.velocity, Mod.Find<ModGore>("Pbg4").Type, 2f);
+					Gore.NewGore(NPC.GetSource_FromThis(null), NPC.position, NPC.velocity, Mod.Find<ModGore>("Pbg5").Type, 2f);
 				}
 				NPC.position.X = NPC.position.X + (float)(NPC.width / 2);
 				NPC.position.Y = NPC.position.Y + (float)(NPC.height / 2);
@@ -1161,7 +1156,7 @@ namespace CalamityModClassicPreTrailer.NPCs.PlaguebringerGoliath
 				5, 5));
 			npcLoot.Add(ItemDropRule.BossBag(ModContent.ItemType<PlaguebringerGoliathBag>()));
 			notExpert.OnSuccess(new CommonDrop(ModContent.ItemType<PlagueCellCluster>(), 1, 10, 15));
-			notExpert.OnSuccess(new CommonDrop(ModContent.ItemType<BloomStone>(), 10));
+			notExpert.OnSuccess(new PerPlayerDropRule(ModContent.ItemType<BloomStone>(), 10));
 			notExpert.OnSuccess(new CommonDrop(ModContent.ItemType<MepheticSprayer>(), 4));
 			notExpert.OnSuccess(new CommonDrop(ModContent.ItemType<Malevolence>(), 4));
 			notExpert.OnSuccess(new CommonDrop(ModContent.ItemType<VirulentKatana>(), 4));

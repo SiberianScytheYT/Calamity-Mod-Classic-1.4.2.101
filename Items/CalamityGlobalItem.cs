@@ -668,7 +668,7 @@ namespace CalamityModClassicPreTrailer.Items
 				{
 					if (line2.Mod == "Terraria" && line2.Name == "Tooltip0")
 					{
-						line2.Text = "Increases your max number of sentries and reduces mana costs by 10%\n" +
+						line2.Text = "Increases your max number of sentries by 1, 10% increased magic damage and 10% reduced mana cost\n" +
 							"30% increased minion damage";
 					}
 				}
@@ -689,7 +689,7 @@ namespace CalamityModClassicPreTrailer.Items
 				{
 					if (line2.Mod == "Terraria" && line2.Name == "Tooltip0")
 					{
-						line2.Text = "20% increased movement speed";
+						line2.Text = "10% increased summon damage and 20% increased movement speed";
 					}
 				}
 			}
@@ -699,7 +699,7 @@ namespace CalamityModClassicPreTrailer.Items
 				{
 					if (line2.Mod == "Terraria" && line2.Name == "Tooltip0")
 					{
-						line2.Text = "Increases your max number of sentries and increases your life regeneration\n" +
+						line2.Text = "Increases your max number of sentries by 1 and increases your life regeneration\n" +
 							"30% increased minion damage and 20% increased melee critical strike chance";
 					}
 				}
@@ -720,7 +720,7 @@ namespace CalamityModClassicPreTrailer.Items
 				{
 					if (line2.Mod == "Terraria" && line2.Name == "Tooltip0")
 					{
-						line2.Text = "20% increased movement speed";
+						line2.Text = "15% increased movement speed";
 					}
 				}
 			}
@@ -730,7 +730,7 @@ namespace CalamityModClassicPreTrailer.Items
 				{
 					if (line2.Mod == "Terraria" && line2.Name == "Tooltip0")
 					{
-						line2.Text = "Increases your max number of sentries and increases ranged critical strike chance by 10%\n" +
+						line2.Text = "Increases your max number of sentries by 1 and increases ranged critical strike chance by 10%\n" +
 							"30% increased minion damage";
 					}
 				}
@@ -741,7 +741,7 @@ namespace CalamityModClassicPreTrailer.Items
 				{
 					if (line2.Mod == "Terraria" && line2.Name == "Tooltip0")
 					{
-						line2.Text = "20% increased ranged damage";
+						line2.Text = "20% increased ranged damage and 10% chance to save ammo";
 					}
 				}
 			}
@@ -761,7 +761,7 @@ namespace CalamityModClassicPreTrailer.Items
 				{
 					if (line2.Mod == "Terraria" && line2.Name == "Tooltip0")
 					{
-						line2.Text = "Increases your max number of sentries and increases melee attack speed by 20%\n" +
+						line2.Text = "Increases your max number of sentries by 1 and increases melee speed by 20%\n" +
 							"30% increased minion damage and 10% increased melee critical strike chance";
 					}
 				}
@@ -796,7 +796,7 @@ namespace CalamityModClassicPreTrailer.Items
 				{
 					if (line2.Mod == "Terraria" && line2.Name == "Tooltip1")
 					{
-						line2.Text = "60% increased minion damage and 25% increased magic damage and critical strike chance";
+						line2.Text = "65% increased minion damage, 30% increased magic damage and 25% increased magic critical strike chance";
 					}
 				}
 			}
@@ -826,7 +826,7 @@ namespace CalamityModClassicPreTrailer.Items
 				{
 					if (line2.Mod == "Terraria" && line2.Name == "Tooltip0")
 					{
-						line2.Text = "Increases your max number of sentries\n" +
+						line2.Text = "Increases your max number of sentries by 2\n" +
 							"Increases melee damage, speed, and critical strike chance by 20% and minion damage by 60%";
 					}
 				}
@@ -847,7 +847,11 @@ namespace CalamityModClassicPreTrailer.Items
 				{
 					if (line2.Mod == "Terraria" && line2.Name == "Tooltip0")
 					{
-						line2.Text = "20% increased movement speed";
+						line2.Text = "";
+					}
+					if (line2.Mod == "Terraria" && line2.Name == "Tooltip1")
+					{
+						line2.Text = "30% increased movement speed";
 					}
 				}
 			}
@@ -880,6 +884,10 @@ namespace CalamityModClassicPreTrailer.Items
 					{
 						line2.Text = "20% increased movement speed";
 					}
+					if (line2.Mod == "Terraria" && line2.Name == "Tooltip1")
+					{
+						line2.Text = "";
+					}
 				}
 			}
 			if (item.type == ItemID.SquireAltHead)
@@ -888,7 +896,7 @@ namespace CalamityModClassicPreTrailer.Items
 				{
 					if (line2.Mod == "Terraria" && line2.Name == "Tooltip0")
 					{
-						line2.Text = "Increases your max number of sentries and grants you 60% minion damage\n" +
+						line2.Text = "Increases your max number of sentries by 2 and grants you 60% minion damage\n" +
 							"20% increased melee critical strike chance";
 					}
 				}
@@ -909,7 +917,11 @@ namespace CalamityModClassicPreTrailer.Items
 				{
 					if (line2.Mod == "Terraria" && line2.Name == "Tooltip0")
 					{
-						line2.Text = "30% increased movement speed";
+						line2.Text = "20% increased movement speed";
+					}
+					if (line2.Mod == "Terraria" && line2.Name == "Tooltip1")
+					{
+						line2.Text = "";
 					}
 				}
 			}
@@ -1733,8 +1745,8 @@ namespace CalamityModClassicPreTrailer.Items
 				player.GetDamage(DamageClass.Summon) -= 0.2f;
 			else if (item.type == ItemID.ApprenticeAltShirt)
 			{
-				player.GetDamage(DamageClass.Summon) -= 0.3f;
-				player.GetDamage(DamageClass.Magic) -= 0.15f;
+				player.GetDamage(DamageClass.Summon) -= 0.25f;
+				player.GetDamage(DamageClass.Magic) -= 0.10f;
 			}
 			else if (item.type == ItemID.MonkAltShirt)
 			{
@@ -1781,14 +1793,14 @@ namespace CalamityModClassicPreTrailer.Items
 			else if (item.type == ItemID.SquireGreaves)
 			{
 				player.GetDamage(DamageClass.Summon) -= 0.15f;
-				player.GetCritChance(DamageClass.Melee) -= 20;
+				player.GetCritChance(DamageClass.Melee) -= 15; // value was 20, set to 15 to avoid having -5 crit on this part
 			}
 			else if (item.type == ItemID.HuntressPants)
 				player.GetDamage(DamageClass.Summon) -= 0.1f;
 			else if (item.type == ItemID.MonkPants)
 			{
 				player.GetDamage(DamageClass.Summon) -= 0.1f;
-				player.GetCritChance(DamageClass.Melee) -= 10;
+				player.GetCritChance(DamageClass.Melee) -= 15; // value was 10, increased to 15
 			}
 			else if (item.type == ItemID.ApprenticeAltPants)
 			{

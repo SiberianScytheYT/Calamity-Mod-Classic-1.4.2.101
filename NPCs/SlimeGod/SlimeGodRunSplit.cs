@@ -10,6 +10,7 @@ using Terraria.GameContent.Generation;
 using CalamityModClassicPreTrailer.Tiles;
 using CalamityModClassicPreTrailer;
 using CalamityModClassicPreTrailer.Items.SlimeGod;
+using CalamityModClassicPreTrailer.NPCs.NPCLootConditions.CalamityBosses;
 using CalamityModClassicPreTrailer.NPCs.NPCLootConditions.MiscConditions;
 using Terraria.GameContent.ItemDropRules;
 using Terraria.WorldBuilding;
@@ -68,11 +69,13 @@ namespace CalamityModClassicPreTrailer.NPCs.SlimeGod
         
         public override void ModifyNPCLoot(NPCLoot npcLoot)
         {
-            npcLoot.Add(ItemDropRule.ByCondition(new ArmageddonDropRuleCondition(),
+            LeadingConditionRule crimulanPresent = new LeadingConditionRule(new CrimulanPresent(NPC));
+            crimulanPresent.OnSuccess(ItemDropRule.ByCondition(new ArmageddonDropRuleCondition(),
                 ModContent.ItemType<SlimeGodBag>(),
                 1,
                 5, 5));
-            npcLoot.Add(ItemDropRule.BossBag(ModContent.ItemType<SlimeGodBag>()));
+            crimulanPresent.OnSuccess(ItemDropRule.BossBag(ModContent.ItemType<SlimeGodBag>()));
+            npcLoot.Add(crimulanPresent);
         }
 		
 		public override void AI()

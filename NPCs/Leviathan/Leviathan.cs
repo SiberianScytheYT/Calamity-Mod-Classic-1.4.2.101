@@ -619,6 +619,7 @@ namespace CalamityModClassicPreTrailer.NPCs.Leviathan
 		public override void ModifyNPCLoot(NPCLoot npcLoot)
 		{
 			LeadingConditionRule notExpert = new LeadingConditionRule(new Conditions.NotExpert());
+			LeadingConditionRule preHardmode = new LeadingConditionRule(new Conditions.IsPreHardmode());
 			LeadingConditionRule noSiren = new LeadingConditionRule(new NoSiren());
 			npcLoot.Add(noSiren.OnSuccess(new CommonDrop(Mod.Find<ModItem>("LeviathanTrophy").Type, 10)));
 			npcLoot.Add(noSiren.OnSuccess(ItemDropRule.ByCondition(new ArmageddonDropRuleCondition(),
@@ -633,16 +634,15 @@ namespace CalamityModClassicPreTrailer.NPCs.Leviathan
 			noSiren.OnSuccess(ItemDropRule.ByCondition(new Conditions.NotExpert(), ItemID.SuperAbsorbantSponge, 10));
 			noSiren.OnSuccess(ItemDropRule.ByCondition(new Conditions.NotExpert(), ItemID.CratePotion, 5, 5, 9)); noSiren.OnSuccess(ItemDropRule.ByCondition(new Conditions.NotExpert(), ItemID.FishingPotion, 5, 5, 9));
 			noSiren.OnSuccess(ItemDropRule.ByCondition(new Conditions.NotExpert(), ItemID.SonarPotion, 5, 5, 9));
-			noSiren.OnSuccess(ItemDropRule.ByCondition(new Conditions.IsPreHardmode(), Mod.Find<ModItem>("IOU").Type, 1));
+			noSiren.OnSuccess(preHardmode).OnSuccess(new PerPlayerDropRule(Mod.Find<ModItem>("IOU").Type, 1));
 			noSiren.OnSuccess(ItemDropRule.ByCondition(new Conditions.NotExpert(), Mod.Find<ModItem>("LeviathanMask").Type, 7)); 
-			noSiren.OnSuccess(notExpert.OnSuccess(ItemDropRule.ByCondition(new Conditions.IsHardmode(), Mod.Find<ModItem>("Atlantis").Type, 4)));
-			noSiren.OnSuccess(notExpert.OnSuccess(ItemDropRule.ByCondition(new Conditions.IsHardmode(), Mod.Find<ModItem>("BrackishFlask").Type, 4)));
-			noSiren.OnSuccess(notExpert.OnSuccess(ItemDropRule.ByCondition(new Conditions.IsHardmode(), Mod.Find<ModItem>("Leviatitan").Type, 4)));
-			noSiren.OnSuccess(notExpert.OnSuccess(ItemDropRule.ByCondition(new Conditions.IsHardmode(), Mod.Find<ModItem>("LureofEnthrallment").Type, 4)));
-			noSiren.OnSuccess(notExpert.OnSuccess(ItemDropRule.ByCondition(new Conditions.IsHardmode(), Mod.Find<ModItem>("SirensSong").Type, 4)));
-			noSiren.OnSuccess(notExpert.OnSuccess(ItemDropRule.ByCondition(new Conditions.IsHardmode(), Mod.Find<ModItem>("Greentide").Type, 4)));
-			noSiren.OnSuccess(notExpert.OnSuccess(ItemDropRule.ByCondition(new Conditions.IsHardmode(), Mod.Find<ModItem>("Atlantis").Type, 4)));
-			npcLoot.Add(notExpert);
+			noSiren.OnSuccess(notExpert).OnSuccess(ItemDropRule.ByCondition(new Conditions.IsHardmode(), Mod.Find<ModItem>("Atlantis").Type, 4));
+			noSiren.OnSuccess(notExpert).OnSuccess(ItemDropRule.ByCondition(new Conditions.IsHardmode(), Mod.Find<ModItem>("BrackishFlask").Type, 4));
+			noSiren.OnSuccess(notExpert).OnSuccess(ItemDropRule.ByCondition(new Conditions.IsHardmode(), Mod.Find<ModItem>("Leviatitan").Type, 4));
+			noSiren.OnSuccess(notExpert).OnSuccess(ItemDropRule.ByCondition(new Conditions.IsHardmode(), Mod.Find<ModItem>("LureofEnthrallment").Type, 4));
+			noSiren.OnSuccess(notExpert).OnSuccess(ItemDropRule.ByCondition(new Conditions.IsHardmode(), Mod.Find<ModItem>("SirensSong").Type, 4));
+			noSiren.OnSuccess(notExpert).OnSuccess(ItemDropRule.ByCondition(new Conditions.IsHardmode(), Mod.Find<ModItem>("Greentide").Type, 4));
+			noSiren.OnSuccess(notExpert).OnSuccess(ItemDropRule.ByCondition(new Conditions.IsHardmode(), Mod.Find<ModItem>("Atlantis").Type, 4));
 			npcLoot.Add(noSiren);
 		}
 

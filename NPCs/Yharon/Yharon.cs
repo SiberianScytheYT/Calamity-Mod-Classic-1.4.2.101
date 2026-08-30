@@ -2810,6 +2810,7 @@ namespace CalamityModClassicPreTrailer.NPCs.Yharon
 			}
 			*/
 			LeadingConditionRule darkSun = new LeadingConditionRule(new DarkSunCondition());
+			LeadingConditionRule isExpert = new LeadingConditionRule(new Conditions.IsExpert());
 			darkSun.OnSuccess(new CommonDrop(ModContent.ItemType<BossRush>(), 1));
 			darkSun.OnSuccess(new CommonDrop(ModContent.ItemType<YharonTrophy>(), 10));
 			npcLoot.Add(ItemDropRule.ByCondition(new ArmageddonDropRuleCondition(),
@@ -2817,10 +2818,10 @@ namespace CalamityModClassicPreTrailer.NPCs.Yharon
 				1,
 				5, 5));
 			npcLoot.Add(ItemDropRule.BossBag(ModContent.ItemType<YharonBag>()));
-			darkSun.OnSuccess(ItemDropRule.ByCondition(new Conditions.IsExpert(), ModContent.ItemType<HellcasterFragment>(), 1, 22, 29));
+			darkSun.OnSuccess(isExpert).OnSuccess(new PerPlayerDropRule(ModContent.ItemType<HellcasterFragment>(), 1, 22, 29));
 			darkSun.OnSuccess(new CommonDrop(ModContent.ItemType<VoidVortex>(), 40));
 			darkSun.OnSuccess(ItemDropRule.ByCondition(new Conditions.IsExpert(), ModContent.ItemType<ForgottenDragonEgg>(), 10));
-			darkSun.OnSuccess(ItemDropRule.ByCondition(new Conditions.NotExpert(), ModContent.ItemType<HellcasterFragment>(), 1, 15, 23));
+			darkSun.OnSuccess(isExpert).OnFailedConditions(new PerPlayerDropRule(ModContent.ItemType<HellcasterFragment>(), 1, 15, 23));
 			darkSun.OnSuccess(ItemDropRule.ByCondition(new Conditions.NotExpert(), ModContent.ItemType<YharonMask>(), 7));
 			darkSun.OnSuccess(ItemDropRule.ByCondition(new Conditions.NotExpert(), ModContent.ItemType<AngryChickenStaff>(), 4));
 			darkSun.OnSuccess(ItemDropRule.ByCondition(new Conditions.NotExpert(), ModContent.ItemType<PhoenixFlameBarrage>(), 4));

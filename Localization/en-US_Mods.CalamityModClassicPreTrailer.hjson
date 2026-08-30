@@ -12255,7 +12255,12 @@ Tiles: {
 	AuricOre.MapEntry: Auric Ore
 	AstralTreeSapling.MapEntry: Astral Tree Sapling
 	AstralOre.MapEntry: Astral Ore
-	AstralChestLocked.MapEntry: Astral Chest Locked
+
+	AstralChestLocked: {
+		MapEntry0: "{$Items.AstralChest.DisplayName}"
+		MapEntry1: Locked {$Items.AstralChest.DisplayName}
+	}
+
 	ArenaTile.MapEntry: Arena Tile
 	AerialiteOre.MapEntry: Aerialite Ore
 }

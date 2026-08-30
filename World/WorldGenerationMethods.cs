@@ -47,7 +47,7 @@ namespace CalamityModClassicPreTrailer.World
 					int y = WorldGen.genRand.Next((int)Main.worldSurface, MaxY);
 					if (Main.wallDungeon[Main.tile[x, y].WallType] && !Main.tile[x, y].HasTile)
 					{
-						chest = AddChestWithDefaultLoot(x, y, (ushort)ChestTypes[i % ChestTypes.Length], 1, 2);
+						chest = AddChestWithDefaultLoot(x, y, (ushort)ChestTypes[i % ChestTypes.Length], 1, 1);
 					}
 				}
 				if (chest != null)

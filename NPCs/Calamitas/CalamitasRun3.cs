@@ -531,7 +531,7 @@ namespace CalamityModClassicPreTrailer.NPCs.Calamitas
 			notExpert.OnSuccess(new CommonDrop(ModContent.ItemType<CalamityDust>(), 1, 9, 15));
 			notExpert.OnSuccess(new CommonDrop(ModContent.ItemType<BlightedLens>(), 1, 1, 3));
 			notExpert.OnSuccess(ItemDropRule.ByCondition(new DownedProvidence(), ModContent.ItemType<Bloodstone>(), 1, 30, 41)); 
-			notExpert.OnSuccess(new CommonDrop(ModContent.ItemType<ChaosStone>(), 10));
+			notExpert.OnSuccess(new PerPlayerDropRule(ModContent.ItemType<ChaosStone>(), 10));
 			notExpert.OnSuccess(new CommonDrop(ModContent.ItemType<CalamitasInferno>(), 4));
 			notExpert.OnSuccess(new CommonDrop(ModContent.ItemType<CalamitasMask>(), 7));
 			notExpert.OnSuccess(new CommonDrop(ModContent.ItemType<TheEyeofCalamitas>(), 4));

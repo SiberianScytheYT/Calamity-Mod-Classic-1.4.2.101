@@ -38,31 +38,44 @@ namespace CalamityModClassicPreTrailer.Tiles.Astral
 			TileObjectData.newTile.LavaDeath = false;
 			TileObjectData.newTile.AnchorBottom = new AnchorData(AnchorType.SolidTile | AnchorType.SolidWithTop | AnchorType.SolidSide, TileObjectData.newTile.Width, 0);
 			TileObjectData.addTile(Type);
-			LocalizedText name = CreateMapEntryName();
+			//LocalizedText name = CreateMapEntryName();
 			// name.SetDefault("Astral Chest");
-			AddMapEntry(new Color(174, 129, 92), name, MapChestName);
+			//AddMapEntry(new Color(174, 129, 92), name, MapChestName);
+			AddMapEntry(new Color(174, 129, 92), this.GetLocalization("MapEntry0"), MapChestName);
+            AddMapEntry(new Color(174, 129, 92), this.GetLocalization("MapEntry1"), MapChestName);
 			DustType = ModContent.DustType<AstralBasic>();
 			TileID.Sets.DisableSmartCursor[Type] = true;
 			AdjTiles = new int[] { TileID.Containers };
 			TileID.Sets.BasicChest[Type] = true;
 		}
 
-		public override LocalizedText DefaultContainerName(int frameX, int frameY) => ItemLoader.GetItem(Mod.Find<ModItem>("AstralChestLocked").Type).GetLocalization("DisplayName");
+		public override LocalizedText DefaultContainerName(int frameX, int frameY)
+        {
+            int option = frameX / 36;
+            return this.GetLocalization("MapEntry" + option);
+        }
 		
-		public override bool HasSmartInteract(int i, int j, SmartInteractScanSettings settings)
+		public override ushort GetMapOption(int i, int j) => (ushort)(Main.tile[i, j].TileFrameX / 36);
+		
+		public override bool HasSmartInteract(int i, int j, SmartInteractScanSettings settings) => true;
+
+		public override bool IsLockedChest(int i, int j) => Main.tile[i, j].TileFrameX / 36 == 1;
+		
+		public override bool UnlockChest(int i, int j, ref short frameXAdjustment, ref int dustType, ref bool manual)
 		{
+			if (!CalamityWorldPreTrailer.downedStarGod)
+				return false;
+
+			dustType = DustType;
+			
 			return true;
 		}
-
 		public string MapChestName(string name, int i, int j)
 		{
 			int left = i;
 			int top = j;
 			Tile tile = Main.tile[i, j];
-			if (tile == null)
-			{
-				return name;
-			}
+			
 			if (tile.TileFrameX % 36 != 0)
 			{
 				left--;
@@ -72,19 +85,10 @@ namespace CalamityModClassicPreTrailer.Tiles.Astral
 				top--;
 			}
 			int chest = Chest.FindChest(left, top);
-			string newName = name;
-			if (Chest.IsLocked(left, top))
-			{
-				newName = "Locked " + newName;
-			}
-			if (chest == -1 || Main.chest[chest].name == "")
-			{
-				return newName;
-			}
+			if (Main.chest[chest].name == "")
+				return name;
 			else
-			{
-				return newName + ": " + Main.chest[chest].name;
-			}
+				return name + $": {Main.chest[chest].name}";
 		}
 
 		public override void NumDust(int i, int j, bool fail, ref int num)
@@ -127,7 +131,8 @@ namespace CalamityModClassicPreTrailer.Tiles.Astral
 				NetMessage.SendData(33, -1, -1, NetworkText.FromLiteral(Main.chest[player.chest].name), player.chest, 1f, 0f, 0f, 0, 0, 0);
 				player.editedChestName = false;
 			}
-			if (Main.netMode == 1 && Main.tile[left, top].TileFrameX < 72)
+			bool isLocked = IsLockedChest(left, top);
+			if (Main.netMode == 1 && !isLocked)
 			{
 				if (left == player.chestX && top == player.chestY && player.chest >= 0)
 				{
@@ -144,19 +149,13 @@ namespace CalamityModClassicPreTrailer.Tiles.Astral
 			}
 			else
 			{
-				if (Chest.IsLocked(left, top))
+				if (isLocked)
 				{
-					if (!CalamityWorldPreTrailer.downedStarGod)
-					{
-						return false;
-					}
 					if (Chest.Unlock(left, top))
 					{
 						AchievementsHelper.NotifyProgressionEvent(AchievementHelperID.Events.UnlockedBiomeChest);
 						if (Main.netMode == NetmodeID.MultiplayerClient)
-						{
 							NetMessage.SendData(MessageID.LockAndUnlock, -1, -1, null, player.whoAmI, 1f, left, top);
-						}
 						return true;
 					}
 				}
@@ -175,10 +174,6 @@ namespace CalamityModClassicPreTrailer.Tiles.Astral
 						{
 							player.chest = chest;
 							Main.playerInventory = true;
-							if (PlayerInput.GrappleAndInteractAreShared)
-							{
-								PlayerInput.Triggers.JustPressed.Grapple = false;
-							}
 							Main.recBigList = false;
 							player.chestX = left;
 							player.chestY = top;
@@ -217,7 +212,7 @@ namespace CalamityModClassicPreTrailer.Tiles.Astral
 				player.cursorItemIconText = Main.chest[chest].name.Length > 0 ? Main.chest[chest].name : "Astral Chest";
 				if (player.cursorItemIconText == "Astral Chest")
 				{
-					player.cursorItemIconID = ModContent.ItemType<Items.Placeables.AstralChest>();;
+					player.cursorItemIconID = ModContent.ItemType<Items.Placeables.AstralChest>();
 					player.cursorItemIconText = "";
 				}
 			}

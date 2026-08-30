@@ -546,7 +546,7 @@ namespace CalamityModClassicPreTrailer.NPCs.BrimstoneWaifu
 				5, 5));
 			npcLoot.Add(ItemDropRule.BossBag(ModContent.ItemType<BrimstoneWaifuBag>()));
 			notExpert.OnSuccess(ItemDropRule.ByCondition(new DownedProvidence(), ModContent.ItemType<Bloodstone>(), 1, 20, 31));
-			notExpert.OnSuccess(new CommonDrop(ModContent.ItemType<RoseStone>(), 10));
+			notExpert.OnSuccess(new PerPlayerDropRule(ModContent.ItemType<RoseStone>(), 10));
 			notExpert.OnSuccess(new CommonDrop(ItemID.SoulofFright, 1, 20, 41));
 			notExpert.OnSuccess(new CommonDrop(ModContent.ItemType<EssenceofChaos>(), 1, 4, 9));
 			notExpert.OnSuccess(ItemDropRule.OneFromOptions(1, new int[]

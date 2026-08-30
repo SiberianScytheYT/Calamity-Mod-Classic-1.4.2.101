@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using System.IO;
 using CalamityModClassicPreTrailer.Items.SlimeGod;
+using CalamityModClassicPreTrailer.NPCs.NPCLootConditions.CalamityBosses;
 using CalamityModClassicPreTrailer.NPCs.NPCLootConditions.MiscConditions;
 using Microsoft.Xna.Framework;
 using Microsoft.Xna.Framework.Graphics;
@@ -71,11 +72,13 @@ namespace CalamityModClassicPreTrailer.NPCs.SlimeGod
 		
 		public override void ModifyNPCLoot(NPCLoot npcLoot)
 		{
-			npcLoot.Add(ItemDropRule.ByCondition(new ArmageddonDropRuleCondition(),
+			LeadingConditionRule corePresent = new LeadingConditionRule(new CorePresent(NPC));
+			corePresent.OnSuccess(ItemDropRule.ByCondition(new ArmageddonDropRuleCondition(),
 				ModContent.ItemType<SlimeGodBag>(),
 				1,
 				5, 5));
-			npcLoot.Add(ItemDropRule.BossBag(ModContent.ItemType<SlimeGodBag>()));
+			corePresent.OnSuccess(ItemDropRule.BossBag(ModContent.ItemType<SlimeGodBag>()));
+			npcLoot.Add(corePresent);
 		}
 
 		

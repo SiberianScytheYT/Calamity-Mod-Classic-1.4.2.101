@@ -743,7 +743,9 @@ namespace CalamityModClassicPreTrailer.NPCs.CosmicWraith
 		
 		public override void ModifyNPCLoot(NPCLoot npcLoot)
 		{
-			npcLoot.Add(ItemDropRule.ByCondition(new NotInDoGSentinelPhase(), Mod.Find<ModItem>("TwistingNether").Type, 1, 2, 4));
+			LeadingConditionRule notDoGFight = new LeadingConditionRule(new NotInDoGSentinelPhase());
+			notDoGFight.OnSuccess(new PerPlayerDropRule(Mod.Find<ModItem>("TwistingNether").Type, 1, 2, 4));
+			npcLoot.Add(notDoGFight);
 			npcLoot.Add(ItemDropRule.ByCondition(new NotInDoGSentinelPhase(), Mod.Find<ModItem>("SignusTrophy").Type, 10));
 			npcLoot.Add(ItemDropRule.ByCondition(new NotInDoGSentinelPhase(), Mod.Find<ModItem>("CosmicKunai").Type, 3));
 			npcLoot.Add(ItemDropRule.ByCondition(new NotInDoGSentinelPhase(), Mod.Find<ModItem>("Cosmilamp").Type, 3));

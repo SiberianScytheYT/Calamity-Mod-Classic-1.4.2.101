@@ -113,7 +113,10 @@ namespace CalamityModClassicPreTrailer.NPCs.StormWeaver
 			return true;
 		}
 		
-		
+		public override void ModifyIncomingHit(ref NPC.HitModifiers modifiers)
+		{
+			modifiers.SetMaxDamage(1);
+		}
 		public override bool CheckActive()
 		{
 			return false;

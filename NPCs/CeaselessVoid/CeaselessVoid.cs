@@ -250,11 +250,13 @@ namespace CalamityModClassicPreTrailer.NPCs.CeaselessVoid
 
 		public override void ModifyNPCLoot(NPCLoot npcLoot)
 		{
-			npcLoot.Add(ItemDropRule.ByCondition(new NotInDoGSentinelPhase(), Mod.Find<ModItem>("DarkPlasma").Type, 1, 2, 4));
+			LeadingConditionRule notDoGFight = new LeadingConditionRule(new NotInDoGSentinelPhase());
+			notDoGFight.OnSuccess(new PerPlayerDropRule(Mod.Find<ModItem>("DarkPlasma").Type, 1, 2, 4));
 			npcLoot.Add(ItemDropRule.ByCondition(new NotInDoGSentinelPhase(), Mod.Find<ModItem>("CeaselessVoidTrophy").Type, 10));
 			npcLoot.Add(ItemDropRule.ByCondition(new NotInDoGSentinelPhase(), Mod.Find<ModItem>("MirrorBlade").Type, 3));
 			npcLoot.Add(ItemDropRule.ByCondition(new NotInDoGSentinelPhase(), Mod.Find<ModItem>("TheEvolution").Type, 40));
-			npcLoot.Add(ItemDropRule.ByCondition(new NotInDoGSentinelPhase(), Mod.Find<ModItem>("ArcanumoftheVoid").Type, 5));
+			notDoGFight.OnSuccess(new PerPlayerDropRule(Mod.Find<ModItem>("ArcanumoftheVoid").Type, 5));
+			npcLoot.Add(notDoGFight);
 		}
 
 		public override void BossLoot(ref string name, ref int potionType)

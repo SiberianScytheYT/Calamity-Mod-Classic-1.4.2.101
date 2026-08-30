@@ -992,7 +992,7 @@ namespace CalamityModClassicPreTrailer.NPCs.Cryogen
 			npcLoot.Add(ItemDropRule.BossBag(ModContent.ItemType<CryogenBag>()));
 
 			notExpert.OnSuccess(new CommonDrop(ItemID.FrozenKey, 5));
-			notExpert.OnSuccess(new CommonDrop(ModContent.ItemType<CryoStone>(), 10));
+			notExpert.OnSuccess(new PerPlayerDropRule(ModContent.ItemType<CryoStone>(), 10));
 			notExpert.OnSuccess(new CommonDrop(ModContent.ItemType<CryogenMask>(), 7));
 			notExpert.OnSuccess(new CommonDrop(ModContent.ItemType<Regenator>(), 40));
 			notExpert.OnSuccess(new CommonDrop(ModContent.ItemType<BittercoldStaff>(), 4));
