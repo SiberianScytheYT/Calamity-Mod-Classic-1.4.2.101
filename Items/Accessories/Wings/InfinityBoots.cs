@@ -68,12 +68,6 @@ namespace CalamityModClassicPreTrailer.Items.Accessories.Wings
 			modPlayer.sTracers = true;
 		}
 
-		public override void HorizontalWingSpeeds(Player player, ref float speed, ref float acceleration)
-		{
-			speed = 9f;
-			acceleration *= 2.5f;
-		}
-
 		public override void AddRecipes()
 		{
 			Recipe recipe = CreateRecipe();

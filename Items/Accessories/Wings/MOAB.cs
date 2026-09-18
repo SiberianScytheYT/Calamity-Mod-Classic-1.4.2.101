@@ -101,11 +101,6 @@ namespace CalamityModClassicPreTrailer.Items.Accessories.Wings
 			player.wingTimeMax = 60;
 		}
 
-		public override void HorizontalWingSpeeds(Player player, ref float speed, ref float acceleration)
-		{
-			speed = 6f;
-		}
-
 		public override void AddRecipes()
 		{
 			Recipe recipe = CreateRecipe();
