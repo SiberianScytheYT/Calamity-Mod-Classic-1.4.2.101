@@ -55,5 +55,11 @@ namespace CalamityModClassicPreTrailer.Tiles
         {
             return -1;
         }
+        
+        public override int SaplingGrowthType(ref int style)
+        {
+            style = 0;
+            return ModContent.TileType<AstralTreeSapling>();
+        }
     }
 }

@@ -5170,7 +5170,7 @@ namespace CalamityModClassicPreTrailer
 					{
 						float ai1 = (float)(I * 120);
 						Projectile.NewProjectile(Entity.GetSource_FromThis(null), Player.Center.X + (float)(Math.Sin(I * 120) * 550), Player.Center.Y + (float)(Math.Cos(I * 120) * 550), 0f, 0f,
-							Mod.Find<ModProjectile>("GhostlyMine").Type, (int)((auricSet ? 15000f : 5000f) * player.GetDamage(DamageClass.Summon).Multiplicative), 1f, Player.whoAmI, ai1, 0f);
+							Mod.Find<ModProjectile>("GhostlyMine").Type, (int)((auricSet ? 15000f : 5000f) * player.GetDamage(DamageClass.Summon).Additive), 1f, Player.whoAmI, ai1, 0f);
 					}
 				}
 			}
@@ -5389,7 +5389,7 @@ namespace CalamityModClassicPreTrailer
 					}
 					if (Player.ownedProjectileCounts[Mod.Find<ModProjectile>("AngryChicken").Type] < 2)
 					{
-						Projectile.NewProjectile(Entity.GetSource_FromThis(null), Player.Center.X, Player.Center.Y, 0f, 0f, Mod.Find<ModProjectile>("AngryChicken").Type, (int)(232f * player.GetDamage(DamageClass.Summon).Multiplicative), 2f, Main.myPlayer, 0f, 0f);
+						Projectile.NewProjectile(Entity.GetSource_FromThis(null), Player.Center.X, Player.Center.Y, 0f, 0f, Mod.Find<ModProjectile>("AngryChicken").Type, (int)(232f * player.GetDamage(DamageClass.Summon).Additive), 2f, Main.myPlayer, 0f, 0f);
 					}
 				}
 			}
@@ -5416,7 +5416,7 @@ namespace CalamityModClassicPreTrailer
 						}
 						if (Player.ownedProjectileCounts[Mod.Find<ModProjectile>("MiniGuardianDefense").Type] < 1)
 						{
-							Projectile.NewProjectile(Entity.GetSource_FromThis(null), Player.Center.X, Player.Center.Y, 0f, -3f, Mod.Find<ModProjectile>("MiniGuardianDefense").Type, (int)(baseDamage * player.GetDamage(DamageClass.Summon).Multiplicative), 1f, Main.myPlayer, 0f, 0f);
+							Projectile.NewProjectile(Entity.GetSource_FromThis(null), Player.Center.X, Player.Center.Y, 0f, -3f, Mod.Find<ModProjectile>("MiniGuardianDefense").Type, (int)(baseDamage * player.GetDamage(DamageClass.Summon).Additive), 1f, Main.myPlayer, 0f, 0f);
 						}
 					}
 					if (tarraSummon || bloodflareSummon || godSlayerSummon || silvaSummon || dsSetBonus || omegaBlueSet)
@@ -5427,7 +5427,7 @@ namespace CalamityModClassicPreTrailer
 						}
 						if (Player.ownedProjectileCounts[Mod.Find<ModProjectile>("MiniGuardianAttack").Type] < 1)
 						{
-							Projectile.NewProjectile(Entity.GetSource_FromThis(null), Player.Center.X, Player.Center.Y, 0f, -1f, Mod.Find<ModProjectile>("MiniGuardianAttack").Type, (int)(baseDamage * player.GetDamage(DamageClass.Summon).Multiplicative), 1f, Main.myPlayer, 0f, 0f);
+							Projectile.NewProjectile(Entity.GetSource_FromThis(null), Player.Center.X, Player.Center.Y, 0f, -1f, Mod.Find<ModProjectile>("MiniGuardianAttack").Type, (int)(baseDamage * player.GetDamage(DamageClass.Summon).Additive), 1f, Main.myPlayer, 0f, 0f);
 						}
 					}
 				}
@@ -9269,7 +9269,7 @@ namespace CalamityModClassicPreTrailer
 				}
 				rect.Width = 2;
 				rect.Inflate(6, 12);
-				float damage = 800f * Player.GetDamage(DamageClass.Summon).Multiplicative;
+				float damage = 800f * Player.GetDamage(DamageClass.Summon).Additive;
 				float knockback = 10f;
 				int nPCImmuneTime = 30;
 				int playerImmuneTime = 6;
@@ -9284,7 +9284,7 @@ namespace CalamityModClassicPreTrailer
 				}
 				rect2.Width = 2;
 				rect2.Inflate(6, 12);
-				float damage2 = 50f * Player.GetDamage(DamageClass.Summon).Multiplicative;
+				float damage2 = 50f * Player.GetDamage(DamageClass.Summon).Additive;
 				float knockback2 = 8f;
 				int nPCImmuneTime2 = 30;
 				int playerImmuneTime2 = 6;
@@ -9299,7 +9299,7 @@ namespace CalamityModClassicPreTrailer
 				}
 				rect2.Width = 2;
 				rect2.Inflate(6, 12);
-				float damage2 = 25f * Player.GetDamage(DamageClass.Summon).Multiplicative;
+				float damage2 = 25f * Player.GetDamage(DamageClass.Summon).Additive;
 				float knockback2 = 5f;
 				int nPCImmuneTime2 = 30;
 				int playerImmuneTime2 = 6;

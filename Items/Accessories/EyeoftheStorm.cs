@@ -54,7 +54,7 @@ namespace CalamityModClassicPreTrailer.Items.Accessories
 				}
 				if (player.ownedProjectileCounts[Mod.Find<ModProjectile>("CloudyWaifu").Type] < 1)
 				{
-					Projectile.NewProjectile(player.GetSource_FromThis(null), player.Center.X, player.Center.Y, 0f, -1f, Mod.Find<ModProjectile>("CloudyWaifu").Type, (int)(45f * player.GetTotalDamage(DamageClass.Summon).Multiplicative), 2f, Main.myPlayer, 0f, 0f);
+					Projectile.NewProjectile(player.GetSource_FromThis(null), player.Center.X, player.Center.Y, 0f, -1f, Mod.Find<ModProjectile>("CloudyWaifu").Type, (int)(45f * player.GetTotalDamage(DamageClass.Summon).Additive), 2f, Main.myPlayer, 0f, 0f);
 				}
 			}
 		}

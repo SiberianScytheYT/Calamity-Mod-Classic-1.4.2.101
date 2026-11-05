@@ -598,6 +598,7 @@ namespace CalamityModClassicPreTrailer
 		public override void ModifyWorldGenTasks(List<GenPass> tasks, ref double totalWeight)
 		{
 			int ShiniesIndex = tasks.FindIndex(genpass => genpass.Name.Equals("Shinies"));
+			int GrassIndex = tasks.FindIndex(genpass => genpass.Name.Equals("Spreading Grass")); // fixes grass on island issue
 			if (ShiniesIndex != -1)
 			{
 				#region IceTomb
@@ -628,9 +629,11 @@ namespace CalamityModClassicPreTrailer
 					}
 				}));
 				#endregion
-
+			}
+			if (GrassIndex != -1)
+			{
 				#region EvilIsland
-				tasks.Insert(ShiniesIndex + 2, new PassLegacy("EvilIsland", delegate(GenerationProgress progress, GameConfiguration config)
+				tasks.Insert(GrassIndex + 2, new PassLegacy("EvilIsland", delegate(GenerationProgress progress, GameConfiguration config)
 				{
 					progress.Message = "Evil Island";
 					int x = Main.maxTilesX;

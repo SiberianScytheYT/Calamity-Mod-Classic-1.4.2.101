@@ -1444,6 +1444,10 @@ namespace CalamityModClassicPreTrailer.NPCs
 		public void CalamityStyleDamage(ref NPC.HitInfo hit)
 		{
 			NPC npc = npcToModify;
+			// disable custom damage calc for calamitas doppelganger phase 2 if her brothers are alive
+			if (npc.type == Mod.Find<ModNPC>("CalamitasRun3").Type && ((Main.expertMode || CalamityWorldPreTrailer.bossRushActive) && NPC.AnyNPCs(Mod.Find<ModNPC>("CalamitasRun").Type) || NPC.AnyNPCs(Mod.Find<ModNPC>("CalamitasRun2").Type)))
+				return;
+			
 			if (npc.type == NPCID.TheDestroyer || npc.type == NPCID.TheDestroyerBody || npc.type == NPCID.TheDestroyerTail ||
 			    npc.type == NPCID.EaterofWorldsHead || npc.type == NPCID.EaterofWorldsBody || npc.type == NPCID.EaterofWorldsTail)
 			{

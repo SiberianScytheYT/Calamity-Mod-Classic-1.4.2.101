@@ -46,7 +46,7 @@ namespace CalamityModClassicPreTrailer.Projectiles.Ranged
 			{
 				num26 = 5f;
 			}
-			Projectile.damage = (int)((float)player.inventory[player.selectedItem].damage * player.GetDamage(DamageClass.Ranged).Multiplicative);
+			Projectile.damage = (int)((float)player.inventory[player.selectedItem].damage * player.GetDamage(DamageClass.Ranged).Additive);
 			Projectile.ai[0] += 1f;
 			Projectile.ai[1] += 1f;
 			int num27 = 10;

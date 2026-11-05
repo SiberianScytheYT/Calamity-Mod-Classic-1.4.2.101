@@ -48,7 +48,7 @@ namespace CalamityModClassicPreTrailer.Projectiles.Patreon
 			{
 				num26 = 5f;
 			}
-			Projectile.damage = (int)((float)player.inventory[player.selectedItem].damage * player.GetDamage(DamageClass.Magic).Multiplicative);
+			Projectile.damage = (int)((float)player.inventory[player.selectedItem].damage * player.GetDamage(DamageClass.Magic).Additive);
 			Projectile.ai[0] += 1f;
 			Projectile.ai[1] += 1f;
             if (Projectile.localAI[0] == 0f)

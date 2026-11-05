@@ -72,7 +72,7 @@ namespace CalamityModClassicPreTrailer.Items.Weapons.DevourerofGods
             {
                 maxMinionScale = 10;
             }
-			damage = (int)(damage * ((player.GetDamage(DamageClass.Summon).Multiplicative * 5 / 3) + ((player.GetDamage(DamageClass.Summon).Multiplicative * 0.46f) * (maxMinionScale - 1))));
+			damage = (int)(damage * ((player.GetDamage(DamageClass.Summon).Additive * 5 / 3) + ((player.GetDamage(DamageClass.Summon).Additive * 0.46f) * (maxMinionScale - 1))));
 			int owner = player.whoAmI;
 			float num72 = Item.shootSpeed;
 			player.itemTime = Item.useTime;

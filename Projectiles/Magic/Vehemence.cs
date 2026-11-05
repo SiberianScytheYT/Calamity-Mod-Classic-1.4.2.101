@@ -57,10 +57,7 @@ namespace CalamityModClassicPreTrailer.Projectiles.Magic
         	double lifeMax = (double)target.lifeMax;
         	double damageMult = (lifeAmount / lifeMax) * 7;
         	Projectile.damage = (int)Math.Pow(Projectile.damage, damageMult);
-        	if (Projectile.damage > 1000000)
-        	{
-		        Projectile.damage = 1000000;
-        	}
+        	modifiers.SetMaxDamage(1000000);
         }
         
         public override void OnHitNPC(NPC target, NPC.HitInfo hit, int damageDone)

@@ -65,7 +65,7 @@ namespace CalamityModClassicPreTrailer.Items.Accessories
                 }
                 if (player.ownedProjectileCounts[Mod.Find<ModProjectile>("FungalClump").Type] < 1)
                 {
-                    Projectile.NewProjectile(player.GetSource_FromThis(null), player.Center.X, player.Center.Y, 0f, -1f, Mod.Find<ModProjectile>("FungalClump").Type, (int)(250f * player.GetDamage(DamageClass.Summon).Multiplicative), 1f, Main.myPlayer, 0f, 0f);
+                    Projectile.NewProjectile(player.GetSource_FromThis(null), player.Center.X, player.Center.Y, 0f, -1f, Mod.Find<ModProjectile>("FungalClump").Type, (int)(250f * player.GetDamage(DamageClass.Summon).Additive), 1f, Main.myPlayer, 0f, 0f);
                 }
             }
             player.GetDamage(DamageClass.Melee) += 0.15f;

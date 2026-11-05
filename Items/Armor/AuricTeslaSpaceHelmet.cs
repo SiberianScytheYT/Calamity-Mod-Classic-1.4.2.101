@@ -72,7 +72,7 @@ namespace CalamityModClassicPreTrailer.Items.Armor
                 }
                 if (player.ownedProjectileCounts[Mod.Find<ModProjectile>("SilvaCrystal").Type] < 1)
                 {
-                    Projectile.NewProjectile(player.GetSource_ItemUse(Item), player.Center.X, player.Center.Y, 0f, -1f, Mod.Find<ModProjectile>("SilvaCrystal").Type, (int)(3000f * player.GetDamage(DamageClass.Summon).Multiplicative), 0f, Main.myPlayer, 0f, 0f);
+                    Projectile.NewProjectile(player.GetSource_ItemUse(Item), player.Center.X, player.Center.Y, 0f, -1f, Mod.Find<ModProjectile>("SilvaCrystal").Type, (int)(3000f * player.GetDamage(DamageClass.Summon).Additive), 0f, Main.myPlayer, 0f, 0f);
                 }
                 if (player.FindBuffIndex(Mod.Find<ModBuff>("Mechworm").Type) == -1)
                 {
@@ -101,7 +101,7 @@ namespace CalamityModClassicPreTrailer.Items.Armor
                     {
                         maxMinionScale = 10;
                     }
-                    int damage = (int)(35 * ((player.GetDamage(DamageClass.Summon).Multiplicative * 5 / 3) + ((player.GetDamage(DamageClass.Summon).Multiplicative * 0.46f) * (maxMinionScale - 1))));
+                    int damage = (int)(35 * ((player.GetDamage(DamageClass.Summon).Additive * 5 / 3) + ((player.GetDamage(DamageClass.Summon).Additive * 0.46f) * (maxMinionScale - 1))));
                     Vector2 vector2 = player.RotatedRelativePoint(player.MountedCenter, true);
                     Vector2 value = Vector2.UnitX.RotatedBy((double)player.fullRotation, default(Vector2));
                     Vector2 vector3 = Main.MouseWorld - vector2;
