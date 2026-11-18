@@ -6530,11 +6530,11 @@ namespace CalamityModClassicPreTrailer
 					}
 				}
 			}
-			modifiers.FinalDamage *= (float)damageMult;
+			modifiers.SourceDamage *= (float)damageMult;
 			#endregion
 
 			if (yharonLore)
-				modifiers.FinalDamage *= 0.75f;
+				modifiers.SourceDamage *= 0.75f;
 
 			if ((target.damage > 5 || target.boss) && Player.whoAmI == Main.myPlayer && !target.SpawnedFromStatue)
 			{
@@ -6710,23 +6710,23 @@ namespace CalamityModClassicPreTrailer
 			#region AdditiveBoosts
 			if (theBee && !isSummon)
 			{
-				modifiers.FinalDamage += theBeeDamage;
+				modifiers.SourceDamage.Flat += theBeeDamage;
 			}
 			if (proj.type == Mod.Find<ModProjectile>("AcidBullet").Type)
 			{
 				int defenseAdd = (int)((double)target.defense * 0.1); //100 defense * 0.1 = 10
-				modifiers.FinalDamage += defenseAdd;
+				modifiers.SourceDamage.Flat += defenseAdd;
 			}
 			if (uberBees && (proj.type == ProjectileID.GiantBee || proj.type == ProjectileID.Bee || proj.type == ProjectileID.Wasp || proj.type == Mod.Find<ModProjectile>("PlagueBee").Type))
 			{
 				if (Player.inventory[Player.selectedItem].type == Mod.Find<ModItem>("TheSwarmer").Type || Player.inventory[Player.selectedItem].type == Mod.Find<ModItem>("PlagueKeeper").Type ||
 					Player.inventory[Player.selectedItem].type == Mod.Find<ModItem>("Plaguenade").Type)
 				{
-					modifiers.FinalDamage += Main.rand.Next(10, 21);
+					modifiers.SourceDamage.Flat += Main.rand.Next(10, 21);
 				}
 				else
 				{
-					modifiers.FinalDamage += Main.rand.Next(70, 101);
+					modifiers.SourceDamage.Flat += Main.rand.Next(70, 101);
 					proj.penetrate = 1;
 				}
 			}
@@ -6744,7 +6744,7 @@ namespace CalamityModClassicPreTrailer
 					Player.inventory[Player.selectedItem].pick == 0 &&
 					Player.inventory[Player.selectedItem].axe == 0)
 				{
-					modifiers.FinalDamage *= 0.6f;
+					modifiers.SourceDamage *= 0.6f;
 				}
 			}
 			if (proj.CountsAsClass(DamageClass.Ranged))
@@ -6752,20 +6752,20 @@ namespace CalamityModClassicPreTrailer
 				switch (proj.type)
 				{
 					case ProjectileID.CrystalShard:
-						modifiers.FinalDamage *= 0.6f;
+						modifiers.SourceDamage *= 0.6f;
 						break;
 					case ProjectileID.ChlorophyteBullet:
-						modifiers.FinalDamage *= 0.8f;
+						modifiers.SourceDamage *= 0.8f;
 						break;
 					case ProjectileID.HallowStar:
-						modifiers.FinalDamage *= 0.7f;
+						modifiers.SourceDamage *= 0.7f;
 						break;
 				}
 				if (proj.type == Mod.Find<ModProjectile>("VeriumBullet").Type)
-					modifiers.FinalDamage *= 0.8f;
+					modifiers.SourceDamage *= 0.8f;
 			}
 			if (yharonLore)
-				modifiers.FinalDamage *= 0.75f;
+				modifiers.SourceDamage *= 0.75f;
 			#endregion
 
 			if ((target.damage > 5 || target.boss) && Player.whoAmI == Main.myPlayer && !target.SpawnedFromStatue)
@@ -7513,7 +7513,7 @@ namespace CalamityModClassicPreTrailer
 						break;
 				}
 			}
-			modifiers.FinalDamage *= (float)damageMult;
+			modifiers.SourceDamage *= (float)damageMult;
 			#endregion
 
 			modifiers.ModifyHurtInfo += CustomDamage; // workaround to HurtModifiers structure, the old calculations are very difficult to adapt into the new implementation.
@@ -7521,7 +7521,7 @@ namespace CalamityModClassicPreTrailer
 			#region MultiplicativeReductions
 			if (trinketOfChiBuff)
 			{
-				modifiers.FinalDamage *= 0.85f;
+				modifiers.SourceDamage *= 0.85f;
 			}
 			if (purpleCandle)
 			{
@@ -7532,20 +7532,20 @@ namespace CalamityModClassicPreTrailer
 			}
 			if (abyssalDivingSuitPlates)
 			{
-				modifiers.FinalDamage *= 0.85f;
+				modifiers.SourceDamage *= 0.85f;
 			}
 			if (sirenIce)
 			{
-				modifiers.FinalDamage *= 0.85f;
+				modifiers.SourceDamage *= 0.85f;
 			}
 			if (CalamityWorldPreTrailer.revenge)
 			{
 				if (!CalamityWorldPreTrailer.downedBossAny)
-					modifiers.FinalDamage *= 0.8f;
+					modifiers.SourceDamage *= 0.8f;
 			}
 			if (Player.mount.Active && (Player.mount.Type == Mod.Find<ModMount>("AngryDog").Type || Player.mount.Type == Mod.Find<ModMount>("OnyxExcavator").Type) && Math.Abs(Player.velocity.X) > Player.mount.RunSpeed / 2f)
 			{
-				modifiers.FinalDamage *= 0.9f;
+				modifiers.SourceDamage *= 0.9f;
 			}
 			#endregion
 

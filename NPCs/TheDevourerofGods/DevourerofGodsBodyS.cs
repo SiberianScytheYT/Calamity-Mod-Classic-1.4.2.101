@@ -370,7 +370,7 @@ namespace CalamityModClassicPreTrailer.NPCs.TheDevourerofGods
 		{
 			modifiers.ModifyHitInfo += NoDamage;
 			double protection = CalamityWorldPreTrailer.death ? 0.03 : 0.045;
-			modifiers.FinalDamage *= (float)protection;
+			modifiers.SourceDamage *= (float)protection;
 		}
 		public void NoDamage(ref NPC.HitInfo hit)
 		{

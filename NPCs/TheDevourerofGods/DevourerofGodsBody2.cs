@@ -94,7 +94,7 @@ namespace CalamityModClassicPreTrailer.NPCs.TheDevourerofGods
 
         public override void ModifyIncomingHit(ref NPC.HitModifiers modifiers)
         {
-	        modifiers.FinalDamage *= 0.5f;
+	        modifiers.SourceDamage *= 0.5f;
         }
 
         public override bool CanHitPlayer(Player target, ref int cooldownSlot)

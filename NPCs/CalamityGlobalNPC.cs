@@ -1420,13 +1420,13 @@ namespace CalamityModClassicPreTrailer.NPCs
 		{
 			if (tSad)
 			{
-				modifiers.FinalDamage /= 2;	
+				modifiers.SourceDamage /= 2;	
 			}
 			if (target.GetModPlayer<CalamityPlayerPreTrailer>().beeResist)
 			{
 				if (CalamityModClassicPreTrailer.beeEnemyList.Contains(npc.type))
 				{
-					modifiers.FinalDamage *= 0.75f;
+					modifiers.SourceDamage *= 0.75f;
 				}
 			}
 		}
