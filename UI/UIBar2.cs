@@ -9,6 +9,7 @@ using Terraria.GameContent.UI.Elements;
 using Terraria.UI;
 using Terraria.DataStructures;
 using Terraria.ID;
+using Terraria.Localization;
 using Terraria.ModLoader;
 
 namespace CalamityModClassicPreTrailer.UI
@@ -134,7 +135,7 @@ namespace CalamityModClassicPreTrailer.UI
 			if (backPanel.ContainsPoint(MousePosition))
 			{
 				Main.LocalPlayer.mouseInterface = true;
-				Main.instance.MouseText("Adrenaline: " + getValue() + "/" + valueMax + "", 0, 0, -1, -1, -1, -1); //only way I got this to show up consistently, otherwise it fucked up and showed up anywhere onscreen lol.
+				Main.instance.MouseText(Language.GetTextValue("Mods.CalamityModClassicPreTrailer.UI.Adrenaline") + ": " + getValue() + "/" + valueMax + "", 0, 0, -1, -1, -1, -1); //only way I got this to show up consistently, otherwise it fucked up and showed up anywhere onscreen lol.
 			}
 			if (dragging)
 			{
