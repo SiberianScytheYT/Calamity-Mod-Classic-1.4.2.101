@@ -66,7 +66,7 @@ namespace CalamityModClassicPreTrailer.Items.DifficultyItems
 			if (!CalamityWorldPreTrailer.revenge)
 			{
 				CalamityWorldPreTrailer.revenge = true;
-				string key = "Revengeance is active.";
+				string key = "Mods.CalamityModClassicPreTrailer.ClassicKeys.RevengeText";
 				Color messageColor = Color.Crimson;
 				if (Main.netMode == 0)
 				{
@@ -84,7 +84,7 @@ namespace CalamityModClassicPreTrailer.Items.DifficultyItems
 			else
 			{
 				CalamityWorldPreTrailer.revenge = false;
-				string key = "Revengeance is not active.";
+				string key = "Mods.CalamityModClassicPreTrailer.ClassicKeys.RevengeText2";
 				Color messageColor = Color.Crimson;
 				if (Main.netMode == 0)
 				{
@@ -101,7 +101,7 @@ namespace CalamityModClassicPreTrailer.Items.DifficultyItems
 				if (CalamityWorldPreTrailer.death)
 				{
 					CalamityWorldPreTrailer.death = false;
-					key = "Death is not active, not fun enough for you?";
+					key = "Mods.CalamityModClassicPreTrailer.ClassicKeys.DeathText2";
 					messageColor = Color.Crimson;
 					if (Main.netMode == 0)
 					{
@@ -119,7 +119,7 @@ namespace CalamityModClassicPreTrailer.Items.DifficultyItems
 				if (CalamityWorldPreTrailer.defiled)
 				{
 					CalamityWorldPreTrailer.defiled = false;
-					key = "Your soul is yours once more...";
+					key = "Mods.CalamityModClassicPreTrailer.ClassicKeys.DefiledText2";
 					messageColor = Color.DarkSeaGreen;
 					if (Main.netMode == 0)
 					{

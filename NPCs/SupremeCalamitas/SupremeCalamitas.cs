@@ -146,7 +146,7 @@ namespace CalamityModClassicPreTrailer.NPCs.SupremeCalamitas
 			{
 				if (Main.LocalPlayer.GetModPlayer<CalamityPlayerPreTrailer>().sCalKillCount == 4)
 				{
-					string key = "Don't get me wrong, I like pain too, but you're just ridiculous."; //kill SCal 4 times
+					string key = "Mods.CalamityModClassicPreTrailer.ClassicKeys.SupremeBossText12"; //kill SCal 4 times
 					Color messageColor = Color.Orange;
 					if (Main.netMode == 0)
 					{
@@ -159,7 +159,7 @@ namespace CalamityModClassicPreTrailer.NPCs.SupremeCalamitas
 				}
 				else if (Main.LocalPlayer.GetModPlayer<CalamityPlayerPreTrailer>().sCalKillCount == 1)
 				{
-					string key = "Do you enjoy going through hell?"; //kill SCal once
+					string key = "Mods.CalamityModClassicPreTrailer.ClassicKeys.SupremeBossText11"; //kill SCal once
 					Color messageColor = Color.Orange;
 					if (Main.netMode == 0)
 					{
@@ -174,7 +174,7 @@ namespace CalamityModClassicPreTrailer.NPCs.SupremeCalamitas
 				{
 					if (Main.LocalPlayer.GetModPlayer<CalamityPlayerPreTrailer>().sCalDeathCount == 50)
 					{
-						string key = "Alright, I'm done counting. You probably died this much just to see what I'd say."; //die 50 or more times
+						string key = "Mods.CalamityModClassicPreTrailer.ClassicKeys.SupremeBossText15"; //die 50 or more times
 						Color messageColor = Color.Orange;
 						if (Main.netMode == 0)
 						{
@@ -187,7 +187,7 @@ namespace CalamityModClassicPreTrailer.NPCs.SupremeCalamitas
 					}
 					else if (Main.LocalPlayer.GetModPlayer<CalamityPlayerPreTrailer>().sCalDeathCount > 19)
 					{
-						string key = "Do you have a fetish for getting killed or something?"; //die 20 or more times
+						string key = "Mods.CalamityModClassicPreTrailer.ClassicKeys.SupremeBossText14"; //die 20 or more times
 						Color messageColor = Color.Orange;
 						if (Main.netMode == 0)
 						{
@@ -200,7 +200,7 @@ namespace CalamityModClassicPreTrailer.NPCs.SupremeCalamitas
 					}
 					else if (Main.LocalPlayer.GetModPlayer<CalamityPlayerPreTrailer>().sCalDeathCount > 4)
 					{
-						string key = "You must enjoy dying more than most people, huh?"; //die 5 or more times
+						string key = "Mods.CalamityModClassicPreTrailer.ClassicKeys.SupremeBossText13"; //die 5 or more times
 						Color messageColor = Color.Orange;
 						if (Main.netMode == 0)
 						{
@@ -364,7 +364,7 @@ namespace CalamityModClassicPreTrailer.NPCs.SupremeCalamitas
 			}
 			else if (!startBattle)
 			{
-				string key = "Alright, let's get started. Not sure why you're bothering.";
+				string key = "Mods.CalamityModClassicPreTrailer.ClassicKeys.SupremeBossText3";
 				Color messageColor = Color.Orange;
 				if (Main.netMode == 0)
 				{
@@ -471,7 +471,7 @@ namespace CalamityModClassicPreTrailer.NPCs.SupremeCalamitas
 			}
 			if (!startSecondAttack && ((double)NPC.life <= (double)NPC.lifeMax * 0.75))
 			{
-				string key = "You seem so confident, even though you are painfully ignorant of what has yet to transpire.";
+				string key = "Mods.CalamityModClassicPreTrailer.ClassicKeys.SupremeBossText4";
 				Color messageColor = Color.Orange;
 				if (Main.netMode == 0)
 				{
@@ -535,7 +535,7 @@ namespace CalamityModClassicPreTrailer.NPCs.SupremeCalamitas
 			if (!startThirdAttack && ((double)NPC.life <= (double)NPC.lifeMax * 0.5))
 			{
 				Music = MusicLoader.GetMusicSlot("CalamityModClassicPreTrailer/Sounds/Music/SCL");
-				string key = "Everything was going well until you came along.";
+				string key = "Mods.CalamityModClassicPreTrailer.ClassicKeys.SupremeBossText5";
 				Color messageColor = Color.Orange;
 				if (Main.netMode == 0)
 				{
@@ -604,7 +604,7 @@ namespace CalamityModClassicPreTrailer.NPCs.SupremeCalamitas
 			if (!startFourthAttack && ((double)NPC.life <= (double)NPC.lifeMax * 0.3))
 			{
 				Music = MusicLoader.GetMusicSlot("CalamityModClassicPreTrailer/Sounds/Music/SCE");
-				string key = "Hmm...perhaps I should let the little ones out to play for a while.";
+				string key = "Mods.CalamityModClassicPreTrailer.ClassicKeys.SupremeBossText7";
 				Color messageColor = Color.Orange;
 				if (Main.netMode == 0)
 				{
@@ -678,7 +678,7 @@ namespace CalamityModClassicPreTrailer.NPCs.SupremeCalamitas
 			}
 			if (!startFifthAttack && ((double)NPC.life <= (double)NPC.lifeMax * 0.1))
 			{
-				string key = "I'm just getting started!";
+				string key = "Mods.CalamityModClassicPreTrailer.ClassicKeys.SupremeBossText9";
 				Color messageColor = Color.Orange;
 				if (Main.netMode == 0)
 				{
@@ -711,7 +711,7 @@ namespace CalamityModClassicPreTrailer.NPCs.SupremeCalamitas
 					{
 						if (giveUpCounter == 900)
 						{
-							string key = "Perhaps one of these times I'll change my mind...";
+							string key = "Mods.CalamityModClassicPreTrailer.ClassicKeys.SupremeBossText27";
 							Color messageColor = Color.Orange;
 							if (Main.netMode == 0)
 							{
@@ -729,7 +729,7 @@ namespace CalamityModClassicPreTrailer.NPCs.SupremeCalamitas
 					}
 					if (giveUpCounter == 600)
 					{
-						string key = "He has grown far stronger since we last fought...you stand no chance.";
+						string key = "Mods.CalamityModClassicPreTrailer.ClassicKeys.SupremeBossText25";
 						Color messageColor = Color.Orange;
 						if (Main.netMode == 0)
 						{
@@ -742,7 +742,7 @@ namespace CalamityModClassicPreTrailer.NPCs.SupremeCalamitas
 					}
 					if (giveUpCounter == 300)
 					{
-						string key = "Well...I suppose this is the end...";
+						string key = "Mods.CalamityModClassicPreTrailer.ClassicKeys.SupremeBossText26";
 						Color messageColor = Color.Orange;
 						if (Main.netMode == 0)
 						{
@@ -766,7 +766,7 @@ namespace CalamityModClassicPreTrailer.NPCs.SupremeCalamitas
 				}
 				if (!gettingTired5 && ((double)NPC.life <= (double)NPC.lifeMax * 0.01))
 				{
-					string key = "Not even I could defeat him! What hope do you have!?";
+					string key = "Mods.CalamityModClassicPreTrailer.ClassicKeys.SupremeBossText24";
 					Color messageColor = Color.Orange;
 					if (Main.netMode == 0)
 					{
@@ -781,7 +781,7 @@ namespace CalamityModClassicPreTrailer.NPCs.SupremeCalamitas
 				}
 				else if (!gettingTired4 && ((double)NPC.life <= (double)NPC.lifeMax * 0.02))
 				{
-					string key = "He has never lost a battle!";
+					string key = "Mods.CalamityModClassicPreTrailer.ClassicKeys.SupremeBossText23";
 					Color messageColor = Color.Orange;
 					if (Main.netMode == 0)
 					{
@@ -796,7 +796,7 @@ namespace CalamityModClassicPreTrailer.NPCs.SupremeCalamitas
 				}
 				else if (!gettingTired3 && ((double)NPC.life <= (double)NPC.lifeMax * 0.04))
 				{
-					string key = "Even if you defeat me you would still have the lord to contend with!";
+					string key = "Mods.CalamityModClassicPreTrailer.ClassicKeys.SupremeBossText22";
 					Color messageColor = Color.Orange;
 					if (Main.netMode == 0)
 					{
@@ -811,7 +811,7 @@ namespace CalamityModClassicPreTrailer.NPCs.SupremeCalamitas
 				}
 				else if (!gettingTired2 && ((double)NPC.life <= (double)NPC.lifeMax * 0.06))
 				{
-					string key = "Just stop!";
+					string key = "Mods.CalamityModClassicPreTrailer.ClassicKeys.SupremeBossText21";
 					Color messageColor = Color.Orange;
 					if (Main.netMode == 0)
 					{
@@ -826,7 +826,7 @@ namespace CalamityModClassicPreTrailer.NPCs.SupremeCalamitas
 				}
 				else if (!gettingTired && ((double)NPC.life <= (double)NPC.lifeMax * 0.08))
 				{
-					string key = "How are you still alive!?";
+					string key = "Mods.CalamityModClassicPreTrailer.ClassicKeys.SupremeBossText20";
 					Color messageColor = Color.Orange;
 					if (Main.netMode == 0)
 					{
@@ -902,7 +902,7 @@ namespace CalamityModClassicPreTrailer.NPCs.SupremeCalamitas
 			#region TransformSeekerandBrotherTriggers
 			if (!halfLife && ((double)NPC.life <= (double)NPC.lifeMax * 0.4))
 			{
-				string key = "Don't worry, I still have plenty of tricks left.";
+				string key = "Mods.CalamityModClassicPreTrailer.ClassicKeys.SupremeBossText";
 				Color messageColor = Color.Orange;
 				if (Main.netMode == 0)
 				{
@@ -918,7 +918,7 @@ namespace CalamityModClassicPreTrailer.NPCs.SupremeCalamitas
 			{
 				if (secondStage == false)
 				{
-					string key = "Impressive...but still not good enough!";
+					string key = "Mods.CalamityModClassicPreTrailer.ClassicKeys.SupremeBossText8";
 					Color messageColor = Color.Orange;
 					if (Main.netMode == 0)
 					{
@@ -956,7 +956,7 @@ namespace CalamityModClassicPreTrailer.NPCs.SupremeCalamitas
 						bossLife = (float)NPC.life;
 						NPC.SpawnOnPlayer(NPC.FindClosestPlayer(), Mod.Find<ModNPC>("SupremeCataclysm").Type);
 						NPC.SpawnOnPlayer(NPC.FindClosestPlayer(), Mod.Find<ModNPC>("SupremeCatastrophe").Type);
-						string key = "Brothers, could you assist me for a moment? This ordeal is growing tiresome.";
+						string key = "Mods.CalamityModClassicPreTrailer.ClassicKeys.SupremeBossText6";
 						Color messageColor = Color.Orange;
 						if (Main.netMode == 0)
 						{
@@ -1956,7 +1956,7 @@ namespace CalamityModClassicPreTrailer.NPCs.SupremeCalamitas
 		{
 			if (lootTimer < 6000) //75 seconds for bullet hells + 25 seconds for normal phases
 			{
-				string key = "Go to hell.";
+				string key = "Mods.CalamityModClassicPreTrailer.ClassicKeys.SupremeBossText2";
 				Color messageColor = Color.Orange;
 				if (Main.netMode == 0)
 				{
@@ -1972,7 +1972,7 @@ namespace CalamityModClassicPreTrailer.NPCs.SupremeCalamitas
 			{
 				if (Main.LocalPlayer.GetModPlayer<CalamityPlayerPreTrailer>().sCalDeathCount == 0)
 				{
-					string key = "You didn't die at all huh? Welp, you probably cheated. Do it again, for real this time...but here's your reward I guess."; //die no times
+					string key = "Mods.CalamityModClassicPreTrailer.ClassicKeys.SupremeBossText16"; //die no times
 					Color messageColor = Color.Orange;
 					if (Main.netMode == 0)
 					{
@@ -1985,7 +1985,7 @@ namespace CalamityModClassicPreTrailer.NPCs.SupremeCalamitas
 				}
 				else if (Main.LocalPlayer.GetModPlayer<CalamityPlayerPreTrailer>().sCalDeathCount == 1)
 				{
-					string key = "One death? That's it? ...I guess you earned this then."; //die one time
+					string key = "Mods.CalamityModClassicPreTrailer.ClassicKeys.SupremeBossText17"; //die one time
 					Color messageColor = Color.Orange;
 					if (Main.netMode == 0)
 					{
@@ -1998,7 +1998,7 @@ namespace CalamityModClassicPreTrailer.NPCs.SupremeCalamitas
 				}
 				else if (Main.LocalPlayer.GetModPlayer<CalamityPlayerPreTrailer>().sCalDeathCount == 2)
 				{
-					string key = "Two deaths, nice job. Here's your reward."; //die two times
+					string key = "Mods.CalamityModClassicPreTrailer.ClassicKeys.SupremeBossText18"; //die two times
 					Color messageColor = Color.Orange;
 					if (Main.netMode == 0)
 					{
@@ -2011,7 +2011,7 @@ namespace CalamityModClassicPreTrailer.NPCs.SupremeCalamitas
 				}
 				else if (Main.LocalPlayer.GetModPlayer<CalamityPlayerPreTrailer>().sCalDeathCount == 3)
 				{
-					string key = "Third time's the charm. Here's a special reward."; //die three times
+					string key = "Mods.CalamityModClassicPreTrailer.ClassicKeys.SupremeBossText19"; //die three times
 					Color messageColor = Color.Orange;
 					if (Main.netMode == 0)
 					{
@@ -2024,7 +2024,7 @@ namespace CalamityModClassicPreTrailer.NPCs.SupremeCalamitas
 				}
 				else //die however many times
 				{
-					string key = "At long last I am free...for a time. I'll keep coming back, just like you. Until we meet again, farewell.";
+					string key = "Mods.CalamityModClassicPreTrailer.ClassicKeys.SupremeBossText10";
 					Color messageColor = Color.Orange;
 					if (Main.netMode == 0)
 					{
@@ -2038,7 +2038,7 @@ namespace CalamityModClassicPreTrailer.NPCs.SupremeCalamitas
 			}
 			else //all times after first kill
 			{
-				string key = "At long last I am free...for a time. I'll keep coming back, just like you. Until we meet again, farewell.";
+				string key = "Mods.CalamityModClassicPreTrailer.ClassicKeys.SupremeBossText10";
 				Color messageColor = Color.Orange;
 				if (Main.netMode == 0)
 				{

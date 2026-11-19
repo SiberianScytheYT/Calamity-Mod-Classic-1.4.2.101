@@ -122,7 +122,7 @@ namespace CalamityModClassicPreTrailer.NPCs
 				{
 					CalamityWorldPreTrailer.bossRushStage = 26;
 					DespawnProj();
-					string key = "Hmm? Your perseverance is truly a trait to behold. You've come further than even the demigods in such a short time.";
+					string key = "Mods.CalamityModClassicPreTrailer.ClassicKeys.BossRushTierThreeEndText";
 					Color messageColor = Color.LightCoral;
 					if (Main.netMode == 0)
 					{
@@ -157,7 +157,7 @@ namespace CalamityModClassicPreTrailer.NPCs
 				{
 					CalamityWorldPreTrailer.bossRushStage = 33;
 					DespawnProj();
-					string key = "Hmm? So you've made it to the final tier, a remarkable feat enviable by even the mightiest of the gods.";
+					string key = "Mods.CalamityModClassicPreTrailer.ClassicKeys.BossRushTierFourEndText";
 					Color messageColor = Color.LightCoral;
 					if (Main.netMode == 0)
 					{
@@ -227,7 +227,7 @@ namespace CalamityModClassicPreTrailer.NPCs
 						netMessage.Write(CalamityWorldPreTrailer.bossRushStage);
 						netMessage.Send();
 					}
-					string key = "Hmm? You expected a reward beyond this mere pebble? Patience, the true reward will become apparent in time...";
+					string key = "Mods.CalamityModClassicPreTrailer.ClassicKeys.BossRushTierFiveEndText";
 					Color messageColor = Color.LightCoral;
 					if (Main.netMode == 0)
 					{
@@ -268,7 +268,7 @@ namespace CalamityModClassicPreTrailer.NPCs
 					case NPCID.TheDestroyer:
 						CalamityWorldPreTrailer.bossRushStage = 10;
 						DespawnProj();
-						string key = "Hmm? Oh, you're still alive. Unexpected, but don't get complacent just yet.";
+						string key = "Mods.CalamityModClassicPreTrailer.ClassicKeys.BossRushTierOneEndText";
 						Color messageColor = Color.LightCoral;
 						if (Main.netMode == 0)
 						{
@@ -298,7 +298,7 @@ namespace CalamityModClassicPreTrailer.NPCs
 					case NPCID.CultistBoss:
 						CalamityWorldPreTrailer.bossRushStage = 19;
 						DespawnProj();
-						string key2 = "Hmm? Persistent aren't you? Perhaps you have some hope of prosperity, unlike past challengers.";
+						string key2 = "Mods.CalamityModClassicPreTrailer.ClassicKeys.BossRushTierTwoEndText";
 						Color messageColor2 = Color.LightCoral;
 						if (Main.netMode == 0)
 						{
@@ -448,7 +448,7 @@ namespace CalamityModClassicPreTrailer.NPCs
 			#endregion
 			if(npc.type == Mod.Find<ModNPC>("DesertScourgeHead").Type)
 			{
-				string key = "The depths of the underground desert are rumbling...";
+				string key = "Mods.CalamityModClassicPreTrailer.ClassicKeys.OpenSunkenSea";
 				Color messageColor = Color.Aquamarine;
 				if (!CalamityWorldPreTrailer.downedDesertScourge)
 				{
@@ -505,7 +505,7 @@ namespace CalamityModClassicPreTrailer.NPCs
 			
 			if (npc.type == Mod.Find<ModNPC>("AstrumDeusHeadSpectral").Type)
 			{
-				string key = "The seal of the stars has been broken!";
+				string key = "Mods.CalamityModClassicPreTrailer.ClassicKeys.AstralBossText";
 				Color messageColor = Color.Gold;
 				if (!CalamityWorldPreTrailer.downedStarGod)
 				{
@@ -533,9 +533,9 @@ namespace CalamityModClassicPreTrailer.NPCs
 
 			if (npc.type == Mod.Find<ModNPC>("DevourerofGodsHeadS").Type)
 			{
-				string key = "The frigid moon shimmers brightly.";
+				string key = "Mods.CalamityModClassicPreTrailer.ClassicKeys.DoGBossText";
 				Color messageColor = Color.Cyan;
-				string key2 = "The harvest moon glows eerily.";
+				string key2 = "Mods.CalamityModClassicPreTrailer.ClassicKeys.DoGBossText2";
 				Color messageColor2 = Color.Orange;
 				if (!CalamityWorldPreTrailer.downedDoG)
 				{
@@ -594,7 +594,7 @@ namespace CalamityModClassicPreTrailer.NPCs
 				{
 					if (!CalamityWorldPreTrailer.spawnAstralMeteor)
 					{
-						string key = "A star has fallen from the heavens!";
+						string key = "Mods.CalamityModClassicPreTrailer.ClassicKeys.AstralText";
 						Color messageColor = Color.Gold;
 						if (Main.netMode == 0)
 						{
@@ -616,7 +616,7 @@ namespace CalamityModClassicPreTrailer.NPCs
 				}
 				else if (Main.rand.Next(2) == 0 && !CalamityWorldPreTrailer.spawnAstralMeteor2)
 				{
-					string key = "A star has fallen from the heavens!";
+					string key = "Mods.CalamityModClassicPreTrailer.ClassicKeys.AstralText";
 					Color messageColor = Color.Gold;
 					if (Main.netMode == 0)
 					{
@@ -635,7 +635,7 @@ namespace CalamityModClassicPreTrailer.NPCs
 				}
 				else if (Main.rand.Next(4) == 0 && !CalamityWorldPreTrailer.spawnAstralMeteor3)
 				{
-					string key = "A star has fallen from the heavens!";
+					string key = "Mods.CalamityModClassicPreTrailer.ClassicKeys.AstralText";
 					Color messageColor = Color.Gold;
 					if (Main.netMode == 0)
 					{
@@ -659,7 +659,7 @@ namespace CalamityModClassicPreTrailer.NPCs
 				}
 				if (!Main.hardMode)
 				{
-					string key2 = "The Sunken Sea trembles...";
+					string key2 = "Mods.CalamityModClassicPreTrailer.ClassicKeys.UglyBossText";
 					Color messageColor2 = Color.Aquamarine;
 					if (Main.netMode == 0)
 					{
@@ -682,7 +682,7 @@ namespace CalamityModClassicPreTrailer.NPCs
 						NetMessage.SendData(7, -1, -1, null, 0, 0f, 0f, 0f, 0, 0, 0);
 					}
 				}
-				string key = "A blood red inferno lingers in the night...";
+				string key = "Mods.CalamityModClassicPreTrailer.ClassicKeys.SteelSkullBossText.";
 				Color messageColor = Color.Crimson;
 				if (!downedPrime && !CalamityWorldPreTrailer.downedBrimstoneElemental)
 				{
@@ -716,9 +716,9 @@ namespace CalamityModClassicPreTrailer.NPCs
 						NetMessage.SendData(7, -1, -1, null, 0, 0f, 0f, 0f, 0, 0, 0);
 					}
 				}
-				string key = "The ocean depths are trembling.";
+				string key = "Mods.CalamityModClassicPreTrailer.ClassicKeys.PlantBossText";
 				Color messageColor = Color.RoyalBlue;
-				string key2 = "Energized plant matter has formed in the underground.";
+				string key2 = "Mods.CalamityModClassicPreTrailer.ClassicKeys.PlantOreText";
 				Color messageColor2 = Color.GreenYellow;
 				if (npc.type == Mod.Find<ModNPC>("CalamitasRun3").Type)
 				{
@@ -783,9 +783,9 @@ namespace CalamityModClassicPreTrailer.NPCs
 				{
 					NetMessage.SendData(7, -1, -1, null, 0, 0f, 0f, 0f, 0, 0, 0);
 				}
-				string key = "A plague has befallen the Jungle.";
+				string key = "Mods.CalamityModClassicPreTrailer.ClassicKeys.BabyBossText";
 				Color messageColor = Color.Lime;
-				string key2 = "An ancient automaton roams the land.";
+				string key2 = "Mods.CalamityModClassicPreTrailer.ClassicKeys.BabyBossText2";
 				Color messageColor2 = Color.Yellow;
 				if (!downedIdiot)
 				{
@@ -810,15 +810,15 @@ namespace CalamityModClassicPreTrailer.NPCs
 				{
 					NetMessage.SendData(7, -1, -1, null, 0, 0f, 0f, 0f, 0, 0, 0);
 				}
-				string key = "The profaned flame blazes fiercely!";
+				string key = "Mods.CalamityModClassicPreTrailer.ClassicKeys.MoonBossText";
 				Color messageColor = Color.Orange;
-				string key2 = "Cosmic terrors are watching...";
+				string key2 = "Mods.CalamityModClassicPreTrailer.ClassicKeys.MoonBossText2";
 				Color messageColor2 = Color.Violet;
-				string key3 = "The bloody moon beckons...";
+				string key3 = "Mods.CalamityModClassicPreTrailer.ClassicKeys.MoonBossText3";
 				Color messageColor3 = Color.Crimson;
-				string key4 = "Shrieks are echoing from the dungeon.";
+				string key4 = "Mods.CalamityModClassicPreTrailer.ClassicKeys.ProfanedBossText2";
 				Color messageColor4 = Color.Cyan;
-				string key5 = "A cold and dark energy has materialized in space.";
+				string key5 = "Mods.CalamityModClassicPreTrailer.ClassicKeys.FutureOreText";
 				Color messageColor5 = Color.LightGray;
 				if (!downedMoonDude)
 				{
@@ -864,7 +864,7 @@ namespace CalamityModClassicPreTrailer.NPCs
 			{
 				if (WorldGenerationMethods.checkAstralMeteor())
 				{
-					string key = "A star has fallen from the heavens!";
+					string key = "Mods.CalamityModClassicPreTrailer.ClassicKeys.AstralText";
 					Color messageColor = Color.Gold;
 					if (Main.netMode == 0)
 					{
@@ -889,7 +889,7 @@ namespace CalamityModClassicPreTrailer.NPCs
 				{
 					if (!CalamityWorldPreTrailer.downedPerforator)
 					{
-						string key = "The ground is glittering with cyan light.";
+						string key = "Mods.CalamityModClassicPreTrailer.ClassicKeys.SkyOreText";
 						Color messageColor = Color.Cyan;
 						WorldGenerationMethods.spawnOre(Mod.Find<ModTile>("AerialiteOre").Type, 12E-05, .4f, .6f);
 						if (Main.netMode == 0)
@@ -915,7 +915,7 @@ namespace CalamityModClassicPreTrailer.NPCs
 				{
 					if (!CalamityWorldPreTrailer.downedHiveMind)
 					{
-						string key = "The ground is glittering with cyan light.";
+						string key = "Mods.CalamityModClassicPreTrailer.ClassicKeys.SkyOreText";
 						Color messageColor = Color.Cyan;
 						WorldGenerationMethods.spawnOre(Mod.Find<ModTile>("AerialiteOre").Type, 12E-05, .4f, .6f);
 						if (Main.netMode == 0)
@@ -973,7 +973,7 @@ namespace CalamityModClassicPreTrailer.NPCs
 			{
 				if (!CalamityWorldPreTrailer.downedCryogen)
 				{
-					string key = "The ice caves are crackling with frigid energy.";
+					string key = "Mods.CalamityModClassicPreTrailer.ClassicKeys.IceOreText";
 					Color messageColor = Color.LightSkyBlue;
 					WorldGenerationMethods.spawnOre(Mod.Find<ModTile>("CryonicOre").Type, 15E-05, .45f, .65f);
 					if (Main.netMode == 0)
@@ -1026,9 +1026,9 @@ namespace CalamityModClassicPreTrailer.NPCs
 			
 			if (npc.type == Mod.Find<ModNPC>("Providence").Type) //boss 11
 			{
-				string key2 = "The calamitous beings have been inundated with bloodstone.";
+				string key2 = "Mods.CalamityModClassicPreTrailer.ClassicKeys.ProfanedBossText3";
 				Color messageColor2 = Color.Orange;
-				string key3 = "Fossilized tree bark is bursting through the jungle's mud.";
+				string key3 = "Mods.CalamityModClassicPreTrailer.ClassicKeys.TreeOreText";
 				Color messageColor3 = Color.LightGreen;
 				if (!CalamityWorldPreTrailer.downedProvidence)
 				{
@@ -1122,9 +1122,9 @@ namespace CalamityModClassicPreTrailer.NPCs
 			
 			if (npc.type == Mod.Find<ModNPC>("Yharon").Type) //boss 17
 			{
-				string key = "The dark sun awaits.";
+				string key = "Mods.CalamityModClassicPreTrailer.ClassicKeys.DargonBossText";
 				Color messageColor = Color.Orange;
-				string key2 = "A godly aura has blessed the world's caverns.";
+				string key2 = "Mods.CalamityModClassicPreTrailer.ClassicKeys.AuricOreText";
 				Color messageColor2 = Color.Gold;
 				if (!CalamityWorldPreTrailer.downedYharon && npc.localAI[2] == 1f)
 				{
@@ -1195,7 +1195,7 @@ namespace CalamityModClassicPreTrailer.NPCs
 			
 			if (npc.type == Mod.Find<ModNPC>("Polterghast").Type) //boss 21
 			{
-				string key = "The abyssal spirits have been disturbed.";
+				string key = "Mods.CalamityModClassicPreTrailer.ClassicKeys.GhostBossText";
 				Color messageColor = Color.RoyalBlue;
 				if (!CalamityWorldPreTrailer.downedPolterghast)
 				{

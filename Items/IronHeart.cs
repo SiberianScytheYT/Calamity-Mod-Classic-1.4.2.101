@@ -57,7 +57,7 @@ namespace CalamityModClassicPreTrailer.Items
 			if (!CalamityWorldPreTrailer.ironHeart)
 			{
 				CalamityWorldPreTrailer.ironHeart = true;
-				string key = "Iron Heart is active, don't die.";
+				string key = "Mods.CalamityModClassicPreTrailer.ClassicKeys.IronHeartText";
 				Color messageColor = Color.LightSkyBlue;
 				if (Main.netMode == 0)
 				{
@@ -71,7 +71,7 @@ namespace CalamityModClassicPreTrailer.Items
 			else
 			{
 				CalamityWorldPreTrailer.ironHeart = false;
-				string key = "Iron Heart is not active, you can die again.";
+				string key = "Mods.CalamityModClassicPreTrailer.ClassicKeys.IronHeartText2";
 				Color messageColor = Color.LightSkyBlue;
 				if (Main.netMode == 0)
 				{

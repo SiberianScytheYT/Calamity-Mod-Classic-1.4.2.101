@@ -58,7 +58,7 @@ namespace CalamityModClassicPreTrailer.Items.DifficultyItems
             if (!CalamityWorldPreTrailer.death)
             {
                 CalamityWorldPreTrailer.death = true;
-                string key = "Death is active, enjoy the fun.";
+                string key = "Mods.CalamityModClassicPreTrailer.ClassicKeys.DeathText";
                 Color messageColor = Color.Crimson;
                 if (Main.netMode == 0)
                 {
@@ -72,7 +72,7 @@ namespace CalamityModClassicPreTrailer.Items.DifficultyItems
             else
             {
                 CalamityWorldPreTrailer.death = false;
-                string key = "Death is not active, not fun enough for you?";
+                string key = "Mods.CalamityModClassicPreTrailer.ClassicKeys.DeathText2";
                 Color messageColor = Color.Crimson;
                 if (Main.netMode == 0)
                 {

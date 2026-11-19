@@ -1335,7 +1335,7 @@ namespace CalamityModClassicPreTrailer
 						bossRushSpawnCountdown--;
 						if (bossRushSpawnCountdown == 180 && bossRushStage == 26)
 						{
-							string key = "May your skills remain sharp for the last challenges.";
+							string key = "Mods.CalamityModClassicPreTrailer.ClassicKeys.BossRushTierThreeEndText2";
 							Color messageColor = Color.LightCoral;
 							if (Main.netMode == 0)
 							{
@@ -1348,7 +1348,7 @@ namespace CalamityModClassicPreTrailer
 						}
 						if (bossRushSpawnCountdown == 210 && bossRushStage == 33)
 						{
-							string key = "Go forth and conquer 'til the ritual's end!";
+							string key = "Mods.CalamityModClassicPreTrailer.ClassicKeys.BossRushTierFourEndText2";
 							Color messageColor = Color.LightCoral;
 							if (Main.netMode == 0)
 							{
@@ -1625,7 +1625,7 @@ namespace CalamityModClassicPreTrailer
 						if (!NPC.AnyNPCs(Mod.Find<ModNPC>("DevourerofGodsHeadS").Type))
 						{
 							NPC.SpawnOnPlayer(closestPlayer, Mod.Find<ModNPC>("DevourerofGodsHeadS").Type);
-							string key = "It's not over yet, kid!";
+							string key = "Mods.CalamityModClassicPreTrailer.ClassicKeys.EdgyBossText10";
 							Color messageColor = Color.Cyan;
 							if (Main.netMode == 0)
 							{
@@ -1686,7 +1686,7 @@ namespace CalamityModClassicPreTrailer
 			}
 			/*if (Main.rand.Next(100000000) == 0)
 			{
-				string key = "The LORDE is approaching...";
+				string key = "Mods.CalamityModClassicPreTrailer.ClassicKeys.AprilFools";
 				Color messageColor = Color.Crimson;
 				if (Main.netMode == 0)
 				{
@@ -2065,7 +2065,7 @@ namespace CalamityModClassicPreTrailer
 		#region BossText
 		public void BossText()
 		{
-			string key = "Something is approaching...";
+			string key = "Mods.CalamityModClassicPreTrailer.ClassicKeys.BossSpawnText";
 			Color messageColor = Color.Crimson;
 			if (Main.netMode == 0)
 			{

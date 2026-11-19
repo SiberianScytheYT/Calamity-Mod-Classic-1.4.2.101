@@ -135,7 +135,7 @@ namespace CalamityModClassicPreTrailer.NPCs.Yharon
 					}
 					if (NPC.timeLeft < 5)
 					{
-						string key = "My dragon deems you an unworthy opponent. You must acquire the power of the dark sun to witness his true power.";
+						string key = "Mods.CalamityModClassicPreTrailer.ClassicKeys.DargonBossText2";
 						Color messageColor = Color.Orange;
 						if (Main.netMode == 0)
 						{
@@ -1883,7 +1883,7 @@ namespace CalamityModClassicPreTrailer.NPCs.Yharon
 			{
 				Music = MusicLoader.GetMusicSlot("CalamityModClassicPreTrailer/Sounds/Music/DragonGod");
 				moveCloser = true;
-				string key = "The air is getting warmer around you.";
+				string key = "Mods.CalamityModClassicPreTrailer.ClassicKeys.FlameText";
 				Color messageColor = Color.Orange;
 				if (Main.netMode == 0)
 				{

@@ -40,7 +40,7 @@ namespace CalamityModClassicPreTrailer.Items.TheDevourerofGods
 		
 		public override bool? UseItem(Player player)/* tModPorter Suggestion: Return null instead of false */
 		{
-            string key = "You are no god...but I shall feast upon your essence regardless!";
+            string key = "Mods.CalamityModClassicPreTrailer.ClassicKeys.EdgyBossText12";
             Color messageColor = Color.Cyan;
             if (Main.netMode == 0)
             {

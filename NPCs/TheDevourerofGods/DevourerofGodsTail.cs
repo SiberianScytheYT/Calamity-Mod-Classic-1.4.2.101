@@ -179,14 +179,14 @@ namespace CalamityModClassicPreTrailer.NPCs.TheDevourerofGods
 		{
 			target.AddBuff(Mod.Find<ModBuff>("GodSlayerInferno").Type, 180, true);
 			int num = Main.rand.Next(2);
-			string key = "Are you honestly that bad at dodging?";
+			string key = "Mods.CalamityModClassicPreTrailer.ClassicKeys.EdgyBossText8";
 			if (num == 0)
 			{
-				key = "Are you honestly that bad at dodging?";
+				key = "Mods.CalamityModClassicPreTrailer.ClassicKeys.EdgyBossText8";
 			}
 			else if (num == 1)
 			{
-				key = "Of all my segments to get hit by...";
+				key = "Mods.CalamityModClassicPreTrailer.ClassicKeys.EdgyBossText9";
 			}
 			Color messageColor = Color.Cyan;
 			if (Main.netMode == 0)

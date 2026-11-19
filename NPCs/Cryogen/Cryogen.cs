@@ -696,7 +696,7 @@ namespace CalamityModClassicPreTrailer.NPCs.Cryogen
 					NPC.localAI[3] = 0f;
 					iceShard = 0f;
 					NPC.netUpdate = true;
-					string key = "Cryogen is derping out!";
+					string key = "Mods.CalamityModClassicPreTrailer.ClassicKeys.CryogenBossText";
 					Color messageColor = Color.Cyan;
 					if (Main.netMode == 0)
 					{

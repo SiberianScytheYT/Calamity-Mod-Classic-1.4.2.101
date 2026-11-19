@@ -176,7 +176,7 @@ namespace CalamityModClassicPreTrailer.NPCs.TheDevourerofGods
 			{
 				if (!halfLife)
 				{
-					string key = "A GOD DOES NOT FEAR DEATH!";
+					string key = "Mods.CalamityModClassicPreTrailer.ClassicKeys.EdgyBossText11";
 					Color messageColor = Color.Cyan;
 					if (Main.netMode == 0)
 					{
@@ -1108,7 +1108,7 @@ namespace CalamityModClassicPreTrailer.NPCs.TheDevourerofGods
 		{
 			if (hit.Damage > NPC.lifeMax / 2)
 			{
-				string key = "You think...you can butcher...ME!?";
+				string key = "Mods.CalamityModClassicPreTrailer.ClassicKeys.EdgyBossText2";
 				Color messageColor = Color.Cyan;
 				if (Main.netMode == 0)
 				{
@@ -1185,26 +1185,26 @@ namespace CalamityModClassicPreTrailer.NPCs.TheDevourerofGods
 				target.KillMe(PlayerDeathReason.ByOther(10), 1000.0, 0, false);
 			}
 			int num = Main.rand.Next(5);
-			string key = "A fatal mistake!";
+			string key = "Mods.CalamityModClassicPreTrailer.ClassicKeys.EdgyBossText3";
 			if (num == 0)
 			{
-				key = "A fatal mistake!";
+				key = "Mods.CalamityModClassicPreTrailer.ClassicKeys.EdgyBossText3";
 			}
 			else if (num == 1)
 			{
-				key = "Good luck recovering from that!";
+				key = "Mods.CalamityModClassicPreTrailer.ClassicKeys.EdgyBossText4";
 			}
 			else if (num == 2)
 			{
-				key = "Delicious...";
+				key = "Mods.CalamityModClassicPreTrailer.ClassicKeys.EdgyBossText5";
 			}
 			else if (num == 3)
 			{
-				key = "Did that hurt?";
+				key = "Mods.CalamityModClassicPreTrailer.ClassicKeys.EdgyBossText6";
 			}
 			else if (num == 4)
 			{
-				key = "Nothing personal, kid.";
+				key = "Mods.CalamityModClassicPreTrailer.ClassicKeys.EdgyBossText7";
 			}
 			Color messageColor = Color.Cyan;
 			if (Main.netMode == 0)

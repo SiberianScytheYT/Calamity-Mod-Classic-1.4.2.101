@@ -117,12 +117,12 @@ namespace CalamityModClassicPreTrailer.Projectiles.Pets
 			if (player.name == "Terry")
 			{
 				doggoType += "S";
-				Main.NewText("It's not over yet, kid!", Color.Cyan);
+				Main.NewText(Language.GetTextValue("Mods.CalamityModClassicPreTrailer.ClassicKeys.EdgyBossText10"), Color.Cyan);
 			}
 			else
 			{
 				doggoType += "2";
-				Main.NewText("Don't get cocky, kid!", Color.Cyan);
+				Main.NewText(Language.GetTextValue("Mods.CalamityModClassicPreTrailer.ClassicKeys.EdgyBossText"), Color.Cyan);
 			}
 
 			int type = Mod.Find<ModNPC>(doggoType).Type;

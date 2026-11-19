@@ -47,7 +47,7 @@ namespace CalamityModClassicPreTrailer.Items
             {
                 CalamityWorldPreTrailer.bossRushStage = 0;
                 CalamityWorldPreTrailer.bossRushActive = true;
-                string key = "Hmm? Ah, another contender. Very well, may the ritual commence!";
+                string key = "Mods.CalamityModClassicPreTrailer.ClassicKeys.BossRushStartText";
                 Color messageColor = Color.LightCoral;
                 if (Main.netMode == 0)
                 {

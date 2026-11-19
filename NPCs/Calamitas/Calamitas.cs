@@ -448,8 +448,8 @@ namespace CalamityModClassicPreTrailer.NPCs.Calamitas
 				NPC.NewNPC(NPC.GetSource_FromThis(null), (int)NPC.Center.X, (int)NPC.position.Y + NPC.height, Mod.Find<ModNPC>("CalamitasRun").Type, NPC.whoAmI, 0f, 0f, 0f, 0f, 255);
 				NPC.NewNPC(NPC.GetSource_FromThis(null), (int)NPC.Center.X, (int)NPC.position.Y + NPC.height, Mod.Find<ModNPC>("CalamitasRun2").Type, NPC.whoAmI, 0f, 0f, 0f, 0f, 255);
 			}
-			string key = "You underestimate my power...";
-			string key2 = "The brothers have awoken!";
+			string key = "Mods.CalamityModClassicPreTrailer.ClassicKeys.CalamitasBossText";
+			string key2 = "Mods.CalamityModClassicPreTrailer.ClassicKeys.CalamitasBossText2";
 			Color messageColor = Color.Orange;
 			if (Main.netMode == 0)
 			{

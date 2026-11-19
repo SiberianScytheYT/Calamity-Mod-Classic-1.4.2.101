@@ -7337,7 +7337,7 @@ namespace CalamityModClassicPreTrailer
 				{
 					if (SCalLore)
 					{
-						string key = "Go to hell.";
+						string key = "Mods.CalamityModClassicPreTrailer.ClassicKeys.SupremeBossText2";
 						Color messageColor = Color.Orange;
 						if (Main.netMode == 0)
 						{
@@ -7926,7 +7926,7 @@ namespace CalamityModClassicPreTrailer
 				if (info.Damage < 100)
 				{
 					KillPlayer();
-					string key = "You aren't hurting as much as I'd like...are you cheating?";
+					string key = "Mods.CalamityModClassicPreTrailer.ClassicKeys.SupremeBossText28";
 					Color messageColor = Color.Orange;
 					if (Main.netMode == 0)
 					{
@@ -10214,7 +10214,7 @@ namespace CalamityModClassicPreTrailer
 					exactMeleeLevel = level;
 					if (shootFireworksLevelUpMelee)
 					{
-						string key = (final ? "Melee weapon proficiency maxed out!" : "Melee weapon proficiency level up!");
+						string key = "Mods.CalamityModClassicPreTrailer.ClassicKeys.MeleeLevelUp" + (final ? "Final" : "");
 						shootFireworksLevelUpMelee = false;
 						if (Player.whoAmI == Main.myPlayer)
 						{
@@ -10243,7 +10243,7 @@ namespace CalamityModClassicPreTrailer
 					exactRangedLevel = level;
 					if (shootFireworksLevelUpRanged)
 					{
-						string key = (final ? "Ranged weapon proficiency maxed out!" : "Ranged weapon proficiency level up!");
+						string key = "Mods.CalamityModClassicPreTrailer.ClassicKeys.RangedLevelUp" + (final ? "Final" : "");
 						messageColor = Color.GreenYellow;
 						shootFireworksLevelUpRanged = false;
 						if (Player.whoAmI == Main.myPlayer)
@@ -10273,7 +10273,7 @@ namespace CalamityModClassicPreTrailer
 					exactMagicLevel = level;
 					if (shootFireworksLevelUpMagic)
 					{
-						string key = (final ? "Magic weapon proficiency maxed out!" : "Magic weapon proficiency level up!");
+						string key = "Mods.CalamityModClassicPreTrailer.ClassicKeys.MagicLevelUp" + (final ? "Final" : "");
 						messageColor = Color.DodgerBlue;
 						shootFireworksLevelUpMagic = false;
 						if (Player.whoAmI == Main.myPlayer)
@@ -10303,7 +10303,7 @@ namespace CalamityModClassicPreTrailer
 					exactSummonLevel = level;
 					if (shootFireworksLevelUpSummon)
 					{
-						string key = (final ? "Summoner weapon proficiency maxed out!" : "Summoner weapon proficiency level up!");
+						string key = "Mods.CalamityModClassicPreTrailer.ClassicKeys.SummonLevelUp" + (final ? "Final" : "");
 						messageColor = Color.Aquamarine;
 						shootFireworksLevelUpSummon = false;
 						if (Player.whoAmI == Main.myPlayer)
@@ -10333,7 +10333,7 @@ namespace CalamityModClassicPreTrailer
 					exactRogueLevel = level;
 					if (shootFireworksLevelUpRogue)
 					{
-						string key = (final ? "Rogue weapon proficiency maxed out!" : "Rogue weapon proficiency level up!");
+						string key = "Mods.CalamityModClassicPreTrailer.ClassicKeys.RogueLevelUp" + (final ? "Final" : "");
 						messageColor = Color.Orchid;
 						shootFireworksLevelUpRogue = false;
 						if (Player.whoAmI == Main.myPlayer)

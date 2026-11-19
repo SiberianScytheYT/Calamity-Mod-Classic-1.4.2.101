@@ -137,7 +137,7 @@ namespace CalamityModClassicPreTrailer.NPCs.Calamitas
 					}
 					secondStage = true;
 				}
-				string key = "Impressive child, most impressive...";
+				string key = "Mods.CalamityModClassicPreTrailer.ClassicKeys.CalamitasBossText3";
 				Color messageColor = Color.Orange;
 				if (Main.netMode == 0)
 				{
@@ -168,7 +168,7 @@ namespace CalamityModClassicPreTrailer.NPCs.Calamitas
 							Projectile.NewProjectile(NPC.GetSource_FromThis(null), NPC.Center.X, NPC.Center.Y, 0f, 0f, Mod.Find<ModProjectile>("RedSpawn").Type, 0, 0f, Main.myPlayer, 0f, 0f);
 							Projectile.NewProjectile(NPC.GetSource_FromThis(null), NPC.Center.X, NPC.Center.Y, 0f, 0f, Mod.Find<ModProjectile>("GraySpawn").Type, 0, 0f, Main.myPlayer, 0f, 0f);
 						}
-						string key = "The brothers have been reborn!";
+						string key = "Mods.CalamityModClassicPreTrailer.ClassicKeys.CalamitasBossText4";
 						Color messageColor = Color.Orange;
 						if (Main.netMode == 0)
 						{

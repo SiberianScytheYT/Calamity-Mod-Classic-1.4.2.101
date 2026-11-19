@@ -64,7 +64,7 @@ namespace CalamityModClassicPreTrailer.Items.DifficultyItems
             {
                 CalamityWorldPreTrailer.armageddon = false;
             }
-            string key = CalamityWorldPreTrailer.armageddon ? "Bosses will now kill you instantly." : "Bosses will no longer kill you instantly.";
+            string key = "Mods.CalamityModClassicPreTrailer.ClassicKeys." + (CalamityWorldPreTrailer.armageddon ? "ArmageddonText" : "ArmageddonText2");
             Color messageColor = Color.Fuchsia;
             if (Main.netMode == 0)
             {

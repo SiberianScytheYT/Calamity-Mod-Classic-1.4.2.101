@@ -66,11 +66,11 @@ namespace CalamityModClassicPreTrailer.Buffs
 		public override void ModifyBuffText(int type, ref string buffName, ref string tip, ref int rare)
 		{
 			if (type == BuffID.NebulaUpDmg1)
-				tip = "7.5% increased damage";
+				tip = tip.Replace("15", "7.5");
 			if (type == BuffID.NebulaUpDmg2)
-				tip = "15% increased damage";
+				tip = tip.Replace("30", "15");
 			if (type == BuffID.NebulaUpDmg3)
-				tip = "22.5% increased damage";
+				tip = tip.Replace("45", "22.5");
 		}
 	}
 }

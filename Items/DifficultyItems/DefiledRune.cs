@@ -59,7 +59,7 @@ namespace CalamityModClassicPreTrailer.Items.DifficultyItems
 			if (!CalamityWorldPreTrailer.defiled)
 			{
 				CalamityWorldPreTrailer.defiled = true;
-				string key = "Your soul is mine...";
+				string key = "Mods.CalamityModClassicPreTrailer.ClassicKeys.DefiledText";
 				Color messageColor = Color.DarkSeaGreen;
 				if (Main.netMode == 0)
 				{
@@ -73,7 +73,7 @@ namespace CalamityModClassicPreTrailer.Items.DifficultyItems
 			else
 			{
 				CalamityWorldPreTrailer.defiled = false;
-				string key = "Your soul is yours once more...";
+				string key = "Mods.CalamityModClassicPreTrailer.ClassicKeys.DefiledText2";
 				Color messageColor = Color.DarkSeaGreen;
 				if (Main.netMode == 0)
 				{
